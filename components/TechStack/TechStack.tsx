@@ -100,7 +100,7 @@ export const TechStack: FC = () => {
             "text-white border-white": isDarkMode,
           })}
         >
-          {"Portfolio"}
+          {"View My Portfolio"}
         </Button>
       </Link>
       <Grid container className="justify-center" gap={3}>
