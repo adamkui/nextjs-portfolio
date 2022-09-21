@@ -18,7 +18,7 @@ const TechStackCard: FC<TechStackCard> = ({ title, icon, isDarkMode }) => {
   const [isHovered, setHovered] = useState<boolean>(false);
 
   return (
-    <Grid item xs={2}>
+    <Grid item xs={5} sm={3} md={2} lg={1}>
       <Card
         variant="outlined"
         className={cn(
@@ -90,8 +90,7 @@ export const TechStack: FC = () => {
       body={
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo tenetur nobis accusamus culpa expedita, laudantium dolores asperiores reprehenderit deleniti assumenda maxime voluptatem quod earum officia omnis ab est facere nihil nemo neque tempora incidunt. Quisquam accusamus inventore eum iste nulla iusto suscipit est id sapiente delectus animi amet a aliquid, rerum libero quaerat saepe beatae nam voluptates nihil consequatur accusantium?"
       }
-      className="flex flex-col"
-      lastSection
+      className="flex flex-col mb-20"
     >
       <Link href="/portfolio">
         <Button
