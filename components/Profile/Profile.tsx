@@ -38,8 +38,8 @@ export const Profile: FC = () => {
 
   return (
     <section className="my-20 relative">
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col lg:flex-row md:justify-between items-center mx-16 max-w-7xl">
+      <div className="flex flex-col items-center mx-5 xs:mx-8 sm:mx-16">
+        <div className="flex flex-col lg:flex-row lg:justify-between items-center max-w-7xl lg:w-full">
           <div className="flex flex-col md:flex-row">
             <Avatar
               alt="Adam Kui"
@@ -92,7 +92,7 @@ export const Profile: FC = () => {
         </div>
         <Divider
           className="mt-10 mx-16 max-w-7xl w-full"
-          variant="middle"
+          variant="fullWidth"
           sx={{
             bgcolor: isDarkMode ? "white" : "rgb(30 41 59)",
           }}
