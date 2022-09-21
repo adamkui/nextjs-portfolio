@@ -88,7 +88,7 @@ export const TechStack: FC = () => {
     <Section
       title="Tech Stack 👨‍💻"
       body={
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo tenetur nobis accusamus culpa expedita, laudantium dolores asperiores reprehenderit deleniti assumenda maxime voluptatem quod earum officia omnis ab est facere nihil nemo neque tempora incidunt. Quisquam accusamus inventore eum iste nulla iusto suscipit est id sapiente delectus animi amet a aliquid, rerum libero quaerat saepe beatae nam voluptates nihil consequatur accusantium?"
+        "I know... this is the reoccuring topic that probalby almost all developers and recruiters are mostly interested in. 🔎 So I decided to collect the most important programming languages, frameworks, libraries etc., to show a little bit more of my background. If it got your attention, you can also take a look at my portfolio, or even better: go to my GitHub page, and see all my public repositories. Hope you'll enjoy! 😎"
       }
       className="flex flex-col mb-20"
     >
