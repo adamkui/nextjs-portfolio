@@ -25,7 +25,7 @@ const TechStackCard: FC<TechStackCard> = ({ title, icon, isDarkMode }) => {
         <div className="self-center my-10">{icon}</div>
         <div
           className={cn(
-            "w-full absolute left-0 bottom-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center transition-all duration-200 ease-out",
+            "w-full absolute left-0 bottom-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center transition-all duration-200 ease-in-out",
             isHovered ? " h-full opacity-100" : "h-0 opacity-0"
           )}
         >

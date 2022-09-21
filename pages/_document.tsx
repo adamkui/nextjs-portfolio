@@ -16,6 +16,7 @@ const Document = () => {
           }
           rel="stylesheet"
         />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <body>
         <Main />

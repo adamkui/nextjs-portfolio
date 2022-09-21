@@ -28,7 +28,7 @@ export const Navigation: FC = () => {
               "px-3 mx-2",
               pathname === href
                 ? getLinkClassNames()
-                : `bg-transparent transition-all duration-200 ease-linear ${
+                : `bg-transparent transition-all duration-200 ease-in-out ${
                     isDarkMode ? "text-white" : "text-black"
                   }`
             )}
