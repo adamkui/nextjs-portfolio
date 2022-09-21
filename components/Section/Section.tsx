@@ -26,7 +26,7 @@ export const Section: FC<SectionProps> = ({
     >
       <Typography
         variant="h5"
-        className="mb-10 underline underline-offset-8 decoration-4"
+        className="mb-10 underline underline-offset-8 decoration-4 mr-3"
       >
         {title}
       </Typography>

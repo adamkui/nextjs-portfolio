@@ -84,7 +84,7 @@ const TimelineData: FC<TimeLineDataProps> = ({
 export const Career: FC = () => {
   return (
     <Section
-      title="Career"
+      title="Career 🏢"
       body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum adipisci tempora quia earum vero quas nulla quos, voluptas numquam mollitia, veritatis fugit illum repellat iusto soluta reprehenderit nesciunt! Fugit distinctio similique velit ut voluptate odit ea nihil repudiandae officiis reiciendis, quia dolorum deleniti, magni officia, a non architecto atque. Soluta!"
     >
       <Timeline position="alternate" className="mt-20">

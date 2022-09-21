@@ -4,6 +4,7 @@ import { WelcomeVideo } from "../components/WelcomeVideo/WelcomeVideo";
 import { Profile } from "../components/Profile/Profile";
 import { Career } from "../components/Career/Career";
 import { TechStack } from "../components/TechStack/TechStack";
+import { AboutMe } from "../components/AboutMe/AboutMe";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
         <Profile />
         <Career />
         <TechStack />
+        <AboutMe />
       </main>
     </div>
   );

@@ -5,6 +5,7 @@ import cn from "classnames";
 
 import { Header } from "../Header/Header";
 import { setDarkMode } from "../../store/common";
+import { Footer } from "../Footer/Footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -41,6 +42,7 @@ const Layout = (props: LayoutProps) => {
       >
         <Header />
         {props.children}
+        <Footer />
       </main>
     </>
   );
