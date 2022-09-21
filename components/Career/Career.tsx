@@ -66,7 +66,10 @@ const TimelineData: FC<TimeLineDataProps> = ({
         <Typography
           variant="body1"
           className={cn(
-            "bg-white bg-opacity-5 backdrop-blur-lg rounded-md w-fit px-2 py-1 mt-3",
+            "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-2 py-1 mt-3",
+            isDarkMode
+              ? " bg-opacity-5 border-transparent"
+              : "bg-opacity-100 border-grey",
             align === "right" ? "self-start" : "self-end"
           )}
         >
@@ -78,6 +81,8 @@ const TimelineData: FC<TimeLineDataProps> = ({
 };
 
 export const Career: FC = () => {
+  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+
   return (
     <section className="mx-16 mb-20">
       <Typography
@@ -88,7 +93,12 @@ export const Career: FC = () => {
       </Typography>
       <Typography
         variant="body1"
-        className="bg-white bg-opacity-5 backdrop-blur-lg rounded-md w-fit px-2 py-1"
+        className={cn(
+          "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-2 py-1 mt-3",
+          isDarkMode
+            ? " bg-opacity-5 border-transparent"
+            : "bg-opacity-100 border-grey"
+        )}
       >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
         quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum
@@ -103,7 +113,11 @@ export const Career: FC = () => {
           date={"Jun 2021 - Present"}
           company={"Erste Bank Hungary"}
           position="Frontend Developer (Medior)"
-          body={"test"}
+          body={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+            quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum
+            adipisci tempora quia earum vero quas nulla quos, voluptas numquam
+            mollitia, veritatis fugit illum repellat iusto soluta reprehenderit
+            nesciunt!`}
           icon={<AccountBalanceIcon htmlColor="" />}
           align={"right"}
         />
@@ -111,7 +125,11 @@ export const Career: FC = () => {
           date={"Mar 2021 - May 2021"}
           company={"Avis Budget Group"}
           position="Automation Developer (Senior)"
-          body={"test"}
+          body={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+            quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum
+            adipisci tempora quia earum vero quas nulla quos, voluptas numquam
+            mollitia, veritatis fugit illum repellat iusto soluta reprehenderit
+            nesciunt!`}
           icon={<CarRentalIcon htmlColor="" />}
           align={"left"}
         />
@@ -119,7 +137,11 @@ export const Career: FC = () => {
           date={"Jan 2018 - Feb 2021"}
           company={"ExxonMobil"}
           position="Shared Services Developer"
-          body={"test"}
+          body={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+            quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum
+            adipisci tempora quia earum vero quas nulla quos, voluptas numquam
+            mollitia, veritatis fugit illum repellat iusto soluta reprehenderit
+            nesciunt!`}
           icon={<OilBarrelIcon htmlColor="" />}
           align={"right"}
         />
@@ -127,7 +149,11 @@ export const Career: FC = () => {
           date={"Jul 2017 - Dec 2017"}
           company={"GE Global Operations"}
           position="RPA Developer Intern"
-          body={"test"}
+          body={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+            quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum
+            adipisci tempora quia earum vero quas nulla quos, voluptas numquam
+            mollitia, veritatis fugit illum repellat iusto soluta reprehenderit
+            nesciunt!`}
           icon={<PrecisionManufacturingIcon htmlColor="" />}
           align={"left"}
         />

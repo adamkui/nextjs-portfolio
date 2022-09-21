@@ -36,7 +36,7 @@ const Layout = (props: LayoutProps) => {
       <main
         className={cn(
           isDarkMode ? "bg-slate-800 text-white" : "bg-white",
-          "transition-all duration-200 ease-in-out min-h-screen"
+          "transition-all duration-200 ease-in-out min-h-screen relative"
         )}
       >
         <Header />
