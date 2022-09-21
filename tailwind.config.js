@@ -5,7 +5,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'sora': ['Sora', 'sans-serif'],
+        'rubikMoonrocks': ['Rubik Moonrocks', 'cursive'],
+        'monoton': ['Monoton', 'cursive'],
+        'gugi': ['Gugi', 'cursive']
+      }
+    },
   },
   plugins: [],
 }
