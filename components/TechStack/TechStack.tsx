@@ -2,17 +2,9 @@ import { Button, Card, Grid, Typography } from "@mui/material";
 import cn from "classnames";
 import Link from "next/link";
 import { FC, ReactElement, useState } from "react";
-import { FaReact } from "react-icons/fa";
-import { SiHtml5, SiTypescript } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
 import { useSelector } from "react-redux";
 import { Section } from "../Section/Section";
-
-interface TechStackCard {
-  title: string;
-  icon: ReactElement;
-  isDarkMode: boolean;
-}
+import { techStackData, TechStackCard } from "./techStackData";
 
 const TechStackCard: FC<TechStackCard> = ({ title, icon, isDarkMode }) => {
   const [isHovered, setHovered] = useState<boolean>(false);
@@ -37,7 +29,10 @@ const TechStackCard: FC<TechStackCard> = ({ title, icon, isDarkMode }) => {
             isHovered ? " h-full opacity-100" : "h-0 opacity-0"
           )}
         >
-          <Typography variant="h6" className={cn("font-medium text-white")}>
+          <Typography
+            variant="subtitle1"
+            className={cn("font-medium text-white text-center")}
+          >
             {title}
           </Typography>
         </div>
@@ -49,46 +44,11 @@ const TechStackCard: FC<TechStackCard> = ({ title, icon, isDarkMode }) => {
 export const TechStack: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
-  const techStackData: Omit<TechStackCard, "isDarkMode">[] = [
-    {
-      title: "React",
-      icon: <FaReact size={72} color="blue" />,
-    },
-    {
-      title: "TypeScript",
-      icon: <SiTypescript size={72} color="blue" />,
-    },
-    {
-      title: "NextJS",
-      icon: <TbBrandNextjs size={72} color="black" />,
-    },
-    {
-      title: "HTML/CSS",
-      icon: <SiHtml5 size={72} color="orange" />,
-    },
-    {
-      title: "React",
-      icon: <FaReact size={72} color="blue" />,
-    },
-    {
-      title: "TypeScript",
-      icon: <SiTypescript size={72} color="blue" />,
-    },
-    {
-      title: "NextJS",
-      icon: <TbBrandNextjs size={72} color="black" />,
-    },
-    {
-      title: "HTML/CSS",
-      icon: <SiHtml5 size={72} color="orange" />,
-    },
-  ];
-
   return (
     <Section
       title="Tech Stack 👨‍💻"
       body={
-        "I know... this is the reoccuring topic that probalby almost all developers and recruiters are mostly interested in. 🔎 So I decided to collect the most important programming languages, frameworks, libraries etc., to show a little bit more of my background. If it got your attention, you can also take a look at my portfolio, or even better: go to my GitHub page, and see all my public repositories. Hope you'll enjoy! 😎"
+        "I know... this is the reoccuring topic that probalby almost all developers and recruiters are mostly interested in. 🔎 So I decided to collect the most important applications, programming languages, frameworks, libraries, package managers, etc., to show a little bit more of my background. If it got your attention, you can also take a look at my portfolio, or even better: go to my GitHub page, and see all my public repositories. Hope you'll enjoy! 😎"
       }
       className="flex flex-col mb-20"
     >
@@ -96,7 +56,7 @@ export const TechStack: FC = () => {
         <Button
           variant="outlined"
           size="large"
-          className={cn("self-center mt-16 mb-20", {
+          className={cn("self-center mb-20 mt-16", {
             "text-white border-white": isDarkMode,
           })}
         >
@@ -106,10 +66,18 @@ export const TechStack: FC = () => {
       <Grid container className="justify-center" gap={3}>
         {techStackData.map(({ title, icon }) => {
           return (
-            <TechStackCard title={title} icon={icon} isDarkMode={isDarkMode} />
+            <TechStackCard
+              key={title}
+              title={title}
+              icon={icon}
+              isDarkMode={isDarkMode}
+            />
           );
         })}
       </Grid>
+      <Typography className="text-center mt-10" variant="subtitle1">
+        ... and many more 🤯
+      </Typography>
     </Section>
   );
 };

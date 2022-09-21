@@ -90,22 +90,24 @@ const TimelineData: FC<TimeLineDataProps> = ({
             {date}
           </Typography>
         ) : null}
-        {chipContent ? (
-          <Stack
-            direction={align === "right" || underSm ? "row" : "row-reverse"}
+        {chipContent && !underSm ? (
+          <Grid
+            container
             spacing={1}
-            className="mt-3"
+            className={cn("mt-3 w-fit", { "self-end": align !== "right" })}
           >
             {chipContent.map((label) => {
               return (
-                <Chip
-                  label={label}
-                  variant="outlined"
-                  className={cn({ "text-white": isDarkMode })}
-                />
+                <Grid item>
+                  <Chip
+                    label={label}
+                    variant="outlined"
+                    className={cn({ "text-white": isDarkMode })}
+                  />
+                </Grid>
               );
             })}
-          </Stack>
+          </Grid>
         ) : null}
         <Typography
           variant="body1"
@@ -138,7 +140,7 @@ export const Career: FC = () => {
   return (
     <Section
       title="Career 🏢"
-      body="My journey started when I joined General Electric in 2017, as a Robotic 🤖 Process Automation Developer (RPA) Intern.  I met, and also did programming before, but even though doing RPA is not a tipical 'write code in an IDE' job, I fell in love with learning programming. 👨‍💻 I started to become more and more motived, and in a few years I got to a senior 👴 level in RPA. However, I felt like I had much more in me, and I really wanted to learn something new. So in 2020 I started to look for new opportunities, when I came accross frontend development. I quickly fell in love 😍 with it. I've spent more than a year coding 8-12 hours after work during the nigth, working on hobby projects while I was studying from online courses. First just HTML + CSS, then JavaScript, and then only frameworks and a bunch of libraries. Today I mostly enjoy working on React / NextJS projects (like this website). For the future I definitely want to learn more about SSR, other frontend frameworks (Angular and Vue), and who knows what else the future will bring! 🤓"
+      body="My journey started when I joined General Electric in 2017, as a Robotic 🤖 Process Automation Developer (RPA) Intern.  I met, and also did programming before, but even though doing RPA is not a tipical 'write code in an IDE' job, I fell in love with learning programming. 👨‍💻 I started to become more and more motived, and in a few years I got to a senior 👴 level in RPA. However, I felt like I had much more in me, and I really wanted to learn something new. So in 2020 I started to look for new opportunities, when I came accross frontend development. I quickly fell in love 😍 with it. I've spent more than a year coding 8-12 hours after work during the nigth, working on hobby projects while I was studying from online courses. First just HTML + CSS, then JavaScript, and then only frameworks and a bunch of libraries. Today I mostly enjoy working on React / Next.js projects (like this website). For the future I definitely want to learn more about SSR, other frontend frameworks (Angular and Vue), and who knows what else the future will bring! 🤓"
       className="mb-10"
     >
       <Timeline position={underSm ? "right" : "alternate"} className="mt-20">
@@ -164,7 +166,7 @@ export const Career: FC = () => {
           topConnectorColor={"#FF7513"}
           bottomConnectorColor={"#F01523"}
           iconColor={"#FF7513"}
-          chipContent={["VB.NET", "C#", "UiPath"]}
+          chipContent={["VB.NET", "C#", "SQL", "UiPath", "Oracle"]}
         />
         <TimelineData
           date={"Jan 2018 - Feb 2021"}
@@ -176,7 +178,7 @@ export const Career: FC = () => {
           topConnectorColor={"#F01523"}
           bottomConnectorColor={"#3B73B9"}
           iconColor={"#F01523"}
-          chipContent={["VB.NET", "C#", "UiPath", "ABAP", "SAP"]}
+          chipContent={["VB.NET", "C#", "UiPath", "ABAP", "SAP", "SQL"]}
         />
         <TimelineData
           date={"Jul 2017 - Dec 2017"}

@@ -17,7 +17,7 @@ interface DataWithIcon {
 }
 
 export const Profile: FC = () => {
-  const codeEditorText = `import { FC } from 'react'; \n\n const HelloWorld: FC = () => {\n\tuseEffect(()=> {\n\t\tconsole.log("Hello World!")\n\t}, []);\n\n\treturn null;\n};`;
+  const codeEditorText = `import { FC } from 'react'; \n\n const HelloWorld: FC = () => {\n\tuseEffect(()=> {\n\t\tconsole.log("Hello World!")\n\t}, []);\n\n\t// Don't judge by what you see! ~ FrontendDev Coelho \n\treturn null;\n};`;
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [code, setCode] = useState(codeEditorText);
 
