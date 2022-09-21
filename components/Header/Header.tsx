@@ -13,8 +13,8 @@ export const Header: FC = () => {
   return (
     <nav
       className={cn(
-        "z-50 flex w-full sticky top-0 justify-center bg-opacity-50 backdrop-blur-lg",
-        isDarkMode ? "bg-slate-900" : ""
+        "z-50 flex w-full sticky top-0 justify-center backdrop-blur-lg ",
+        isDarkMode ? "bg-slate-900 bg-opacity-50" : "bg-slate-200 bg-opacity-50"
       )}
     >
       <ul className="flex w-full max-w-7xl justify-between items-center justify-self-center p-5">

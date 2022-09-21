@@ -1,8 +1,12 @@
 import { Typography } from "@mui/material";
+import cn from "classnames";
 import { FC, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Typed from "react-typed";
 
 export const WelcomeVideo: FC = () => {
+  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+
   let typed: any;
 
   useEffect(() => {
@@ -13,7 +17,7 @@ export const WelcomeVideo: FC = () => {
 
   return (
     <section className="h-96 flex relative justify-center items-center text-center px-10">
-      <Typography variant={"h4"}>
+      <Typography variant={"h4"} className={"text-white z-50"}>
         <Typed
           typedRef={(typedRef: any) => (typed = typedRef)}
           strings={[
@@ -34,7 +38,10 @@ export const WelcomeVideo: FC = () => {
         autoPlay
         loop
         muted
-        className="min-w-full min-h-full object-cover opacity-50 absolute left-0 top-0 h-96"
+        className={cn(
+          "min-w-full min-h-full object-cover absolute left-0 top-0 h-96 brightness-75",
+          isDarkMode ? "opacity-50" : "opacity-1"
+        )}
       />
     </section>
   );

@@ -15,7 +15,7 @@ export const Navigation: FC = () => {
   const getLinkClassNames = () => {
     return `${
       isDarkMode ? "bg-white" : "bg-black"
-    } bg-opacity-5 backdrop-blur-lg rounded-md`;
+    } bg-opacity-10 backdrop-blur-lg rounded-md`;
   };
 
   return (

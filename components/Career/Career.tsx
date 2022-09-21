@@ -13,6 +13,7 @@ import CarRentalIcon from "@mui/icons-material/CarRental";
 import cn from "classnames";
 import OilBarrelIcon from "@mui/icons-material/OilBarrel";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
+import { Section } from "../Section/Section";
 
 interface TimeLineDataProps {
   date: string;
@@ -66,7 +67,7 @@ const TimelineData: FC<TimeLineDataProps> = ({
         <Typography
           variant="body1"
           className={cn(
-            "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-2 py-1 mt-3",
+            "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-3 py-2 mt-3",
             isDarkMode
               ? " bg-opacity-5 border-transparent"
               : "bg-opacity-100 border-grey",
@@ -81,33 +82,11 @@ const TimelineData: FC<TimeLineDataProps> = ({
 };
 
 export const Career: FC = () => {
-  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-
   return (
-    <section className="mx-16 mb-20">
-      <Typography
-        variant="h5"
-        className="mb-10 underline underline-offset-8 decoration-4"
-      >
-        Career
-      </Typography>
-      <Typography
-        variant="body1"
-        className={cn(
-          "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-2 py-1 mt-3",
-          isDarkMode
-            ? " bg-opacity-5 border-transparent"
-            : "bg-opacity-100 border-grey"
-        )}
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
-        quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum
-        adipisci tempora quia earum vero quas nulla quos, voluptas numquam
-        mollitia, veritatis fugit illum repellat iusto soluta reprehenderit
-        nesciunt! Fugit distinctio similique velit ut voluptate odit ea nihil
-        repudiandae officiis reiciendis, quia dolorum deleniti, magni officia, a
-        non architecto atque. Soluta!
-      </Typography>
+    <Section
+      title="Career"
+      body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, quod id quidem unde expedita tenetur? Recusandae voluptatum iste harum adipisci tempora quia earum vero quas nulla quos, voluptas numquam mollitia, veritatis fugit illum repellat iusto soluta reprehenderit nesciunt! Fugit distinctio similique velit ut voluptate odit ea nihil repudiandae officiis reiciendis, quia dolorum deleniti, magni officia, a non architecto atque. Soluta!"
+    >
       <Timeline position="alternate" className="mt-20">
         <TimelineData
           date={"Jun 2021 - Present"}
@@ -158,6 +137,6 @@ export const Career: FC = () => {
           align={"left"}
         />
       </Timeline>
-    </section>
+    </Section>
   );
 };
