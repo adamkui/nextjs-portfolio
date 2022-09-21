@@ -6,10 +6,12 @@ import cn from "classnames";
 import Link from "next/link";
 import { FC, MouseEvent, useState } from "react";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 import { NavigationProvider } from "../Constants/navigation";
 
 export const MobileNavigation: FC = () => {
+  const { pathname } = useRouter();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
@@ -54,11 +56,14 @@ export const MobileNavigation: FC = () => {
       >
         {[...NAV_ITEMS, ...LINKS_MENU_ITEMS]?.map(({ label, href, icon }) => {
           return !icon ? (
-            <Link href={href}>
+            <Link href={href} key={label}>
               <MenuItem
                 key={label}
                 onClick={handleClose}
-                className="flex"
+                className={cn(
+                  "flex",
+                  pathname === href ? "font-black cursor-default" : "font-thin"
+                )}
                 sx={{ width: 170 }}
               >
                 {label}
@@ -68,7 +73,7 @@ export const MobileNavigation: FC = () => {
             <MenuItem
               key={label}
               onClick={handleClose}
-              className="flex"
+              className="flex font-thin"
               sx={{ width: 170 }}
             >
               <ListItemIcon>{icon}</ListItemIcon>

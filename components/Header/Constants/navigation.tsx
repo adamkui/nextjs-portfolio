@@ -12,7 +12,7 @@ export const NavigationProvider = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
   const NAV_ITEMS: NavigationItemProps[] = [
-    { label: "About", href: "/about" },
+    { label: "About", href: "/" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Blog", href: "/blog" },
   ];
