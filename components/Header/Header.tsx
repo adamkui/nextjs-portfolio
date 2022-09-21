@@ -1,22 +1,10 @@
-import { FC } from "react";
-import Link from "next/link";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TerminalIcon from "@mui/icons-material/Terminal";
 import cn from "classnames";
+import { FC } from "react";
 
-import { NavigationItemProps } from "../../types/header.model";
-import DarkModeSwitch from "./DarkModeSwitch";
-
-const NAV_ITEMS: NavigationItemProps[] = [
-  { label: "About", href: "/about" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Blog", href: "/blog" },
-  {
-    label: "GitHub",
-    href: "https://github.com/adamkui",
-    icon: <GitHubIcon />,
-  },
-];
+import { DarkModeSwitch } from "./HeaderComponents/DarkModeSwitch";
+import { Logo } from "./HeaderComponents/Logo";
+import { MobileNavigation } from "./HeaderComponents/MobileNavigation";
+import { Navigation } from "./HeaderComponents/Navigation";
 
 export const Header: FC = () => {
   return (
@@ -26,23 +14,12 @@ export const Header: FC = () => {
       )}
     >
       <ul className="flex w-full max-w-7xl justify-between items-center justify-self-center p-5">
-        <li className="flex items-center">
-          <TerminalIcon className="mr-2" />
-          <h1 className="font-bold text-xl">Adam Kui</h1>
-        </li>
-        <li className="flex">
-          {NAV_ITEMS.map(({ label, href, icon }) => {
-            return (
-              <div key={label} className="flex items-center mx-5">
-                <div className="mr-2 flex">{icon}</div>
-                <Link href={href}>{label}</Link>
-              </div>
-            );
-          })}
-        </li>
-        <li>
+        <Logo />
+        <Navigation />
+        <div className="flex items-center">
           <DarkModeSwitch />
-        </li>
+          <MobileNavigation />
+        </div>
       </ul>
     </nav>
   );

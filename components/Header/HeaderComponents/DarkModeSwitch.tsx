@@ -1,8 +1,8 @@
-import { FC, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
-import { setDarkMode } from "../../store/common";
+import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { setDarkMode } from "../../../store/common";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -51,7 +51,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const DarkModeSwitch: FC = () => {
+export const DarkModeSwitch: FC = () => {
   const dispatch = useDispatch();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
@@ -60,12 +60,12 @@ const DarkModeSwitch: FC = () => {
   };
 
   return (
-    <MaterialUISwitch
-      checked={isDarkMode}
-      onChange={handleChange}
-      inputProps={{ "aria-label": "controlled" }}
-    />
+    <li>
+      <MaterialUISwitch
+        checked={isDarkMode}
+        onChange={handleChange}
+        inputProps={{ "aria-label": "controlled" }}
+      />
+    </li>
   );
 };
-
-export default DarkModeSwitch;
