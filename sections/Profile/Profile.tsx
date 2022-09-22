@@ -4,7 +4,7 @@ import Prism, { highlight } from "prismjs";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-dark.css";
-import { FC, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { useSelector } from "react-redux";
 import Editor from "react-simple-code-editor";
 
@@ -38,14 +38,14 @@ export const Profile: FC = () => {
               <Grid container className="mt-5">
                 {personalData.map(({ label, icon }) => {
                   return (
-                    <div key={label}>
+                    <Fragment key={label}>
                       <Grid item xs={1.5} sm={1} md={1} lg={1}>
                         {icon}
                       </Grid>
                       <Grid item xs={10.5} sm={11} md={11} lg={11}>
                         <Typography variant="subtitle1">{label}</Typography>
                       </Grid>
-                    </div>
+                    </Fragment>
                   );
                 })}
               </Grid>
