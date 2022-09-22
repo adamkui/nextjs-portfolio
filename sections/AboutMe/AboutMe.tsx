@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import cn from "classnames";
+import Image from "next/image";
 import { FC } from "react";
 import { useSelector } from "react-redux";
 
@@ -37,11 +38,14 @@ export const AboutMe: FC = () => {
             );
           })}
         </ul>
-        <div className="px-20">
-          <img
-            src="desk.jpg"
+        <div className="p-20">
+          <Image
+            src="/desk.jpg"
             alt="desk-setup"
             className="my-10 rounded-md w-full"
+            layout="responsive"
+            width={4032}
+            height={3024}
           />
         </div>
       </div>
