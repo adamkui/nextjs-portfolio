@@ -83,7 +83,7 @@ export const MobileNavigation: FC = () => {
                 sx={{ width: 170 }}
               >
                 <ListItemIcon>{icon}</ListItemIcon>
-                <a href={href} target={"_blank"}>
+                <a href={href} target={"_blank"} rel="noreferrer">
                   {label}
                 </a>
               </MenuItem>

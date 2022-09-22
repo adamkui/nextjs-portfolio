@@ -31,7 +31,7 @@ const Layout = (props: LayoutProps) => {
     };
 
     getAndSetDarkMode();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

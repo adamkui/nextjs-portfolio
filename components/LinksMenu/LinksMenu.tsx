@@ -78,6 +78,7 @@ export const LinksMenu: FC = () => {
                     href={href}
                     target="_blank"
                     className="flex w-full items-center"
+                    rel="noreferrer"
                   >
                     <ListItemIcon>{icon}</ListItemIcon>
                     <ListItemText
