@@ -2,7 +2,8 @@ import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setDarkMode } from "../../../store/common";
+
+import { setDarkMode } from "store/common";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,

@@ -1,38 +1,42 @@
+import cn from "classnames";
 import Head from "next/head";
 import { ReactNode, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import cn from "classnames";
 
-import { Header } from "../Header/Header";
+import { useGetText } from "hooks";
 import { setDarkMode } from "../../store/common";
 import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 const Layout = (props: LayoutProps) => {
-  const isDarkMode = useSelector(
-    (state: ApplicationState) => state.common.isDarkMode
-  );
+  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const dispatch = useDispatch();
+  const t = useGetText();
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const getAndSetDarkMode = () => {
+      if (typeof window === "undefined") return;
 
-    const isDarkModeFromLocalStorage = localStorage.getItem("isDarkMode");
+      const hasDarkModeSaved = localStorage.getItem("isDarkMode");
 
-    if (isDarkModeFromLocalStorage) {
-      dispatch(setDarkMode(isDarkModeFromLocalStorage === "true"));
-    } else {
-      localStorage.setItem("isDarkMode", "false");
-    }
+      if (hasDarkModeSaved) {
+        dispatch(setDarkMode(hasDarkModeSaved === "true"));
+      } else {
+        localStorage.setItem("isDarkMode", "false");
+      }
+    };
+
+    getAndSetDarkMode();
   }, []);
 
   return (
     <>
       <Head>
-        <title>Adam Kui | Dev</title>
+        <title>{t("PAGE_TITLE")}</title>
       </Head>
       <main
         className={cn(

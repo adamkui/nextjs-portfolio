@@ -1,40 +1,21 @@
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import PlaceIcon from "@mui/icons-material/Place";
 import { Avatar, Divider, Grid, Typography } from "@mui/material";
 import cn from "classnames";
 import Prism, { highlight } from "prismjs";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-dark.css";
-import { FC, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import Editor from "react-simple-code-editor";
 
-interface DataWithIcon {
-  label: string;
-  icon: ReactElement<any, any>;
-}
+import { personalData } from "data";
+import { useGetText } from "hooks";
 
 export const Profile: FC = () => {
-  const codeEditorText = `import { FC } from 'react'; \n\n const HelloWorld: FC = () => {\n\tuseEffect(()=> {\n\t\tconsole.log("Hello World!")\n\t}, []);\n\n\t// Don't judge by what you see! ~ FrontendDev Coelho \n\treturn null;\n};`;
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-  const [code, setCode] = useState(codeEditorText);
+  const t = useGetText();
 
-  const personalData: DataWithIcon[] = [
-    {
-      label: "Budapest, Hungary",
-      icon: <PlaceIcon />,
-    },
-    {
-      label: "addam.kui@gmail.com",
-      icon: <AlternateEmailIcon />,
-    },
-    {
-      label: "Download my CV",
-      icon: <CloudDownloadIcon />,
-    },
-  ];
+  const [code, setCode] = useState(t("PROFILE_CODE_EDITOR"));
 
   return (
     <section className="my-20 relative">
@@ -52,19 +33,19 @@ export const Profile: FC = () => {
             />
 
             <div className="flex flex-col mt-10 md:mt-0">
-              <Typography variant="h4">Adam Kui</Typography>
-              <Typography variant="h6">Frontend Software Developer</Typography>
+              <Typography variant="h4">{t("PROFILE_NAME")}</Typography>
+              <Typography variant="h6">{t("PROFILE_JOB")}</Typography>
               <Grid container className="mt-5">
                 {personalData.map(({ label, icon }) => {
                   return (
-                    <>
+                    <div key={label}>
                       <Grid item xs={1.5} sm={1} md={1} lg={1}>
                         {icon}
                       </Grid>
                       <Grid item xs={10.5} sm={11} md={11} lg={11}>
                         <Typography variant="subtitle1">{label}</Typography>
                       </Grid>
-                    </>
+                    </div>
                   );
                 })}
               </Grid>

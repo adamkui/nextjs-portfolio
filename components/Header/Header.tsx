@@ -2,10 +2,10 @@ import cn from "classnames";
 import { FC } from "react";
 import { useSelector } from "react-redux";
 
-import { DarkModeSwitch } from "./HeaderComponents/DarkModeSwitch";
-import { Logo } from "./HeaderComponents/Logo";
-import { MobileNavigation } from "./HeaderComponents/MobileNavigation";
-import { Navigation } from "./HeaderComponents/Navigation";
+import { DarkModeSwitch } from "../DarkModeSwitch/DarkModeSwitch";
+import { Logo } from "../Logo/Logo";
+import { MobileNavigation } from "../MobileNavigation/MobileNavigation";
+import { Navigation } from "../Navigation/Navigation";
 
 export const Header: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);

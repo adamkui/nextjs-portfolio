@@ -4,15 +4,17 @@ import { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Typed from "react-typed";
 
+import { texts } from "data";
+import { useGetText } from "hooks";
+
 export const WelcomeVideo: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+  const t = useGetText();
 
   let typed: any;
 
   useEffect(() => {
-    if (typed) {
-      typed.start();
-    }
+    typed?.start();
   }, [typed]);
 
   return (
@@ -20,12 +22,9 @@ export const WelcomeVideo: FC = () => {
       <Typography variant={"h4"} className={"text-white z-50"}>
         <Typed
           typedRef={(typedRef: any) => (typed = typedRef)}
-          strings={[
-            "Welcome.",
-            "My name is Adam Kui.",
-            "I'm a software developer from Budapest, Hungary.",
-            "Take a look around!",
-          ]}
+          strings={[1, 2, 3, 4].map((i) => {
+            return t(`WELCOME_TEXT_${i}` as keyof typeof texts);
+          })}
           startDelay={500}
           typeSpeed={25}
           backSpeed={5}

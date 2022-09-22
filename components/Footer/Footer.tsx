@@ -1,9 +1,12 @@
+import cn from "classnames";
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import cn from "classnames";
+
+import { useGetText } from "hooks";
 
 export const Footer: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+  const t = useGetText();
 
   return (
     <footer
@@ -12,7 +15,7 @@ export const Footer: FC = () => {
         isDarkMode ? "bg-slate-900" : "bg-slate-200"
       )}
     >
-      Copyright © 2022 Adam Kui. All Rights Reserved.
+      {t("FOOTER_COPYRIGHT")}
     </footer>
   );
 };

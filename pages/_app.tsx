@@ -3,14 +3,13 @@ import { Suspense } from "react";
 import { Provider } from "react-redux";
 
 import Layout from "../components/Layout/Layout";
-import { Loader } from "../components/Loader/Loader";
 import store from "../store";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={""}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

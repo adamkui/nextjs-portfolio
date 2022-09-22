@@ -7,13 +7,17 @@ import MenuList from "@mui/material/MenuList";
 import Paper from "@mui/material/Paper";
 import { FC, MouseEvent, useState } from "react";
 import { useSelector } from "react-redux";
-import { NavigationProvider } from "../Constants/navigation";
+
+import { useGetLinkMenuItems, useGetText } from "hooks";
 
 export const LinksMenu: FC = () => {
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-  const open = Boolean(anchorEl);
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-  const { LINKS_MENU_ITEMS } = NavigationProvider();
+  const linkMenuItems = useGetLinkMenuItems();
+  const t = useGetText();
+
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
+  const open = Boolean(anchorEl);
 
   const handleToggleLinksMenu = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -33,7 +37,7 @@ export const LinksMenu: FC = () => {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
       >
-        {"Links"}
+        {t("NAVIGATION_LINKS_TITLE")}
       </button>
       <Menu
         id="basic-menu"
@@ -63,7 +67,7 @@ export const LinksMenu: FC = () => {
           <MenuList
             className={isDarkMode ? "bg-slate-800 text-white" : "bg-white"}
           >
-            {LINKS_MENU_ITEMS.map(({ icon, label, href }) => {
+            {linkMenuItems.map(({ icon, label, href }) => {
               return (
                 <MenuItem
                   key={label}

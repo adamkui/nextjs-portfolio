@@ -4,18 +4,21 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import cn from "classnames";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, MouseEvent, useState } from "react";
 import { useSelector } from "react-redux";
-import { useRouter } from "next/router";
 
-import { NavigationProvider } from "../Constants/navigation";
+import { navigationItems } from "data";
+import { useGetLinkMenuItems } from "hooks";
 
 export const MobileNavigation: FC = () => {
   const { pathname } = useRouter();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+  const linkMenuItems = useGetLinkMenuItems();
+
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
   const open = Boolean(anchorEl);
-  const { NAV_ITEMS, LINKS_MENU_ITEMS } = NavigationProvider();
 
   const handleToggleMobileNavigationMenu = (
     event: MouseEvent<HTMLButtonElement>
@@ -54,35 +57,39 @@ export const MobileNavigation: FC = () => {
           },
         }}
       >
-        {[...NAV_ITEMS, ...LINKS_MENU_ITEMS]?.map(({ label, href, icon }) => {
-          return !icon ? (
-            <Link href={href} key={label}>
+        {[...navigationItems, ...linkMenuItems]?.map(
+          ({ label, href, icon }) => {
+            return !icon ? (
+              <Link href={href} key={label}>
+                <MenuItem
+                  key={label}
+                  onClick={handleClose}
+                  className={cn(
+                    "flex",
+                    pathname === href
+                      ? "font-black cursor-default"
+                      : "font-thin"
+                  )}
+                  sx={{ width: 170 }}
+                >
+                  {label}
+                </MenuItem>
+              </Link>
+            ) : (
               <MenuItem
                 key={label}
                 onClick={handleClose}
-                className={cn(
-                  "flex",
-                  pathname === href ? "font-black cursor-default" : "font-thin"
-                )}
+                className="flex font-thin"
                 sx={{ width: 170 }}
               >
-                {label}
+                <ListItemIcon>{icon}</ListItemIcon>
+                <a href={href} target={"_blank"}>
+                  {label}
+                </a>
               </MenuItem>
-            </Link>
-          ) : (
-            <MenuItem
-              key={label}
-              onClick={handleClose}
-              className="flex font-thin"
-              sx={{ width: 170 }}
-            >
-              <ListItemIcon>{icon}</ListItemIcon>
-              <a href={href} target={"_blank"}>
-                {label}
-              </a>
-            </MenuItem>
-          );
-        })}
+            );
+          }
+        )}
       </Menu>
     </div>
   );

@@ -39,16 +39,17 @@ import {
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
-export interface TechStackCard {
+interface TechStackItemProps {
   title: string;
-  icon: ReactElement;
-  isDarkMode: boolean;
+  icon: ReactElement<any, any>;
+  href?: string;
 }
 
-export const techStackData: Omit<TechStackCard, "isDarkMode">[] = [
+export const techStackItems: TechStackItemProps[] = [
   {
     title: "NPM",
     icon: <SiNpm size={72} color="#e32e37" />,
+    href: "https://google.com",
   },
   {
     title: "Yarn",
