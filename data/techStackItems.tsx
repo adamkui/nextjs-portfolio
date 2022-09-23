@@ -18,6 +18,7 @@ import {
   SiJetbrains,
   SiLodash,
   SiMaterialui,
+  SiMongodb,
   SiMysql,
   SiNetlify,
   SiNodedotjs,
@@ -102,6 +103,11 @@ export const techStackItems: TechStackItemProps[] = [
     title: "Nodemon",
     icon: <SiNodemon size={72} color="#76d04b" />,
     href: "https://www.npmjs.com/package/nodemon",
+  },
+  {
+    title: "MongoDB",
+    icon: <SiMongodb size={72} color="#00ec64" />,
+    href: "https://www.mongodb.com/",
   },
   {
     title: "Postman",
