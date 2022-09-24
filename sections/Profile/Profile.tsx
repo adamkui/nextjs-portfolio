@@ -1,14 +1,18 @@
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+import PlaceIcon from "@mui/icons-material/Place";
 import { Avatar, Divider, Grid, Typography } from "@mui/material";
 import cn from "classnames";
+
 import Prism, { highlight } from "prismjs";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-dark.css";
-import { FC, Fragment, useState } from "react";
+import { FC, ReactElement, useState } from "react";
 import { useSelector } from "react-redux";
 import Editor from "react-simple-code-editor";
 
-import { personalData } from "data";
+import { TextUnderline, ProfileItem, ProfileItemVariant } from "components";
 import { useGetText } from "hooks";
 
 export const Profile: FC = () => {
@@ -35,24 +39,26 @@ export const Profile: FC = () => {
             <div className="flex flex-col mt-10 md:mt-0">
               <Typography variant="h4">{t("PROFILE_NAME")}</Typography>
               <Typography variant="h6">{t("PROFILE_JOB")}</Typography>
-              <Grid container className="mt-5">
-                {personalData.map(({ label, icon }) => {
-                  return (
-                    <Fragment key={label}>
-                      <Grid item xs={1.5} sm={1} md={1} lg={1}>
-                        {icon}
-                      </Grid>
-                      <Grid item xs={10.5} sm={11} md={11} lg={11}>
-                        <Typography variant="subtitle1">{label}</Typography>
-                      </Grid>
-                    </Fragment>
-                  );
-                })}
+              <Grid container className="mt-5" columns={2}>
+                <ProfileItem
+                  icon={<PlaceIcon />}
+                  titleTrlKey="PROFILE_LOCATION"
+                />
+                <ProfileItem
+                  icon={<AlternateEmailIcon />}
+                  titleTrlKey="PROFILE_EMAIL"
+                  variant={ProfileItemVariant.EMAIL}
+                />
+                <ProfileItem
+                  icon={<CloudDownloadIcon />}
+                  titleTrlKey="PROFILE_CV_DOWNLOAD"
+                  variant={ProfileItemVariant.DOWNLOAD_BUTTON}
+                />
               </Grid>
             </div>
           </div>
 
-          <div className="flex flex-col justify-self-end mt-20 lg:mt-0 w-full md:w-1/2">
+          <div className="flex justify-self-end mt-20 lg:mt-0 w-full lg:w-1/2">
             <Editor
               value={code}
               onValueChange={(code) => setCode(code)}
