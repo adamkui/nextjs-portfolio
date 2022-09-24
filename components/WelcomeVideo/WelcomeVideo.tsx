@@ -19,7 +19,7 @@ export const WelcomeVideo: FC = () => {
 
   return (
     <section className="h-96 flex relative justify-center items-center text-center px-10">
-      <Typography variant={"h4"} className={"text-white z-50"}>
+      <Typography variant={"h4"} className={"text-white z-40"}>
         <Typed
           typedRef={(typedRef: any) => (typed = typedRef)}
           strings={[1, 2, 3, 4].map((i) => {

@@ -1,17 +1,23 @@
 import { Button, Grid, Typography } from "@mui/material";
 import cn from "classnames";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 
+import {
+  Section,
+  TechStackCard,
+  TechStackMoreInfoDialog,
+  TextUnderline,
+} from "components";
 import { techStackItems } from "data";
 import { useGetText } from "hooks";
-import { Section } from "../../components/Section/Section";
-import { TechStackCard } from "../../components/TechStackCard/TechStackCard";
 
 export const TechStack: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const t = useGetText();
+
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
     <Section
@@ -23,16 +29,17 @@ export const TechStack: FC = () => {
         <Button
           variant="outlined"
           size="large"
-          className={cn("self-center mb-20 mt-16", {
-            "text-white border-white": isDarkMode,
-          })}
+          className={cn(
+            "self-center mb-20 mt-16 bg-clip-text text-transparent bg-gradient-to-r border-sky-600",
+            isDarkMode ? "from-sky-500 to-cyan-400" : "from-sky-600 to-cyan-500"
+          )}
         >
           {t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
         </Button>
       </Link>
       <Grid container className="justify-center" gap={3}>
-        {techStackItems.map(({ title, icon, href }) => {
-          return (
+        {techStackItems.flatMap(({ title, icon, href }) => {
+          return icon ? (
             <TechStackCard
               key={title}
               title={title}
@@ -40,12 +47,26 @@ export const TechStack: FC = () => {
               isDarkMode={isDarkMode}
               href={href}
             />
+          ) : (
+            []
           );
         })}
       </Grid>
-      <Typography className="text-center mt-10" variant="subtitle1">
-        {t("TECH_STACK_MORE")}
-      </Typography>
+      <button
+        type="button"
+        onClick={() => setModalOpen(true)}
+        className="w-fit self-center group"
+      >
+        <Typography className="text-center mt-10" variant="subtitle1">
+          {t("TECH_STACK_MORE")}
+        </Typography>
+        <TextUnderline bgColorClass="bg-gradient-to-r from-sky-600 to-cyan-500" />
+      </button>
+      <TechStackMoreInfoDialog
+        isModalOpen={isModalOpen}
+        setModalOpen={setModalOpen}
+        isDarkMode={isDarkMode}
+      />
     </Section>
   );
 };

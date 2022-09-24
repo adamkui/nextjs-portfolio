@@ -46,7 +46,7 @@ export const useGetLinkMenuItems = () => {
           />
         ),
         label: t("LINK_MENU_CODERSRANK"),
-        href: "https://codersrank.com/in/adamkui",
+        href: "https://profile.codersrank.io/user/adamkui",
       },
     ];
 

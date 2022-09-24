@@ -40,7 +40,9 @@ export const TechStackCard: FC<TechStackCard> = ({
           >
             <Typography
               variant="subtitle1"
-              className={cn("font-medium text-white text-center")}
+              className={cn(
+                "font-medium text-white text-center text-ellipsis overflow-hidden"
+              )}
             >
               {title}
             </Typography>

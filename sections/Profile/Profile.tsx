@@ -3,16 +3,15 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import PlaceIcon from "@mui/icons-material/Place";
 import { Avatar, Divider, Grid, Typography } from "@mui/material";
 import cn from "classnames";
-
 import Prism, { highlight } from "prismjs";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-dark.css";
-import { FC, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import Editor from "react-simple-code-editor";
 
-import { TextUnderline, ProfileItem, ProfileItemVariant } from "components";
+import { ProfileItem, ProfileItemVariant } from "components";
 import { useGetText } from "hooks";
 
 export const Profile: FC = () => {
