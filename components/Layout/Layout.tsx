@@ -1,12 +1,13 @@
 import cn from "classnames";
 import Head from "next/head";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetText } from "hooks";
 import { setDarkMode } from "../../store/common";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
+import { PageLoader } from "../PageLoader/PageLoader";
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,37 +18,53 @@ const Layout = (props: LayoutProps) => {
   const dispatch = useDispatch();
   const t = useGetText();
 
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const [fadeInContent, setFadeInContent] = useState<boolean>(false);
+
   useEffect(() => {
-    const getAndSetDarkMode = () => {
-      if (typeof window === "undefined") return;
+    setLoading(true);
+    const fadeInContent = setTimeout(() => setFadeInContent(true), 300);
 
-      const hasDarkModeSaved = localStorage.getItem("isDarkMode");
+    if (typeof window === "undefined") return;
 
-      if (hasDarkModeSaved) {
-        dispatch(setDarkMode(hasDarkModeSaved === "true"));
-      } else {
-        localStorage.setItem("isDarkMode", "false");
-      }
+    const hasDarkModeSaved = localStorage.getItem("isDarkMode");
+
+    if (hasDarkModeSaved) {
+      dispatch(setDarkMode(hasDarkModeSaved === "true"));
+    } else {
+      localStorage.setItem("isDarkMode", "false");
+    }
+
+    setLoading(false);
+
+    return () => {
+      clearTimeout(fadeInContent);
     };
-
-    getAndSetDarkMode();
   }, [dispatch]);
 
   return (
     <>
-      <Head>
-        <title>{t("PAGE_TITLE")}</title>
-      </Head>
-      <main
+      <PageLoader isLoading={isLoading} isDarkMode={isDarkMode} />
+      <div
         className={cn(
-          isDarkMode ? "bg-slate-800 text-white" : "bg-white",
-          "transition-all duration-200 ease-in-out min-h-screen relative"
+          "transition-all duration-200 ease-in-out",
+          fadeInContent ? "opacity-100" : "opacity-0"
         )}
       >
-        <Header />
-        {props.children}
-        <Footer />
-      </main>
+        <Head>
+          <title>{t("PAGE_TITLE")}</title>
+        </Head>
+        <main
+          className={cn(
+            isDarkMode ? "bg-slate-800 text-white" : "bg-white",
+            "transition-all duration-200 ease-in-out min-h-screen relative"
+          )}
+        >
+          <Header />
+          {props.children}
+          <Footer />
+        </main>
+      </div>
     </>
   );
 };
