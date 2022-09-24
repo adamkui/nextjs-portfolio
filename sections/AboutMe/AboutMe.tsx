@@ -5,7 +5,6 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 
 import { Section } from "components";
-import { deskSetupItems } from "data";
 import { useGetText } from "hooks";
 
 export const AboutMe: FC = () => {
@@ -24,30 +23,6 @@ export const AboutMe: FC = () => {
       >
         <Typography variant="body1">{t("ABOUT_ME_BODY_1")}</Typography>
         <Typography variant="body1">{t("ABOUT_ME_BODY_2")}</Typography>
-        <br />
-        <Typography variant="body1" className="font-bold">
-          {t("ABOUT_ME_BODY_3")}
-        </Typography>
-        <ul className="list-disc">
-          {deskSetupItems.map(({ label, item }) => {
-            return (
-              <li className="ml-5" key={label}>
-                <b>{label}: </b>
-                {item}
-              </li>
-            );
-          })}
-        </ul>
-        <div className="p-20">
-          <Image
-            src="/desk.jpg"
-            alt="desk-setup"
-            className="my-10 rounded-md w-full"
-            layout="responsive"
-            width={4032}
-            height={3024}
-          />
-        </div>
       </div>
     </Section>
   );
