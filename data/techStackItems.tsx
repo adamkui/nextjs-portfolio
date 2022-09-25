@@ -197,13 +197,13 @@ export const techStackItems: TechStackItemProps[] = [
     title: "React",
     icon: <FaReact size={72} color="#61DBFB" />,
     href: "https://reactjs.org/",
-    category: TechStackItemCategory.FRONTENT_FRAMEWORK,
+    category: TechStackItemCategory.FRONTEND_FRAMEWORK,
   },
   {
     title: "Next.js",
     icon: <TbBrandNextjs size={72} color="black" />,
     href: "https://nextjs.org/",
-    category: TechStackItemCategory.FRONTENT_FRAMEWORK,
+    category: TechStackItemCategory.FRONTEND_FRAMEWORK,
   },
   {
     title: "Sass",
