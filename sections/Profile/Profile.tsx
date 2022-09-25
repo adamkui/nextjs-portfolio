@@ -27,7 +27,7 @@ export const Profile: FC = () => {
           <div className="flex flex-col md:flex-row">
             <Avatar
               alt="Adam Kui"
-              src="profile.jpg"
+              src="profile.webp"
               className={cn(
                 "border-2 border-solid mr-16 shadow-sm shadow-black",
                 isDarkMode ? "border-white" : "border-slate-800"

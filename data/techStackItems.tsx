@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import { FaReact, FaSourcetree } from "react-icons/fa";
 import { GrReactjs } from "react-icons/gr";
 import {
+  SiAzuredevops,
   SiBootstrap,
   SiCsharp,
   SiCss3,
@@ -81,7 +82,7 @@ interface TechStackDialogItems {
 
 export const techStackItems: TechStackItemProps[] = [
   {
-    title: "NPM",
+    title: "npm",
     icon: <SiNpm size={72} color="#e32e37" />,
     href: "https://www.npmjs.com/",
     category: TechStackItemCategory.PACKAGE_MANAGER,
@@ -90,6 +91,11 @@ export const techStackItems: TechStackItemProps[] = [
     title: "Yarn",
     icon: <SiYarn size={72} color="#2c8ebb" />,
     href: "https://yarnpkg.com/",
+    category: TechStackItemCategory.PACKAGE_MANAGER,
+  },
+  {
+    title: "Homebrew",
+    href: "https://brew.sh/",
     category: TechStackItemCategory.PACKAGE_MANAGER,
   },
   {
@@ -111,9 +117,15 @@ export const techStackItems: TechStackItemProps[] = [
     category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
   },
   {
-    title: "SVN",
+    title: "Svn",
     href: "https://subversion.apache.org/",
     category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
+  },
+  {
+    title: "TFVC",
+    href: "https://learn.microsoft.com/en-us/azure/devops/repos/tfvc/what-is-tfvc?view=azure-devops",
+    category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
+    icon: <SiAzuredevops size={72} color="#0273d3" />,
   },
   {
     title: "Sourcetree",
