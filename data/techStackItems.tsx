@@ -629,6 +629,11 @@ export const techStackItems: TechStackItemProps[] = [
     href: "https://recharts.org/",
     category: TechStackItemCategory.FRONTEND_LIBRARY,
   },
+  {
+    title: "Evergreen",
+    href: "https://evergreen.segment.com/",
+    category: TechStackItemCategory.UI_KIT,
+  },
 ];
 
 const getItemsByCategory = (category: TechStackItemCategory) => {
