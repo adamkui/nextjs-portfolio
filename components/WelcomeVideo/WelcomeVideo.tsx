@@ -41,6 +41,7 @@ export const WelcomeVideo: FC = () => {
           "min-w-full min-h-full object-cover absolute left-0 top-0 h-96 brightness-75",
           isDarkMode ? "opacity-50" : "opacity-1"
         )}
+        poster="river_loop_poster.webp"
       />
     </section>
   );

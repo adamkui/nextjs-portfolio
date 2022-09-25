@@ -15,6 +15,7 @@ import {
   SiGit,
   SiGithub,
   SiGitlab,
+  SiGraphql,
   SiHeroku,
   SiHtml5,
   SiJavascript,
@@ -633,6 +634,12 @@ export const techStackItems: TechStackItemProps[] = [
     title: "Evergreen",
     href: "https://evergreen.segment.com/",
     category: TechStackItemCategory.UI_KIT,
+  },
+  {
+    title: "GraphQL",
+    href: "https://graphql.org/",
+    icon: <SiGraphql size={72} color="#E00398" />,
+    category: TechStackItemCategory.DATABASE,
   },
 ];
 
