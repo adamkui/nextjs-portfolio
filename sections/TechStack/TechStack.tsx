@@ -12,6 +12,7 @@ import {
 } from "components";
 import { TechStackItemCategory, techStackItems } from "data";
 import { useGetText } from "hooks";
+import { sortBy } from "lodash";
 
 export const TechStack: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
@@ -39,8 +40,9 @@ export const TechStack: FC = () => {
       </Link>
       <Grid container className="justify-center" gap={3}>
         {Object.values(TechStackItemCategory).map((ItemCategory) => {
-          return techStackItems
+          return sortBy(techStackItems, [(item) => item.title.toLowerCase()])
             .filter((item) => item.category === ItemCategory && item.icon)
+
             .map(({ title, icon, href }) => {
               return (
                 <TechStackCard

@@ -49,10 +49,9 @@ import { texts } from ".";
 export enum TechStackItemCategory {
   "MARKUP_LANGUAGE" = "MARKUP_LANGUAGE",
   "STYLE_SHEET_LANGUAGE" = "STYLE_SHEET_LANGUAGE",
-  "CSS_FRAMEWORK" = "CSS_FRAMEWORK",
   "CSS_PREPROCESSOR" = "CSS_PREPROCESSOR",
+  "CSS_FRAMEWORK" = "CSS_FRAMEWORK",
   "PROGRAMMING_LANGUAGE" = "PROGRAMMING_LANGUAGE",
-  "MOBILE_DEVELOPMENT" = "MOBILE_DEVELOPMENT",
   "FRONTEND_FRAMEWORK" = "FRONTEND_FRAMEWORK",
   "FRONTEND_LIBRARY" = "FRONTEND_LIBRARY",
   "UI_KIT" = "UI_KIT",
@@ -60,6 +59,7 @@ export enum TechStackItemCategory {
   "BACKEND_FRAMEWORK" = "BACKEND_FRAMEWORK",
   "BACKEND_LIBRARY" = "BACKEND_LIBRARY",
   "DATABASE" = "DATABASE",
+  "MOBILE_DEVELOPMENT" = "MOBILE_DEVELOPMENT",
   "PACKAGE_MANAGER" = "PACKAGE_MANAGER",
   "VERSION_CONTROL_SYSTEM" = "VERSION_CONTROL_SYSTEM",
   "SOFTWARE" = "SOFTWARE",
@@ -364,10 +364,105 @@ export const techStackItems: TechStackItemProps[] = [
     href: "https://www.sourcetreeapp.com/",
     category: TechStackItemCategory.SOFTWARE,
   },
+  {
+    title: "Formik",
+    href: "https://formik.org/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Axios",
+    href: "https://axios-http.com/docs/intro",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Classnames",
+    href: "https://www.npmjs.com/package/classnames",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "http-proxy-middleware",
+    href: "https://www.npmjs.com/package/http-proxy-middleware",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "i18next",
+    href: "https://www.i18next.com/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-i18next",
+    href: "https://react.i18next.com/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "loglevel",
+    href: "https://www.npmjs.com/package/loglevel",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "query-string",
+    href: "https://www.npmjs.com/package/query-string",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "React Helmet",
+    href: "https://www.npmjs.com/package/react-helmet",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "date-fns",
+    href: "https://date-fns.org/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-app-polyfill",
+    href: "https://www.npmjs.com/package/react-app-polyfill",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-dates",
+    href: "https://www.npmjs.com/package/react-dates",
+    category: TechStackItemCategory.UI_KIT,
+  },
+  {
+    title: "react-gtm-module",
+    href: "https://www.npmjs.com/package/react-gtm-module",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-pdf",
+    href: "https://www.npmjs.com/package/react-pdf",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-transition-group",
+    href: "https://www.npmjs.com/package/react-transition-group",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Redux Thunk",
+    href: "https://www.npmjs.com/package/redux-thunk",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "sanitize-html",
+    href: "https://www.npmjs.com/package/sanitize-html",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "uuid",
+    href: "https://www.npmjs.com/package/uuid",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "yup",
+    href: "https://www.npmjs.com/package/yup",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
 ];
 
 const getItemsByCategory = (category: TechStackItemCategory) => {
-  return sortBy(techStackItems, ["title"])
+  return sortBy(techStackItems, [(item) => item.title.toLowerCase()])
     .filter((item) => item.category === category)
     .map(({ title, href }) => {
       return {
