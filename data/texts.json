@@ -11,6 +11,7 @@
   "PROFILE_LOCATION": "Budapest, Hungary",
   "PROFILE_EMAIL": "addam.kui@gmail.com",
   "PROFILE_CV_DOWNLOAD": "Download my CV",
+  "PROFILE_CV_DOWNLOAD_TOASTIFY": "Your download has started",
   "CAREER_TITLE": "Career 🏢",
   "CAREER_BODY": "My journey started when I joined General Electric in 2017, as a Robotic 🤖 Process Automation Developer (RPA) Intern.  I met, and also did programming before, but even though doing RPA is not a tipical 'write code in an IDE' job, I fell in love with learning programming. 👨‍💻 I started to become more and more motived, and in a few years I got to a senior 👴 level in RPA. However, I felt like I had much more in me, and I really wanted to learn something new. So in 2020 I started to look for new opportunities, when I came accross frontend development. I quickly fell in love 😍 with it. I've spent more than a year coding 8-12 hours after work during the nigth, working on hobby projects while I was studying from online courses. First just HTML + CSS, then JavaScript, and then only frameworks and a bunch of libraries. Today I mostly enjoy working on React / Next.js projects (like this website). For the future I definitely want to learn more about SSR, other frontend frameworks (Angular and Vue), and who knows what else the future will bring! 🤓",
   "FOOTER_COPYRIGHT": "Copyright © 2022 Adam Kui. All Rights Reserved.",
@@ -22,7 +23,7 @@
   "TECH_STACK_TITLE": "Tech Stack 👨‍💻",
   "TECH_STACK_BODY": "I know... this is the reoccuring topic that probalby almost all developers and recruiters are mostly interested in. 🔎 So I decided to collect the most important applications, programming languages, frameworks, libraries, package managers, etc., to show a little bit more of my background. If it got your attention, you can also take a look at my portfolio, or even better: go to my GitHub page, and see all my public repositories. Hope you'll enjoy! 😎",
   "TECH_STACK_PORTFOLIO_BUTTON_LABEL": "View My Portfolio",
-  "TECH_STACK_MORE": "... check them all by category here! 🤯",
+  "TECH_STACK_MORE": "... and even more here 🤯",
   "TECH_STACK_DIALOG_TITLE": "Tech Stack",
   "TECH_STACK_PACKAGE_MANAGER": "Package managers",
   "TECH_STACK_VERSION_CONTROL_SYSTEM": "Version Control",
@@ -44,5 +45,5 @@
   "TECH_STACK_CMS": "CMS",
   "ABOUT_ME_TITLE": "What I ❤️",
   "ABOUT_ME_BODY_1": "I feel very lucky, because my job is also my passion. I sit quite a lot in front of my desk, so I also became passionate about my desk setup. I was watching quite a lot of videos on YouTube, and tried so many variations and items on my desk, but I'm very satisfied with the results now.",
-  "ABOUT_ME_BODY_2": "In my free time I often like to go fishing / street workout / running / planespotting / cooking."
+  "ABOUT_ME_BODY_2": "In my free time I often like to go fishing to the nearby rivers, do street workout, go for a run, spend time with my friend, go for a planespotting and even cooking. I also play the bass guitar, not as much as a few years ago, when I even had my own funky band, but I still find joy in it. On the weekends I love to watch Formula 1 races, as I'm a big fan of it for more than 10 years now."
 }

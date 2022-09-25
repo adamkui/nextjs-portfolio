@@ -2,6 +2,8 @@ import { useGetText } from "@/hooks/useGetText";
 import { Grid, Typography } from "@mui/material";
 import { saveAs } from "file-saver";
 import { FC, Fragment, ReactElement } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { texts } from "data";
 import { TextUnderline } from "../TextUnderline/TextUnderline";
@@ -15,19 +17,28 @@ export enum ProfileItemVariant {
 interface ProfileItemProps {
   icon: ReactElement;
   titleTrlKey: keyof typeof texts;
+  isDarkMode: boolean;
   variant?: ProfileItemVariant;
 }
 
 export const ProfileItem: FC<ProfileItemProps> = ({
   icon,
   titleTrlKey,
+  isDarkMode,
   variant = ProfileItemVariant.TEXT,
 }) => {
   const t = useGetText();
 
+  const notify = () =>
+    toast.success(t("PROFILE_CV_DOWNLOAD_TOASTIFY"), {
+      autoClose: 2500,
+      hideProgressBar: true,
+    });
+
   const saveCv = () => {
     const cvHref = "Adam_Kui_CV.pdf";
     saveAs(cvHref, cvHref);
+    notify();
   };
 
   const ProfileItemVariations = {
@@ -44,6 +55,10 @@ export const ProfileItem: FC<ProfileItemProps> = ({
       <button onClick={() => saveCv()} className="group">
         <Typography variant="subtitle1">{t(titleTrlKey)}</Typography>
         <TextUnderline />
+        <ToastContainer
+          position="bottom-left"
+          theme={isDarkMode ? "dark" : "light"}
+        />
       </button>
     ),
   };

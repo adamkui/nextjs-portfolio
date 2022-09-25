@@ -42,16 +42,19 @@ export const Profile: FC = () => {
                 <ProfileItem
                   icon={<PlaceIcon />}
                   titleTrlKey="PROFILE_LOCATION"
+                  isDarkMode={isDarkMode}
                 />
                 <ProfileItem
                   icon={<AlternateEmailIcon />}
                   titleTrlKey="PROFILE_EMAIL"
                   variant={ProfileItemVariant.EMAIL}
+                  isDarkMode={isDarkMode}
                 />
                 <ProfileItem
                   icon={<CloudDownloadIcon />}
                   titleTrlKey="PROFILE_CV_DOWNLOAD"
                   variant={ProfileItemVariant.DOWNLOAD_BUTTON}
+                  isDarkMode={isDarkMode}
                 />
               </Grid>
             </div>

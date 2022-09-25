@@ -31,11 +31,17 @@ export const TechStack: FC = () => {
           variant="outlined"
           size="large"
           className={cn(
-            "self-center mb-20 mt-16 bg-clip-text text-transparent bg-gradient-to-r border-sky-600",
+            "relative overflow-hidden self-center mb-20 mt-16 bg-clip-text text-transparent bg-gradient-to-r border-sky-600 group transition-all duration-200 ease-in-out",
             isDarkMode ? "from-sky-500 to-cyan-400" : "from-sky-600 to-cyan-500"
           )}
         >
           {t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
+          <span
+            className={cn(
+              "absolute w-0 h-0 transition-all duration-200 ease-out rounded-full group-hover:w-64 group-hover:h-32 opacity-5",
+              isDarkMode ? "bg-white" : "bg-sky-500"
+            )}
+          ></span>
         </Button>
       </Link>
       <Grid container className="justify-center" gap={3}>
@@ -69,7 +75,6 @@ export const TechStack: FC = () => {
       <TechStackMoreInfoDialog
         isModalOpen={isModalOpen}
         setModalOpen={setModalOpen}
-        isDarkMode={isDarkMode}
       />
     </Section>
   );

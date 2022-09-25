@@ -9,13 +9,11 @@ import { TextUnderline } from "../TextUnderline/TextUnderline";
 interface TechStackMoreInfoDialogProps {
   isModalOpen: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
-  isDarkMode: boolean;
 }
 
 export const TechStackMoreInfoDialog: FC<TechStackMoreInfoDialogProps> = ({
   isModalOpen,
   setModalOpen,
-  isDarkMode,
 }) => {
   const t = useGetText();
 
