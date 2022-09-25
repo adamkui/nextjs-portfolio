@@ -64,7 +64,11 @@ export const TechStackMoreInfoDialog: FC<TechStackMoreInfoDialogProps> = ({
                   <div className="mx-auto w-full max-w-lg rounded-2xl max-h-72 overflow-y-scroll">
                     {techStackDialogItems.map(({ titleTrlKey, list }) => {
                       return (
-                        <Disclosure as="div" className={"mt-2 mr-1"}>
+                        <Disclosure
+                          as="div"
+                          className={"mt-2 mr-1"}
+                          key={titleTrlKey}
+                        >
                           {({ open }) => (
                             <>
                               <Disclosure.Button className="flex w-full justify-between rounded-lg bg-indigo-100 px-4 py-2 text-left text-sm font-medium text-indigo-900 hover:bg-indigo-200 focus:outline-none focus-visible:ring focus-visible:ring-indigo-500 focus-visible:ring-opacity-75">
@@ -80,10 +84,11 @@ export const TechStackMoreInfoDialog: FC<TechStackMoreInfoDialogProps> = ({
                               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-white flex flex-col">
                                 {list.map(({ label, href }) => {
                                   return (
-                                    <div className="group w-fit">
+                                    <div className="group w-fit" key={label}>
                                       <a
                                         href={href}
                                         target="_blank"
+                                        rel="noreferrer"
                                         className={
                                           href
                                             ? "pointer group w-fit"
