@@ -10,7 +10,7 @@ import {
   TechStackMoreInfoDialog,
   TextUnderline,
 } from "components";
-import { techStackItems } from "data";
+import { TechStackItemCategory, techStackItems } from "data";
 import { useGetText } from "hooks";
 
 export const TechStack: FC = () => {
@@ -38,18 +38,20 @@ export const TechStack: FC = () => {
         </Button>
       </Link>
       <Grid container className="justify-center" gap={3}>
-        {techStackItems.flatMap(({ title, icon, href }) => {
-          return icon ? (
-            <TechStackCard
-              key={title}
-              title={title}
-              icon={icon}
-              isDarkMode={isDarkMode}
-              href={href}
-            />
-          ) : (
-            []
-          );
+        {Object.values(TechStackItemCategory).map((ItemCategory) => {
+          return techStackItems
+            .filter((item) => item.category === ItemCategory && item.icon)
+            .map(({ title, icon, href }) => {
+              return (
+                <TechStackCard
+                  key={title}
+                  title={title}
+                  icon={icon!}
+                  isDarkMode={isDarkMode}
+                  href={href}
+                />
+              );
+            });
         })}
       </Grid>
       <button
