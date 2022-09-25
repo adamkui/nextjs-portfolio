@@ -9,6 +9,7 @@ import {
   SiCss3,
   SiDiscord,
   SiDotnet,
+  SiExpo,
   SiExpress,
   SiFramer,
   SiGit,
@@ -34,6 +35,7 @@ import {
   SiSap,
   SiSass,
   SiSlack,
+  SiStrapi,
   SiStyledcomponents,
   SiTailwindcss,
   SiTestinglibrary,
@@ -64,6 +66,7 @@ export enum TechStackItemCategory {
   "VERSION_CONTROL_SYSTEM" = "VERSION_CONTROL_SYSTEM",
   "SOFTWARE" = "SOFTWARE",
   "HOSTING" = "HOSTING",
+  "CMS" = "CMS",
 }
 
 type LinkProps = {
@@ -457,6 +460,173 @@ export const techStackItems: TechStackItemProps[] = [
   {
     title: "yup",
     href: "https://www.npmjs.com/package/yup",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "file-saver",
+    href: "https://www.npmjs.com/package/file-saver",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-csv-reader",
+    href: "https://www.npmjs.com/package/react-csv-reader",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-intersection-observer",
+    href: "https://www.npmjs.com/package/react-intersection-observer",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "React Date Picker",
+    href: "https://www.npmjs.com/package/react-datepicker",
+    category: TechStackItemCategory.UI_KIT,
+  },
+  {
+    title: "react-dropzone",
+    href: "https://www.npmjs.com/package/react-dropzone",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-paginate",
+    href: "https://www.npmjs.com/package/react-paginate",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-quill",
+    href: "https://www.npmjs.com/package/react-quill",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-select",
+    href: "https://www.npmjs.com/package/react-select",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "crypto-js",
+    href: "https://www.npmjs.com/package/crypto-js",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "dotenv",
+    href: "https://www.npmjs.com/package/dotenv",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "json-server",
+    href: "https://www.npmjs.com/package/json-server",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "Ui Path",
+    href: "https://www.uipath.com/product/studio",
+    category: TechStackItemCategory.SOFTWARE,
+  },
+  {
+    title: "MuleSoft",
+    href: "https://www.mulesoft.com/",
+    category: TechStackItemCategory.SOFTWARE,
+  },
+  {
+    title: "Chromium",
+    href: "https://www.npmjs.com/package/chromium",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "Discord.js",
+    href: "https://discord.js.org/#/",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "Puppeteer",
+    href: "https://pptr.dev/",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "react-responsive",
+    href: "https://www.npmjs.com/package/react-responsive",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "chart.js",
+    href: "https://www.chartjs.org/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "node-fetch",
+    href: "https://www.npmjs.com/package/node-fetch",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "Strapi",
+    href: "https://strapi.io/",
+    category: TechStackItemCategory.CMS,
+    icon: <SiStrapi size={72} color="#8b4bff" />,
+  },
+  {
+    title: "Cloudinary",
+    href: "https://cloudinary.com/",
+    category: TechStackItemCategory.CMS,
+  },
+  {
+    title: "Knex.js",
+    href: "https://knexjs.org/",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "node-postgre",
+    href: "https://www.npmjs.com/package/pg",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "Slugify",
+    href: "https://www.npmjs.com/package/slugify",
+    category: TechStackItemCategory.BACKEND_LIBRARY,
+  },
+  {
+    title: "Cookie",
+    href: "https://www.npmjs.com/package/cookie",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Moment.js",
+    href: "https://momentjs.com/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-geocode",
+    href: "https://www.npmjs.com/package/react-geocode",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-map-gl",
+    href: "https://www.npmjs.com/package/react-map-gl",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-icons",
+    href: "https://www.npmjs.com/package/react-icons",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-toastify",
+    href: "https://www.npmjs.com/package/react-icons",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Expo",
+    href: "https://expo.dev/",
+    category: TechStackItemCategory.MOBILE_DEVELOPMENT,
+    icon: <SiExpo size={72} color="black" />,
+  },
+  {
+    title: "React Native Paper",
+    href: "https://reactnativepaper.com/",
+    category: TechStackItemCategory.UI_KIT,
+  },
+  {
+    title: "Recharts",
+    href: "https://recharts.org/",
     category: TechStackItemCategory.FRONTEND_LIBRARY,
   },
 ];
