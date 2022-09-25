@@ -1,13 +1,16 @@
+import { Tooltip } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { useGetText } from "hooks";
 import { setDarkMode } from "store/common";
 
 export const DarkModeSwitch: FC = () => {
   const dispatch = useDispatch();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+  const t = useGetText();
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -61,12 +64,14 @@ export const DarkModeSwitch: FC = () => {
   };
 
   return (
-    <li>
-      <MaterialUISwitch
-        checked={isDarkMode}
-        onChange={handleChange}
-        inputProps={{ "aria-label": "controlled" }}
-      />
-    </li>
+    <Tooltip title={t("DARK_MODE_TOOLTIP")}>
+      <li>
+        <MaterialUISwitch
+          checked={isDarkMode}
+          onChange={handleChange}
+          inputProps={{ "aria-label": "controlled" }}
+        />
+      </li>
+    </Tooltip>
   );
 };

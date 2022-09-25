@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import cn from "classnames";
-import Image from "next/image";
 import { FC } from "react";
 import { useSelector } from "react-redux";
 

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
 import { WelcomeVideo } from "components";
-import { AboutMe, Career, Profile, TechStack } from "sections";
+import { AboutMe, Career, CreatedWith, Profile, TechStack } from "sections";
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +12,7 @@ const Home: NextPage = () => {
         <Career />
         <TechStack />
         <AboutMe />
+        <CreatedWith />
       </main>
     </div>
   );

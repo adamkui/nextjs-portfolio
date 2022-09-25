@@ -1,5 +1,6 @@
 {
   "GOT_IT": "Got it",
+  "DARK_MODE_TOOLTIP": "Light / Dark mode",
   "PAGE_TITLE": "Adam Kui | Dev",
   "LINK_MENU_GITHUB": "GitHub",
   "LINK_MENU_LINKEDIN": "LinkedIn",
@@ -45,5 +46,9 @@
   "TECH_STACK_CMS": "CMS",
   "ABOUT_ME_TITLE": "What I ❤️",
   "ABOUT_ME_BODY_1": "I feel very lucky, because my job is also my passion. I sit quite a lot in front of my desk, so I also became passionate about my desk setup. I was watching quite a lot of videos on YouTube, and tried so many variations and items on my desk, but I'm very satisfied with the results now.",
-  "ABOUT_ME_BODY_2": "In my free time I often like to go fishing to the nearby rivers, do street workout, go for a run, spend time with my friend, go for a planespotting and even cooking. I also play the bass guitar, not as much as a few years ago, when I even had my own funky band, but I still find joy in it. On the weekends I love to watch Formula 1 races, as I'm a big fan of it for more than 10 years now."
+  "ABOUT_ME_BODY_2": "In my free time I often like to go fishing to the nearby rivers, do street workout, go for a run, spend time with my friend, go for a planespotting and even cooking. I also play the bass guitar, not as much as a few years ago, when I even had my own funky band, but I still find joy in it. On the weekends I love to watch Formula 1 races, as I'm a big fan of it for more than 10 years now.",
+  "CREATED_WITH_TITLE": "Created with 🛠",
+  "CREATED_WITH_BODY": "🏗 This website was built using Next.js, React, MUI, HeadlessUI and Tailwind CSS.",
+  "CREATED_WITH_BODY_2": "Check out the source code",
+  "CREATED_WITH_BODY_3": "🎥 Special thanks for the amazing videos to:"
 }
