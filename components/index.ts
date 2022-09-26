@@ -7,6 +7,7 @@ export * from "./Logo/Logo"
 export * from "./MobileNavigation/MobileNavigation"
 export * from "./Navigation/Navigation"
 export * from "./PageLoader/PageLoader"
+export * from './PortfolioCard/PortfolioCard'
 export * from "./ProfileItem/ProfileItem"
 export * from "./Section/Section"
 export * from "./TechStackCard/TechStackCard"

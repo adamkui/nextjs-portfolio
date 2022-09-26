@@ -50,5 +50,7 @@
   "CREATED_WITH_TITLE": "Created with 🛠",
   "CREATED_WITH_BODY": "🏗 This website was built using Next.js, React, MUI, HeadlessUI and Tailwind CSS.",
   "CREATED_WITH_BODY_2": "Check out the source code",
-  "CREATED_WITH_BODY_3": "🎥 Special thanks for the amazing videos to:"
+  "CREATED_WITH_BODY_3": "🎥 Special thanks for the amazing videos to:",
+  "PORTFOLIO_TITLE_PROFESSIONAL": "Professional 👔",
+  "PORTFOLIO_TITLE_HOBBY_PROJECTS": "Other 🧐"
 }
