@@ -16,9 +16,15 @@ export const Portfolio: FC = () => {
         title={t("PORTFOLIO_TITLE_PROFESSIONAL")}
         className="flex flex-col w-full mt-20"
       >
-        <Grid container gap={0} className="w-full justify-center">
+        <Grid container spacing={2}>
           {professionalPortfolioItems.map((itemProps) => {
-            return <PortfolioCard {...itemProps} isDarkMode={isDarkMode} />;
+            return (
+              <PortfolioCard
+                {...itemProps}
+                isDarkMode={isDarkMode}
+                key={itemProps.titleTrlKey}
+              />
+            );
           })}
         </Grid>
       </Section>
@@ -26,9 +32,15 @@ export const Portfolio: FC = () => {
         title={t("PORTFOLIO_TITLE_HOBBY_PROJECTS")}
         className="flex flex-col w-full my-20"
       >
-        <Grid container gap={0} className="w-full justify-center">
+        <Grid container spacing={2} className="">
           {hobbyPortfolioItems.map((itemProps) => {
-            return <PortfolioCard {...itemProps} isDarkMode={isDarkMode} />;
+            return (
+              <PortfolioCard
+                {...itemProps}
+                isDarkMode={isDarkMode}
+                key={itemProps.titleTrlKey}
+              />
+            );
           })}
         </Grid>
       </Section>

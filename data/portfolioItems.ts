@@ -24,20 +24,20 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
     imageSrc: "/george_store.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
-    buttonProps: {label: "More information", href: "https://www.georgestore.hu/"}
+    buttonProps: {label: "More Information", href: "https://www.georgestore.hu/"}
   },
   {
     titleTrlKey: "PORTFOLIO_GEORGE_ADMIN_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_ADMIN_DESCRIPTION",
-    imageSrc: "/george_store.webp",
-    imageSize: { width: 1350, height: 924 },
+    imageSrc: "/george.webp",
+    imageSize: { width: 512, height: 512 },
     chipContent: ["React", "NodeJs"]
   },
   {
     titleTrlKey: "PORTFOLIO_GEORGE_MICROSITES_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION",
-    imageSrc: "/george_store.webp",
-    imageSize: { width: 1350, height: 924 },
+    imageSrc: "/george_microsites.webp",
+    imageSize: { width: 1156, height: 777 },
     chipContent: ["React", "NodeJs"]
   },
 ];

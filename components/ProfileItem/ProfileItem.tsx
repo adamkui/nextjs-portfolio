@@ -1,4 +1,3 @@
-import { useGetText } from "@/hooks/useGetText";
 import { Grid, Typography } from "@mui/material";
 import { saveAs } from "file-saver";
 import { FC, Fragment, ReactElement } from "react";
@@ -6,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { texts } from "data";
+import { useGetText } from "hooks";
 import { TextUnderline } from "../TextUnderline/TextUnderline";
 
 export enum ProfileItemVariant {

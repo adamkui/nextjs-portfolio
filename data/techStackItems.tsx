@@ -641,6 +641,11 @@ export const techStackItems: TechStackItemProps[] = [
     icon: <SiGraphql size={72} color="#E00398" />,
     category: TechStackItemCategory.DATABASE,
   },
+  {
+    title: "React Slick",
+    href: "https://react-slick.neostack.com/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
 ];
 
 const getItemsByCategory = (category: TechStackItemCategory) => {
