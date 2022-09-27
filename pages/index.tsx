@@ -16,6 +16,7 @@ const Home: NextPage = () => {
           stringsToType={[1, 2, 3, 4].map((i) => {
             return t(`WELCOME_TEXT_${i}` as keyof typeof texts);
           })}
+          loop
         />
         <Profile />
         <Career />

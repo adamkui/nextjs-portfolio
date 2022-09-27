@@ -8,12 +8,14 @@ interface HeaderVideoProps {
   src: string;
   poster: string;
   stringsToType?: string[];
+  loop?: boolean;
 }
 
 export const HeaderVideo: FC<HeaderVideoProps> = ({
   src,
   poster,
   stringsToType,
+  loop,
 }) => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
@@ -25,7 +27,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
 
   return (
     <section className="h-96 flex relative justify-center items-center text-center px-10">
-      {typed ? (
+      {stringsToType ? (
         <Typography variant={"h4"} className={"text-white z-40"}>
           <Typed
             typedRef={(typedRef: any) => (typed = typedRef)}
@@ -34,7 +36,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
             typeSpeed={25}
             backSpeed={5}
             backDelay={1750}
-            loop
+            loop={loop}
           />
         </Typography>
       ) : null}

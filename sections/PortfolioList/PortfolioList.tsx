@@ -1,9 +1,10 @@
+import { Grid } from "@mui/material";
 import { FC } from "react";
+import { useSelector } from "react-redux";
 
 import { PortfolioCard, Section } from "components";
+import { hobbyPortfolioItems, professionalPortfolioItems } from "data";
 import { useGetText } from "hooks";
-import { Grid } from "@mui/material";
-import { useSelector } from "react-redux";
 
 export const Portfolio: FC = () => {
   const t = useGetText();
@@ -13,25 +14,24 @@ export const Portfolio: FC = () => {
     <>
       <Section
         title={t("PORTFOLIO_TITLE_PROFESSIONAL")}
-        className="flex flex-col w-full my-20"
+        className="flex flex-col w-full mt-20"
       >
         <Grid container gap={0} className="w-full justify-center">
-          <PortfolioCard
-            isDarkMode={isDarkMode}
-            title={t("GOT_IT")}
-            description={t("GOT_IT")}
-          />
-          <PortfolioCard
-            isDarkMode={isDarkMode}
-            title={t("GOT_IT")}
-            description={t("GOT_IT")}
-          />
+          {professionalPortfolioItems.map((itemProps) => {
+            return <PortfolioCard {...itemProps} isDarkMode={isDarkMode} />;
+          })}
         </Grid>
       </Section>
       <Section
         title={t("PORTFOLIO_TITLE_HOBBY_PROJECTS")}
         className="flex flex-col w-full my-20"
-      ></Section>
+      >
+        <Grid container gap={0} className="w-full justify-center">
+          {hobbyPortfolioItems.map((itemProps) => {
+            return <PortfolioCard {...itemProps} isDarkMode={isDarkMode} />;
+          })}
+        </Grid>
+      </Section>
     </>
   );
 };

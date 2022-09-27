@@ -52,5 +52,21 @@
   "CREATED_WITH_BODY_2": "Check out the source code",
   "CREATED_WITH_BODY_3": "🎥 Special thanks for the amazing videos to:",
   "PORTFOLIO_TITLE_PROFESSIONAL": "Professional 👔",
-  "PORTFOLIO_TITLE_HOBBY_PROJECTS": "Other 🧐"
+  "PORTFOLIO_TITLE_HOBBY_PROJECTS": "Other 🧐",
+  "PORTFOLIO_GEORGE_STORE_TITLE": "George Store",
+  "PORTFOLIO_GEORGE_STORE_DESCRIPTION": "George Store on web and mobile.",
+  "PORTFOLIO_GEORGE_ADMIN_TITLE": "George Admin",
+  "PORTFOLIO_GEORGE_ADMIN_DESCRIPTION": "George Admin for web.",
+  "PORTFOLIO_GEORGE_MICROSITES_TITLE": "George Microsites",
+  "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION": "George Microsites for web.",
+  "PORTFOLIO_PAL_GOLLNER_TITLE": "Pal Gollner Portfolio",
+  "PORTFOLIO_PAL_GOLLNER_DESCRIPTION": "Minimalistic portfolio website of urban, travel and sport photographer, Pal Gollner.",
+  "PORTFOLIO_COVID_DASHBOARD_TITLE": "Covid Dashboard",
+  "PORTFOLIO_COVID_DASHBOARD_DESCRIPTION": "A simple covid dashboard.",
+  "PORTFOLIO_NOTES_APP_TITLE": "Notes App",
+  "PORTFOLIO_NOTES_APP_DESCRIPTION": "A simple note app built in React.",
+  "PORTFOLIO_MUSIC_PLAYER_APP_TITLE": "Music Player App",
+  "PORTFOLIO_MUSIC_PLAYER_APP_DESCRIPTION": "A music player app built in React.",
+  "PORTFOLIO_BEAT_MAKER_APP_TITLE": "Beat Maker App",
+  "PORTFOLIO_BEAT_MAKER_APP_DESCRIPTION": "A beat maker app built with JavaScript."
 }

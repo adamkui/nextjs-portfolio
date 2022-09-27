@@ -1,5 +1,6 @@
 export * from "./careerItems"
 export * from "./companyLogos"
 export * from "./navigationItems"
+export * from "./portfolioItems"
 export * from "./techStackItems"
 export { default as texts } from "./texts.json"

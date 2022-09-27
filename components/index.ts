@@ -1,3 +1,4 @@
+export * from './ButtonWrapper/ButtonWrapper'
 export * from "./DarkModeSwitch/DarkModeSwitch";
 export * from "./Footer/Footer";
 export * from "./Header/Header";

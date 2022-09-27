@@ -1,10 +1,10 @@
-import { Button, Grid, Typography } from "@mui/material";
-import cn from "classnames";
+import { Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 
 import {
+  ButtonWrapper,
   Section,
   TechStackCard,
   TechStackMoreInfoDialog,
@@ -27,28 +27,15 @@ export const TechStack: FC = () => {
       className="flex flex-col mb-20"
     >
       <Link href="/portfolio">
-        <Button
-          variant="outlined"
-          size="large"
-          className={cn(
-            "relative overflow-hidden self-center mb-20 mt-16 bg-clip-text text-transparent bg-gradient-to-r border-sky-600 group transition-all duration-200 ease-in-out",
-            isDarkMode ? "from-sky-500 to-cyan-400" : "from-sky-600 to-cyan-500"
-          )}
-        >
-          {t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
-          <span
-            className={cn(
-              "absolute w-0 h-0 transition-all duration-200 ease-out rounded-full group-hover:w-64 group-hover:h-32 opacity-5",
-              isDarkMode ? "bg-white" : "bg-sky-500"
-            )}
-          ></span>
-        </Button>
+        <ButtonWrapper
+          label={t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
+          className={"mt-16 mb-20"}
+        />
       </Link>
       <Grid container className="justify-center" gap={3}>
         {Object.values(TechStackItemCategory).map((ItemCategory) => {
           return sortBy(techStackItems, [(item) => item.title.toLowerCase()])
             .filter((item) => item.category === ItemCategory && item.icon)
-
             .map(({ title, icon, href }) => {
               return (
                 <TechStackCard
