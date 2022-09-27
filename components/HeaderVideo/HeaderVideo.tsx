@@ -4,17 +4,14 @@ import { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Typed from "react-typed";
 
-import { texts } from "data";
-import { useGetText } from "hooks";
-
 interface HeaderVideoProps {
   src: string;
   poster: string;
+  typed?: string[];
 }
 
 export const HeaderVideo: FC<HeaderVideoProps> = ({ src, poster }) => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-  const t = useGetText();
 
   let typed: any;
 
@@ -24,19 +21,19 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({ src, poster }) => {
 
   return (
     <section className="h-96 flex relative justify-center items-center text-center px-10">
-      <Typography variant={"h4"} className={"text-white z-40"}>
-        <Typed
-          typedRef={(typedRef: any) => (typed = typedRef)}
-          strings={[1, 2, 3, 4].map((i) => {
-            return t(`WELCOME_TEXT_${i}` as keyof typeof texts);
-          })}
-          startDelay={500}
-          typeSpeed={25}
-          backSpeed={5}
-          backDelay={1750}
-          loop
-        />
-      </Typography>
+      {typed ? (
+        <Typography variant={"h4"} className={"text-white z-40"}>
+          <Typed
+            typedRef={(typedRef: any) => (typed = typedRef)}
+            strings={typed}
+            startDelay={500}
+            typeSpeed={25}
+            backSpeed={5}
+            backDelay={1750}
+            loop
+          />
+        </Typography>
+      ) : null}
       <video
         src={src}
         autoPlay
