@@ -7,10 +7,14 @@ import Typed from "react-typed";
 interface HeaderVideoProps {
   src: string;
   poster: string;
-  typed?: string[];
+  stringsToType?: string[];
 }
 
-export const HeaderVideo: FC<HeaderVideoProps> = ({ src, poster }) => {
+export const HeaderVideo: FC<HeaderVideoProps> = ({
+  src,
+  poster,
+  stringsToType,
+}) => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
   let typed: any;
@@ -25,7 +29,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({ src, poster }) => {
         <Typography variant={"h4"} className={"text-white z-40"}>
           <Typed
             typedRef={(typedRef: any) => (typed = typedRef)}
-            strings={typed}
+            strings={stringsToType}
             startDelay={500}
             typeSpeed={25}
             backSpeed={5}

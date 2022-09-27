@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <HeaderVideo
           src="/about_720_m.mp4"
           poster="about_poster.webp"
-          typed={[1, 2, 3, 4].map((i) => {
+          stringsToType={[1, 2, 3, 4].map((i) => {
             return t(`WELCOME_TEXT_${i}` as keyof typeof texts);
           })}
         />
