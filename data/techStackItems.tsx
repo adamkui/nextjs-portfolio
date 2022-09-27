@@ -273,7 +273,7 @@ export const techStackItems: TechStackItemProps[] = [
     category: TechStackItemCategory.CSS_FRAMEWORK,
   },
   {
-    title: "MUI",
+    title: "Material UI",
     icon: <SiMaterialui size={72} color="#38bdf8" />,
     href: "https://mui.com/",
     category: TechStackItemCategory.UI_KIT,

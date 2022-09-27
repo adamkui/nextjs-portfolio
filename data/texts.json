@@ -62,8 +62,10 @@
   "PORTFOLIO_GEORGE_ADMIN_DESCRIPTION": "George Admin is an internal web application designed for desktop only. Its features contains two different messengers, query and administration pages for different purposes. I'm responsible for the same areas of the application's lifecycle, as in George Store's.",
   "PORTFOLIO_GEORGE_MICROSITES_TITLE": "George Microsites (FE)",
   "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION": "A set of microsites, cloned from George Store, for the purpose of A / B testing and other UX research.",
+  "PORTFOLIO_GEORGE_MOCK_BACKEND_TITLE": "FE Development Related Mock Apps (BE)",
+  "PORTFOLIO_GEORGE_MOCK_BACKEND_DESCRIPTION": "NodeJS + ExpressJS mock backend applications for easier development.",
   "PORTFOLIO_PAL_GOLLNER_TITLE": "Pal Gollner Portfolio (Full Stack)",
-  "PORTFOLIO_PAL_GOLLNER_DESCRIPTION": "Minimalistic portfolio website of urban, travel and sport photographer, Pal Gollner.",
+  "PORTFOLIO_PAL_GOLLNER_DESCRIPTION": "Minimal design portfolio website of urban and sport photographer, Pal Gollner. Check out his content for some great photos!",
   "PORTFOLIO_COVID_DASHBOARD_TITLE": "Covid Dashboard (FE)",
   "PORTFOLIO_COVID_DASHBOARD_DESCRIPTION": "A simple covid dashboard.",
   "PORTFOLIO_NOTES_APP_TITLE": "Notes App (FE)",
@@ -78,5 +80,6 @@
   "PORTFOLIO_PHOTO_SEARCH_APP_DESCRIPTION": "Search photos using APIs.",
   "PORTFOLIO_DISCORD_CHATBOT_TITLE": "Discord News Fetch ChatBot (BE)",
   "PORTFOLIO_DISCORD_CHATBOT_DESCRIPTION": "Discord.JS application that fetches data from Rockstar Newswire website based on a regular base (as defined in config vars), formats the data in an embedded Discord message, and sends to the configured Discord channel.",
-  "PORTFOLIO_MORE_ON_GITHUB": "... check my GitHub for more 📦"
+  "PORTFOLIO_MORE_ON_GITHUB": "... check my GitHub for more 📦",
+  "BLOG_NO_POSTS": "Nothing to see here yet..."
 }

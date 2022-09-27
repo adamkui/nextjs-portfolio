@@ -43,6 +43,13 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
     imageSize: { width: 1156, height: 777 },
     chipContent: ["React", "TypeScript"],
   },
+  {
+    titleTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_TITLE",
+    descriptionTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_DESCRIPTION",
+    imageSrc: "/george_microsites.webp",
+    imageSize: { width: 1156, height: 777 },
+    chipContent: ["NodeJS", "ExpressJS"],
+  },
 ];
 
 export const hobbyPortfolioItems: PortfolioItemProps[] = [
@@ -51,7 +58,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
     descriptionTrlKey: "PORTFOLIO_PAL_GOLLNER_DESCRIPTION",
     imageSrc: "/george_store.webp",
     imageSize: { width: 1350, height: 924 },
-    chipContent: ["React", "NodeJs"],
+    chipContent: ["React", "TypeScript", "NodeJs", "Material UI", "Framer Motion", "TailwindCSS", "Axios", "Cloudinary"],
     buttonProps: { href: "https://www.palgollner.hu/" },
   },
   {
