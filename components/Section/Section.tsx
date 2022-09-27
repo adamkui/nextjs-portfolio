@@ -37,7 +37,7 @@ export const Section: FC<SectionProps> = ({
             className={cn(
               "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-3 py-2 mt-3",
               isDarkMode
-                ? " bg-opacity-5 border-transparent"
+                ? "bg-opacity-5 border-transparent"
                 : "bg-opacity-100 border-grey"
             )}
           >

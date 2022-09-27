@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 
-import { WelcomeVideo } from "components";
+import { HeaderVideo } from "components";
 import { AboutMe, Career, CreatedWith, Profile, TechStack } from "sections";
 
 const Home: NextPage = () => {
   return (
     <div>
       <main className="transition-all duration-200 ease-in-out h-min-screen h-full">
-        <WelcomeVideo />
+        <HeaderVideo src="/about_720_m.mp4" poster="about_poster.webp" />
         <Profile />
         <Career />
         <TechStack />
