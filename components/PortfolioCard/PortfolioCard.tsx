@@ -53,34 +53,15 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
             : "bg-opacity-100 border-grey"
         )}
       >
-        <CardContent>
-          <Slider
-            dots={true}
-            infinite={true}
-            speed={500}
-            slidesToShow={1}
-            slidesToScroll={1}
-            arrows={true}
-            className={"mx-5"}
-          >
-            <CardMedia
-              component="img"
-              sx={{
-                height: 225,
-                objectFit: "contain",
-              }}
-              image={imageSrc}
-            />
-            <CardMedia
-              component="img"
-              sx={{
-                height: 225,
-                objectFit: "contain",
-              }}
-              image={imageSrc}
-            />
-          </Slider>
-        </CardContent>
+        <CardMedia
+          component="img"
+          sx={{
+            height: 225,
+            objectFit: "contain",
+          }}
+          image={imageSrc}
+          className={"p-3 mt-5"}
+        />
         <CardContent
           className={cn(
             "flex flex-col justify-start mt-7 h-full",
@@ -109,7 +90,7 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
           <CardActions className="px-3">
             <a href={buttonProps.href} target={"_blank"} rel={"noreferrer"}>
               <ButtonWrapper
-                label={buttonProps?.label || "Visit website"}
+                label={t(buttonProps?.label || "PORTFOLIO_VISIT_WEBSITE")}
                 className={"my-3"}
               />
             </a>
