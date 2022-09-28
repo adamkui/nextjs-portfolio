@@ -1,8 +1,13 @@
 import { Typography } from "@mui/material";
 import cn from "classnames";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Typed from "react-typed";
+
+type VideoSize = {
+  width?: number;
+  height?: number;
+};
 
 interface HeaderVideoProps {
   src: string;
@@ -18,6 +23,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   loop,
 }) => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+  const [videoSize, setVideoSize] = useState<VideoSize>();
 
   let typed: any;
 
@@ -51,8 +57,15 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           isDarkMode ? "opacity-40" : "opacity-80"
         )}
         poster={poster}
-        width={typeof window !== "undefined" ? window.innerWidth : undefined}
-        height={384}
+        width={videoSize?.width}
+        height={videoSize?.height}
+        onLoadedMetadata={() =>
+          setVideoSize({
+            width:
+              typeof window !== "undefined" ? window.innerWidth : undefined,
+            height: 384,
+          })
+        }
       />
     </section>
   );
