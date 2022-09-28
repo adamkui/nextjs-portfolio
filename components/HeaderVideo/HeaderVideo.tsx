@@ -52,7 +52,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         src={poster}
         layout={"fill"}
         className={cn(
-          "transition-opacity duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          "transition-none duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
           isVideLoaded ? "opacity-0" : isDarkMode ? "opacity-40" : "opacity-80"
         )}
       />
@@ -63,7 +63,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         loop
         muted
         className={cn(
-          "transition-all duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          "transition-none duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
           windowSize.underSm ? "delay-300" : "",
           isVideLoaded
             ? isDarkMode
