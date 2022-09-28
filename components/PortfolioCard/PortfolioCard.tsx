@@ -26,7 +26,6 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
   titleTrlKey,
   descriptionTrlKey,
   imageSrc,
-  imageSize,
   chipContent,
   buttonProps,
 }) => {
