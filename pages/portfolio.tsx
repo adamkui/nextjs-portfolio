@@ -10,7 +10,7 @@ const PortfolioPage: NextPage = () => {
         <HeaderVideo
           src="/portfolio_720_m.mp4"
           srcOnMobile="/portfolio_540_m.mp4"
-          poster="portfolio_poster.webp"
+          poster="/portfolio_poster.webp"
           stringsToType={["Welcome to my portfolio."]}
           loop={false}
         />

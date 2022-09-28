@@ -5,11 +5,7 @@ import { useSelector } from "react-redux";
 import Typed from "react-typed";
 
 import { useWindowSize } from "hooks";
-
-type VideoSize = {
-  width?: number;
-  height?: number;
-};
+import Image from "next/image";
 
 interface HeaderVideoProps {
   src: string;
@@ -29,7 +25,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   const windowSize = useWindowSize();
 
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-  const [videoSize, setVideoSize] = useState<VideoSize>();
+  const [isVideLoaded, setVideoLoaded] = useState<boolean>(false);
 
   let typed: any;
 
@@ -52,6 +48,16 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           />
         </Typography>
       ) : null}
+      {isVideLoaded ? null : (
+        <Image
+          layout="fill"
+          src={poster}
+          className={cn(
+            "min-w-full min-h-full object-cover absolute left-0 top-0 h-96 brightness-75 bg-transparent",
+            isDarkMode ? "opacity-40" : "opacity-80"
+          )}
+        />
+      )}
       <video
         src={windowSize.underSm ? srcOnMobile : src}
         autoPlay
@@ -63,15 +69,9 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           isDarkMode ? "opacity-40" : "opacity-80"
         )}
         // poster={poster}
-        width={videoSize?.width}
-        height={videoSize?.height}
-        onLoadedMetadata={() =>
-          setVideoSize({
-            width:
-              typeof window !== "undefined" ? window.innerWidth : undefined,
-            height: 384,
-          })
-        }
+        onTimeUpdate={() => {
+          setVideoLoaded(true);
+        }}
       />
     </section>
   );
