@@ -30,9 +30,12 @@ export const AboutMe: FC = () => {
       <Image
         src="/desk.webp"
         width={1500}
-        height={isImageLoading ? 0 : 1000}
+        height={1000}
         layout={"responsive"}
-        className={"mt-10 justify-self-center rounded-md"}
+        className={cn(
+          "mt-10 justify-self-center rounded-md",
+          isImageLoading ? "opacity-transparent" : "opacity-100"
+        )}
         onLoad={() => {
           setImageLoading(false);
         }}
