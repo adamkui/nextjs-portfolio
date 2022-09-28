@@ -72,7 +72,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_NOTES_APP_TITLE",
     descriptionTrlKey: "PORTFOLIO_NOTES_APP_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/notes.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
     buttonProps: { href: "https://notesapphu.netlify.app/"}
