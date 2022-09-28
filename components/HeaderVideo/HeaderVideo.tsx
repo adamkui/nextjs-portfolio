@@ -63,7 +63,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         loop
         muted
         className={cn(
-          "transition-all duration-1000 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          "transition-all duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
           windowSize.underSm ? "delay-300" : "",
           isVideLoaded
             ? isDarkMode
