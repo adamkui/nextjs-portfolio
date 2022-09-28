@@ -51,6 +51,8 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           isDarkMode ? "opacity-40" : "opacity-80"
         )}
         poster={poster}
+        width={typeof window !== "undefined" ? window.innerWidth : undefined}
+        height={384}
       />
     </section>
   );

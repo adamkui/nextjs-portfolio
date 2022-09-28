@@ -56,7 +56,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_PAL_GOLLNER_TITLE",
     descriptionTrlKey: "PORTFOLIO_PAL_GOLLNER_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/pal_gollner.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "TypeScript", "NodeJs", "Material UI", "Framer Motion", "TailwindCSS", "Axios", "Cloudinary"],
     buttonProps: { href: "https://www.palgollner.hu/" },
