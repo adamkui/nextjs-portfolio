@@ -2,12 +2,14 @@ import cn from "classnames";
 import Head from "next/head";
 import { ReactNode, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BsArrowUpCircle } from "react-icons/bs";
 
 import { useGetText } from "hooks";
 import { setDarkMode } from "../../store/common";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { PageLoader } from "../PageLoader/PageLoader";
+import { Typography } from "@mui/material";
 
 interface LayoutProps {
   children: ReactNode;
@@ -62,6 +64,19 @@ const Layout = (props: LayoutProps) => {
         >
           <Header />
           {props.children}
+          <div
+            className="w-full text-center flex flex-col items-center mb-10 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <BsArrowUpCircle
+              size={32}
+              color={"white"}
+              className={"animate-bounce"}
+            />
+            <Typography variant={"subtitle2"} className={"mt-3"}>
+              {"Scroll to top"}
+            </Typography>
+          </div>
           <Footer />
         </main>
       </div>

@@ -4,6 +4,8 @@ interface WindowSizeParams {
   width?: number;
   height?: number;
   underSm?: boolean;
+  underXl?: boolean;
+  under2xl?: boolean;
 }
 
 export const useWindowSize = () => {
@@ -11,6 +13,8 @@ export const useWindowSize = () => {
     width: undefined,
     height: undefined,
     underSm: false,
+    underXl: false,
+    under2xl: false,
   });
 
   useEffect(() => {
@@ -19,6 +23,8 @@ export const useWindowSize = () => {
         width: window.innerWidth,
         height: window.innerHeight,
         underSm: window.innerWidth < 640,
+        underXl: window.innerWidth < 1280,
+        under2xl: window.innerWidth < 1536,
       });
     };
 

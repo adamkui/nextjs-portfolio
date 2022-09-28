@@ -63,7 +63,7 @@
   "PORTFOLIO_GEORGE_MICROSITES_TITLE": "George Microsites (FE)",
   "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION": "A set of microsites, cloned from George Store, for the purpose of A / B testing and other UX research.",
   "PORTFOLIO_GEORGE_MOCK_BACKEND_TITLE": "FE Development Related Mock Apps (BE)",
-  "PORTFOLIO_GEORGE_MOCK_BACKEND_DESCRIPTION": "NodeJS + ExpressJS mock backend applications for easier development.",
+  "PORTFOLIO_GEORGE_MOCK_BACKEND_DESCRIPTION": "NodeJS + ExpressJS mock backend applications for test environment independent frontend development.",
   "PORTFOLIO_PAL_GOLLNER_TITLE": "Pal Gollner Portfolio (Full Stack)",
   "PORTFOLIO_PAL_GOLLNER_DESCRIPTION": "Minimal design portfolio website of urban and sport photographer, Pal Gollner. Check out his content for some great photos!",
   "PORTFOLIO_COVID_DASHBOARD_TITLE": "Covid Dashboard (FE)",

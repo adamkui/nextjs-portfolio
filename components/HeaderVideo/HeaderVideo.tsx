@@ -22,7 +22,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   stringsToType,
   loop,
 }) => {
-  const { underSm } = useWindowSize();
+  const { underSm, underXl, under2xl } = useWindowSize();
 
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [isVideLoaded, setVideoLoaded] = useState<boolean>(false);
@@ -65,8 +65,11 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         playsInline
         loop
         muted
+        style={{
+          top: underXl ? 0 : under2xl ? "-50%" : "-100%",
+        }}
         className={cn(
-          "transition-none duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          "transition-none duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",
           underSm ? "delay-300" : "",
           isVideLoaded
             ? isDarkMode
