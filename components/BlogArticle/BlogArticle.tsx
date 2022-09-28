@@ -1,14 +1,20 @@
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { FC, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-export const BlogArticle: FC = () => {
-  const [tosText, setTosText] = useState("");
+export const BlogArticle: FC<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = (props) => {
+  return <ReactMarkdown>{props.markdownText}</ReactMarkdown>;
+};
 
-  useEffect(() => {
-    fetch("/blog/test.md")
-      .then((res) => res.text())
-      .then((text) => setTosText(text));
-  });
+export const getServerSideProps: GetServerSideProps = async () => {
+  const test = await fetch("/blog/test.md");
+  const text = await test.text();
 
-  return <ReactMarkdown>{tosText}</ReactMarkdown>;
+  return {
+    props: {
+      markdownText: "test",
+    },
+  };
 };
