@@ -21,7 +21,7 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_GEORGE_STORE_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_STORE_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/macbook.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "TypeScript", "NodeJs"],
     buttonProps: {
@@ -32,21 +32,21 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_GEORGE_ADMIN_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_ADMIN_DESCRIPTION",
-    imageSrc: "/george.webp",
+    imageSrc: "/macbook.webp",
     imageSize: { width: 512, height: 512 },
     chipContent: ["React", "TypeScript", "NodeJs"],
   },
   {
     titleTrlKey: "PORTFOLIO_GEORGE_MICROSITES_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION",
-    imageSrc: "/george_microsites.webp",
+    imageSrc: "/macbook.webp",
     imageSize: { width: 1156, height: 777 },
     chipContent: ["React", "TypeScript"],
   },
   {
     titleTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_DESCRIPTION",
-    imageSrc: "/george_microsites.webp",
+    imageSrc: "/macbook.webp",
     imageSize: { width: 1156, height: 777 },
     chipContent: ["NodeJS", "ExpressJS"],
   },
@@ -64,7 +64,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_COVID_DASHBOARD_TITLE",
     descriptionTrlKey: "PORTFOLIO_COVID_DASHBOARD_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/macbook.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
     buttonProps: { href: "https://global-covid-dashboard.netlify.app/" },
@@ -80,7 +80,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_MUSIC_PLAYER_APP_TITLE",
     descriptionTrlKey: "PORTFOLIO_MUSIC_PLAYER_APP_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/music_player.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
     buttonProps: {href: "https://ak-react-music-player.netlify.app/"}
@@ -88,7 +88,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_BEAT_MAKER_APP_TITLE",
     descriptionTrlKey: "PORTFOLIO_BEAT_MAKER_APP_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/beat_maker.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
     buttonProps: {href: "https://beatmaker-ak.netlify.app/"}
@@ -96,7 +96,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_COLORS_APP_TITLE",
     descriptionTrlKey: "PORTFOLIO_COLORS_APP_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/colors.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
     buttonProps: {href: "https://colors-page.netlify.app/"}
@@ -104,7 +104,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_PHOTO_SEARCH_APP_TITLE",
     descriptionTrlKey: "PORTFOLIO_PHOTO_SEARCH_APP_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/photo_search.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["React", "NodeJs"],
     buttonProps: {href: "https://photon-project-ak.netlify.app/"}
@@ -112,7 +112,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_DISCORD_CHATBOT_TITLE",
     descriptionTrlKey: "PORTFOLIO_DISCORD_CHATBOT_DESCRIPTION",
-    imageSrc: "/george_store.webp",
+    imageSrc: "/macbook.webp",
     imageSize: { width: 1350, height: 924 },
     chipContent: ["Discord.JS", "JavaScript", "Chromium", "MongoDB", "Puppeteer"],
     buttonProps: {label: "PORTFOLIO_VISIT_GITHUB", href: "https://github.com/adamkui/discord-bot-gta-online-news"}
