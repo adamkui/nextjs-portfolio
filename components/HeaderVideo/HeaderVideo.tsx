@@ -26,7 +26,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   }, [typed]);
 
   return (
-    <section className="h-96 flex relative justify-center items-center text-center px-10">
+    <section className="h-96 flex relative justify-center items-center text-center px-10 overflow-hidden">
       {stringsToType ? (
         <Typography variant={"h4"} className={"text-white z-40"}>
           <Typed
