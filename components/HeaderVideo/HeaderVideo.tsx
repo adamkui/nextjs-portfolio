@@ -48,16 +48,6 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           />
         </Typography>
       ) : null}
-      {isVideLoaded ? null : (
-        <Image
-          layout="fill"
-          src={poster}
-          className={cn(
-            "min-w-full min-h-full object-cover absolute left-0 top-0 h-96 brightness-75 bg-transparent",
-            isDarkMode ? "opacity-40" : "opacity-80"
-          )}
-        />
-      )}
       <video
         src={windowSize.underSm ? srcOnMobile : src}
         autoPlay
@@ -65,11 +55,15 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         loop
         muted
         className={cn(
-          "transition-none min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
-          isDarkMode ? "opacity-40" : "opacity-80",
-          isVideLoaded ? "h-96" : "h-0"
+          "transition-all duration-1000 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          windowSize.underSm ? "delay-300" : "",
+          isVideLoaded
+            ? isDarkMode
+              ? "opacity-40"
+              : "opacity-80"
+            : "opacity-0"
         )}
-        // poster={poster}
+        poster={poster}
         onTimeUpdate={() => {
           setVideoLoaded(true);
         }}
