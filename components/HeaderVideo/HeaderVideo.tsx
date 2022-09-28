@@ -4,6 +4,8 @@ import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Typed from "react-typed";
 
+import { useWindowSize } from "hooks";
+
 type VideoSize = {
   width?: number;
   height?: number;
@@ -11,6 +13,7 @@ type VideoSize = {
 
 interface HeaderVideoProps {
   src: string;
+  srcOnMobile: string;
   poster: string;
   stringsToType?: string[];
   loop?: boolean;
@@ -18,10 +21,13 @@ interface HeaderVideoProps {
 
 export const HeaderVideo: FC<HeaderVideoProps> = ({
   src,
+  srcOnMobile,
   poster,
   stringsToType,
   loop,
 }) => {
+  const windowSize = useWindowSize();
+
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [videoSize, setVideoSize] = useState<VideoSize>();
 
@@ -47,7 +53,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         </Typography>
       ) : null}
       <video
-        src={src}
+        src={windowSize.underSm ? srcOnMobile : src}
         autoPlay
         playsInline
         loop
