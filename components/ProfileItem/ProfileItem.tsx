@@ -42,7 +42,11 @@ export const ProfileItem: FC<ProfileItemProps> = ({
   };
 
   const ProfileItemVariations = {
-    TEXT: <Typography variant="subtitle1">{t(titleTrlKey)}</Typography>,
+    TEXT: (
+      <Typography variant="subtitle1" className="mb-0.5">
+        {t(titleTrlKey)}
+      </Typography>
+    ),
     EMAIL: (
       <a href={`mailto:${t(titleTrlKey)}`} className="group">
         <Typography variant="subtitle1" className="cursor-pointer">

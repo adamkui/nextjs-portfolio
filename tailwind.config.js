@@ -15,6 +15,9 @@ module.exports = {
         'rubikMoonrocks': ['Rubik Moonrocks', 'cursive'],
         'monoton': ['Monoton', 'cursive'],
         'gugi': ['Gugi', 'cursive']
+      },
+      opacity: {
+        "transparent": 0
       }
     },
   },
