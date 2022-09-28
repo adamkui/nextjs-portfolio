@@ -1,7 +1,7 @@
 {
   "GOT_IT": "Got it",
   "DARK_MODE_TOOLTIP": "Light / Dark mode",
-  "PAGE_TITLE": "Adam Kui | Dev",
+  "PAGE_TITLE": "Adam Kui | Developer",
   "LINK_MENU_GITHUB": "GitHub",
   "LINK_MENU_LINKEDIN": "LinkedIn",
   "LINK_MENU_CODERSRANK": "CodersRank",
@@ -20,7 +20,7 @@
   "NAVIGATION_LINKS_TITLE": "Links",
   "PROFILE_NAME": "Adam Kui",
   "PROFILE_JOB": "Frontend Software Developer",
-  "PROFILE_CODE_EDITOR": "import { FC, useEffect } from 'react'; \n\n const HelloWorld: FC = () => {\n\tuseEffect(()=> {\n\t\tconsole.log('Hello World!')\n\t}, []);\n\n\t// Don't judge by what you see! ~ FrontendDev Coelho \n\treturn null;\n};",
+  "PROFILE_CODE_EDITOR": "import { FC } from 'react'; \n\nconst HelloWorld: FC = () => {\n\tconsole.log('Hello World!');\n\n\t// Do you know how to make a 🍌 with JavaScript?\n\tconst baNaNa = 'b' + 'a' + + 'a' + 'a'\n\t// Enjoy it! 😎\n\treturn baNaNa;\n};",
   "TECH_STACK_TITLE": "Tech Stack 👨‍💻",
   "TECH_STACK_BODY": "I know... this is the reoccuring topic that probalby almost all developers and recruiters are mostly interested in. 🔎 So I decided to collect the most important applications, programming languages, frameworks, libraries, package managers, etc., to show a little bit more of my background. If it got your attention, you can also take a look at my portfolio, or even better: go to my GitHub page, and see all my public repositories. Hope you'll enjoy! 😎",
   "TECH_STACK_PORTFOLIO_BUTTON_LABEL": "View My Portfolio",

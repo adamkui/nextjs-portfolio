@@ -12,55 +12,71 @@ import { useSelector } from "react-redux";
 import Editor from "react-simple-code-editor";
 
 import { ProfileItem, ProfileItemVariant } from "components";
-import { useGetText } from "hooks";
+import { useGetText, useWindowSize } from "hooks";
 
 export const Profile: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const t = useGetText();
+  const { underSm } = useWindowSize();
 
   const [code, setCode] = useState(t("PROFILE_CODE_EDITOR"));
+
+  const avatarSize = {
+    width: underSm ? 100 : 175,
+    height: underSm ? 100 : 175,
+  };
+
+  const ProfileItems = (
+    <Grid container className="mt-5" columns={2}>
+      <ProfileItem
+        icon={<PlaceIcon />}
+        titleTrlKey="PROFILE_LOCATION"
+        isDarkMode={isDarkMode}
+      />
+      <ProfileItem
+        icon={<AlternateEmailIcon />}
+        titleTrlKey="PROFILE_EMAIL"
+        variant={ProfileItemVariant.EMAIL}
+        isDarkMode={isDarkMode}
+      />
+      <ProfileItem
+        icon={<CloudDownloadIcon />}
+        titleTrlKey="PROFILE_CV_DOWNLOAD"
+        variant={ProfileItemVariant.DOWNLOAD_BUTTON}
+        isDarkMode={isDarkMode}
+      />
+    </Grid>
+  );
 
   return (
     <section className="my-20 relative">
       <div className="flex flex-col items-center mx-5 xs:mx-8 sm:mx-16">
-        <div className="flex flex-col lg:flex-row lg:justify-between items-center max-w-7xl lg:w-full">
-          <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col lg:flex-row items-start lg:justify-between sm:items-center max-w-7xl lg:w-full">
+          <div className="flex flex-row items-center">
             <Avatar
               alt="Adam Kui"
               src="profile.webp"
               className={cn(
-                "border-2 border-solid mr-16 shadow-sm shadow-black",
+                "border-2 border-solid mr-10 sm:mr-16 shadow-sm shadow-black",
                 isDarkMode ? "border-white" : "border-slate-800"
               )}
-              sx={{ width: 175, height: 175 }}
+              sx={{ width: avatarSize.width, height: avatarSize.height }}
             />
 
-            <div className="flex flex-col mt-10 md:mt-0">
-              <Typography variant="h4">{t("PROFILE_NAME")}</Typography>
-              <Typography variant="h6">{t("PROFILE_JOB")}</Typography>
-              <Grid container className="mt-5" columns={2}>
-                <ProfileItem
-                  icon={<PlaceIcon />}
-                  titleTrlKey="PROFILE_LOCATION"
-                  isDarkMode={isDarkMode}
-                />
-                <ProfileItem
-                  icon={<AlternateEmailIcon />}
-                  titleTrlKey="PROFILE_EMAIL"
-                  variant={ProfileItemVariant.EMAIL}
-                  isDarkMode={isDarkMode}
-                />
-                <ProfileItem
-                  icon={<CloudDownloadIcon />}
-                  titleTrlKey="PROFILE_CV_DOWNLOAD"
-                  variant={ProfileItemVariant.DOWNLOAD_BUTTON}
-                  isDarkMode={isDarkMode}
-                />
-              </Grid>
+            <div className="flex flex-col sm:mt-10 md:mt-0">
+              <Typography variant={underSm ? "h5" : "h4"}>
+                {t("PROFILE_NAME")}
+              </Typography>
+              <Typography variant={underSm ? "subtitle1" : "h6"}>
+                {t("PROFILE_JOB")}
+              </Typography>
+              {underSm ? null : ProfileItems}
             </div>
           </div>
-
-          <div className="flex justify-self-end mt-20 lg:mt-0 w-full lg:w-1/2">
+          {!underSm ? null : (
+            <div className="mt-5 justify-end">{ProfileItems}</div>
+          )}
+          <div className="flex justify-self-end mt-10 lg:mt-0 w-full lg:w-1/2">
             <Editor
               value={code}
               onValueChange={(code) => setCode(code)}

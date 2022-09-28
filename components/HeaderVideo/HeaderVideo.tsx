@@ -22,7 +22,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   stringsToType,
   loop,
 }) => {
-  const windowSize = useWindowSize();
+  const { underSm } = useWindowSize();
 
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [isVideLoaded, setVideoLoaded] = useState<boolean>(false);
@@ -34,9 +34,12 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   }, [typed]);
 
   return (
-    <section className="h-96 flex relative justify-center items-center text-center px-10 overflow-hidden">
+    <section className="h-56 sm:h-96 flex relative justify-center items-center text-center px-10 overflow-hidden">
       {stringsToType ? (
-        <Typography variant={"h4"} className={"text-white z-40"}>
+        <Typography
+          variant={underSm ? "h5" : "h4"}
+          className={"text-white z-40"}
+        >
           <Typed
             typedRef={(typedRef: any) => (typed = typedRef)}
             strings={stringsToType}
@@ -57,14 +60,14 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         )}
       />
       <video
-        src={windowSize.underSm ? srcOnMobile : src}
+        src={underSm ? srcOnMobile : src}
         autoPlay
         playsInline
         loop
         muted
         className={cn(
           "transition-none duration-300 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
-          windowSize.underSm ? "delay-300" : "",
+          underSm ? "delay-300" : "",
           isVideLoaded
             ? isDarkMode
               ? "opacity-40"
