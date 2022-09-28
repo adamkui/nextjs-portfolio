@@ -43,6 +43,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
       <video
         src={src}
         autoPlay
+        playsInline
         loop
         muted
         className={cn(
