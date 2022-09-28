@@ -11,6 +11,7 @@ export * from "./Navigation/Navigation";
 export * from "./PageLoader/PageLoader";
 export * from "./PortfolioCard/PortfolioCard";
 export * from "./ProfileItem/ProfileItem";
+export * from "./ScrollUpButton/ScrollUpButton"
 export * from "./Section/Section";
 export * from "./TechStackCard/TechStackCard";
 export * from "./TechStackMoreInfoDialog/TechStackMoreInfoDialog";
