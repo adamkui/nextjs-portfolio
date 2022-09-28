@@ -65,8 +65,9 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         loop
         muted
         className={cn(
-          "min-w-full min-h-full object-cover absolute left-0 top-0 h-96 brightness-75 bg-transparent",
-          isDarkMode ? "opacity-40" : "opacity-80"
+          "transition-none min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          isDarkMode ? "opacity-40" : "opacity-80",
+          isVideLoaded ? "h-96" : "h-0"
         )}
         // poster={poster}
         onTimeUpdate={() => {
