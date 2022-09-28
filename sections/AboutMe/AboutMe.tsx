@@ -1,14 +1,18 @@
-import { Typography } from "@mui/material";
+import { Skeleton, Typography } from "@mui/material";
 import cn from "classnames";
-import { FC } from "react";
+import Image from "next/image";
+import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { Section } from "components";
-import { useGetText } from "hooks";
+import { useGetText, useWindowSize } from "hooks";
 
 export const AboutMe: FC = () => {
-  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const t = useGetText();
+  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
+  const { underSm, underXl } = useWindowSize();
+
+  const [isImageLoading, setImageLoading] = useState<boolean>(true);
 
   return (
     <Section title={t("ABOUT_ME_TITLE")} className="flex flex-col w-full mb-20">
@@ -23,6 +27,22 @@ export const AboutMe: FC = () => {
         <Typography variant="body1">{t("ABOUT_ME_BODY_1")}</Typography>
         <Typography variant="body1">{t("ABOUT_ME_BODY_2")}</Typography>
       </div>
+      <Image
+        src="/desk.webp"
+        width={1500}
+        height={1000}
+        layout={"responsive"}
+        className={"mt-10 justify-self-center rounded-md"}
+        onLoad={() => setImageLoading(false)}
+      />
+      {isImageLoading ? (
+        <Skeleton
+          animation={"wave"}
+          variant={"rounded"}
+          className={"mt-10 w-full"}
+          height={underSm ? 275 : underXl ? 550 : 850}
+        />
+      ) : null}
     </Section>
   );
 };
