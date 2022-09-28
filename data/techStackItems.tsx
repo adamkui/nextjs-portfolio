@@ -22,6 +22,7 @@ import {
   SiJest,
   SiJetbrains,
   SiLodash,
+  SiMarkdown,
   SiMaterialui,
   SiMongodb,
   SiMysql,
@@ -644,6 +645,17 @@ export const techStackItems: TechStackItemProps[] = [
   {
     title: "React Slick",
     href: "https://react-slick.neostack.com/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Markdown",
+    href: "https://www.markdownguide.org/",
+    icon: <SiMarkdown size={72} color="black" />,
+    category: TechStackItemCategory.MARKUP_LANGUAGE,
+  },
+  {
+    title: "react-markdown",
+    href: "https://github.com/remarkjs/react-markdown",
     category: TechStackItemCategory.FRONTEND_LIBRARY,
   },
 ];

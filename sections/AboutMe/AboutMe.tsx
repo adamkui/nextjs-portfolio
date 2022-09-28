@@ -28,7 +28,7 @@ export const AboutMe: FC = () => {
         <Typography variant="body1">{t("ABOUT_ME_BODY_2")}</Typography>
       </div>
       <Image
-        src="/desk.webp"
+        src="/assets/images/desk.webp"
         width={1500}
         height={1000}
         layout={"responsive"}

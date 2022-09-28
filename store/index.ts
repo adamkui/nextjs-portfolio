@@ -16,4 +16,5 @@ declare global {
     type AppDispatch = typeof store.dispatch;
   
     type GetState = () => ApplicationState;
+
   }
