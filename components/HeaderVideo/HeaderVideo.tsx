@@ -3,9 +3,9 @@ import cn from "classnames";
 import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Typed from "react-typed";
+import Image from "next/image";
 
 import { useWindowSize } from "hooks";
-import Image from "next/image";
 
 interface HeaderVideoProps {
   src: string;
@@ -48,6 +48,14 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           />
         </Typography>
       ) : null}
+      <Image
+        src={poster}
+        layout={"fill"}
+        className={cn(
+          "transition-all duration-200 ease-in-out min-w-full min-h-full object-cover absolute left-0 top-0 brightness-75 bg-transparent",
+          isVideLoaded ? "opacity-0" : isDarkMode ? "opacity-40" : "opacity-80"
+        )}
+      />
       <video
         src={windowSize.underSm ? srcOnMobile : src}
         autoPlay
@@ -61,9 +69,8 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
             ? isDarkMode
               ? "opacity-40"
               : "opacity-80"
-            : "opacity-0"
+            : "opacity-5"
         )}
-        poster={poster}
         onTimeUpdate={() => {
           setVideoLoaded(true);
         }}
