@@ -1,13 +1,14 @@
 import { Typography } from "@mui/material";
 import cn from "classnames";
-import { FC, ReactNode } from "react";
+import { FC, ReactElement, ReactNode } from "react";
 import { useSelector } from "react-redux";
 
 interface SectionProps {
   title: string;
-  body?: string;
+  body?: string | ReactElement;
   children?: ReactNode;
   className?: string;
+  fullWidth?: boolean;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -15,12 +16,17 @@ export const Section: FC<SectionProps> = ({
   body,
   children,
   className,
+  fullWidth,
 }) => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
   return (
     <section className="flex w-full justify-center">
-      <div className={cn("mx-5 xs:mx-8 sm:mx-16 max-w-7xl", className)}>
+      <div
+        className={cn("mx-5 xs:mx-8 sm:mx-16 max-w-7xl", className, {
+          "w-full": fullWidth,
+        })}
+      >
         <div className="w-fit mb-10">
           <Typography variant="h5" className="w-fit mb-1 bg-clip-text">
             {title}
@@ -35,7 +41,8 @@ export const Section: FC<SectionProps> = ({
           <Typography
             variant="body1"
             className={cn(
-              "bg-white border border-solid backdrop-blur-lg rounded-md w-fit px-3 py-2 mt-3",
+              "bg-white border border-solid backdrop-blur-lg rounded-md px-3 py-2 mt-3",
+              fullWidth ? "w-full" : "w-fit",
               isDarkMode
                 ? "bg-opacity-5 border-transparent"
                 : "bg-opacity-100 border-grey"

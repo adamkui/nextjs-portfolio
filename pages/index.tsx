@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { HeaderVideo } from "components";
+import { HeaderVideo, ScrollUpButton } from "components";
 import { texts } from "data";
 import { useGetText } from "hooks";
 import { AboutMe, Career, CreatedWith, Profile, TechStack } from "sections";
@@ -24,6 +24,7 @@ const Home: NextPage = () => {
         <TechStack />
         <AboutMe />
         <CreatedWith />
+        <ScrollUpButton />
       </main>
     </div>
   );

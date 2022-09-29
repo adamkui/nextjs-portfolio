@@ -3,7 +3,6 @@ import Head from "next/head";
 import { ReactNode, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ScrollUpButton } from "components";
 import { useGetText } from "hooks";
 import { setDarkMode } from "../../store/common";
 import { Footer } from "../Footer/Footer";
@@ -63,7 +62,6 @@ const Layout = (props: LayoutProps) => {
         >
           <Header />
           {props.children}
-          <ScrollUpButton />
           <Footer />
         </main>
       </div>

@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import { HeaderVideo } from "components";
+import { HeaderVideo, ScrollUpButton } from "components";
 import { Portfolio } from "sections";
 
 const PortfolioPage: NextPage = () => {
@@ -15,6 +15,7 @@ const PortfolioPage: NextPage = () => {
           loop={false}
         />
         <Portfolio />
+        <ScrollUpButton />
       </main>
     </div>
   );
