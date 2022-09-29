@@ -21,6 +21,7 @@ import {
   SiJavascript,
   SiJest,
   SiJetbrains,
+  SiJirasoftware,
   SiLodash,
   SiMarkdown,
   SiMaterialui,
@@ -657,6 +658,12 @@ export const techStackItems: TechStackItemProps[] = [
     title: "react-markdown",
     href: "https://github.com/remarkjs/react-markdown",
     category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Jira",
+    href: "https://www.atlassian.com/software/jira",
+    category: TechStackItemCategory.SOFTWARE,
+    icon: <SiJirasoftware size={72} color="#2584ff" />,
   },
 ];
 
