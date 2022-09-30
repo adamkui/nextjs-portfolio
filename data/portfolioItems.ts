@@ -18,7 +18,7 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
     titleTrlKey: "PORTFOLIO_GEORGE_STORE_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_STORE_DESCRIPTION",
     imageSrc: "/assets/images/portfolio/george_store.webp",
-    chipContent: ["React", "TypeScript", "NodeJs"],
+    chipContent: ["React", "TypeScript", "Bootstrap", "NodeJs"],
     buttonProps: {
       label: "PORTFOLIO_MORE_INFORMATION",
       href: "https://www.georgestore.hu/",
@@ -28,13 +28,13 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
     titleTrlKey: "PORTFOLIO_GEORGE_ADMIN_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_ADMIN_DESCRIPTION",
     imageSrc: "/assets/images/portfolio/george_admin.webp",
-    chipContent: ["React", "TypeScript", "NodeJs"],
+    chipContent: ["React", "TypeScript", "Bootstrap", "NodeJs"],
   },
   {
     titleTrlKey: "PORTFOLIO_GEORGE_MICROSITES_TITLE",
     descriptionTrlKey: "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION",
     imageSrc: "/assets/images/portfolio/george_microsites.webp",
-    chipContent: ["React", "TypeScript"],
+    chipContent: ["React", "TypeScript", "Bootstrap"],
   },
   {
     titleTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_TITLE",
