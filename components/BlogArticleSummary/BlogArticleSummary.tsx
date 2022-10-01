@@ -28,6 +28,7 @@ export const BlogArticleSummary: FC<BlogArticleSummaryProps> = ({
             <ReactMarkdown>
               {truncate(markdownText, { length: 250 })}
             </ReactMarkdown>
+            <br />
             <Link href={"/blog/1"}>{"See more"}</Link>
           </div>
         }

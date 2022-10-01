@@ -1,30 +1,10 @@
 import { isEmpty } from "lodash";
 import { GetStaticPropsResult, InferGetStaticPropsType, NextPage } from "next";
 
-import { BlogArticleSummary, BlogNoArticles, HeaderVideo } from "components";
-import { Grid } from "@mui/material";
-import { texts } from "data/index";
-import { useGetText } from "hooks/useGetText";
-
-type BlogPageProps = {
-  filesData: FileData[];
-};
-
-type FileData = {
-  title: string;
-  content: string;
-};
-
-type BlogArticlesResponse = {
-  total_count: number;
-  time: number;
-  resources: BlogArticleResource[];
-};
-
-type BlogArticleResource = {
-  filename: string;
-  url: string;
-};
+import { BlogNoArticles, HeaderVideo, PaginatedBlogArticles } from "components";
+import { texts } from "data";
+import { useGetText } from "hooks";
+import { BlogArticlesResponse, BlogPageProps, FileData } from "models";
 
 const CMS_BLOG_ARTICLES_URL = `https://${process.env.CLOUDINARY_API_CLIENT}:${process.env.CLOUDINARY_API_SECRET}@api.cloudinary.com/v1_1/disyx1lwa/resources/search?max_results=500&expression=folder:nextjs-portfolio/*`;
 
@@ -69,15 +49,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           loop
         />
         {!isEmpty(filesData) ? (
-          <Grid container spacing={10} className={"w-full my-0 relative"}>
-            {filesData.map(({ title, content }) => {
-              return (
-                <Grid item xs={12} key={title}>
-                  <BlogArticleSummary title={title} markdownText={content} />
-                </Grid>
-              );
-            })}
-          </Grid>
+          <PaginatedBlogArticles filesData={filesData} />
         ) : (
           <BlogNoArticles />
         )}

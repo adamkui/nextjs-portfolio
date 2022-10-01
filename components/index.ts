@@ -11,6 +11,7 @@ export * from "./Logo/Logo";
 export * from "./MobileNavigation/MobileNavigation";
 export * from "./Navigation/Navigation";
 export * from "./PageLoader/PageLoader";
+export * from "./PaginatedBlogArticles/PaginatedBlogArticles";
 export * from "./PortfolioCard/PortfolioCard";
 export * from "./ProfileItem/ProfileItem";
 export * from "./ScrollUpButton/ScrollUpButton"

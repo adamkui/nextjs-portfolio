@@ -7,6 +7,7 @@ import { AboutMe, Career, CreatedWith, Profile, TechStack } from "sections";
 
 const Home: NextPage = () => {
   const t = useGetText();
+
   return (
     <div>
       <main className="transition-all duration-200 ease-in-out h-min-screen h-full">
