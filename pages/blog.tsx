@@ -16,10 +16,11 @@ export const getStaticProps = async (): Promise<
   ).then((res) => res.json());
 
   const filesData: FileData[] = await Promise.all(
-    resources.map(async ({ filename, url }) => {
+    resources.map(async ({ filename, url }, index) => {
       return {
         title: filename.replace(".md", ""),
         content: await fetch(url).then((res) => res.text()),
+        id: index + 1,
       };
     })
   );

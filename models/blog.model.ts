@@ -5,6 +5,7 @@ export type BlogPageProps = {
 export type FileData = {
   title: string;
   content: string;
+  id: number
 };
 
 export type BlogArticlesResponse = {

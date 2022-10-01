@@ -7,11 +7,13 @@ import { Section } from "..";
 interface BlogArticleSummaryProps {
   title: string;
   markdownText: string;
+  id: number;
 }
 
 export const BlogArticleSummary: FC<BlogArticleSummaryProps> = ({
   title,
   markdownText,
+  id,
 }) => {
   const [markdownElement, setMarkdownElement] = useState<ReactElement | null>(
     null
@@ -29,7 +31,7 @@ export const BlogArticleSummary: FC<BlogArticleSummaryProps> = ({
               {truncate(markdownText, { length: 250 })}
             </ReactMarkdown>
             <br />
-            <Link href={"/blog/1"}>{"See more"}</Link>
+            <Link href={`/blog/${id}`}>{"See more"}</Link>
           </div>
         }
       />

@@ -19,7 +19,7 @@ export const Navigation: FC = () => {
             key={label}
             className={cn(
               "px-3 mx-2",
-              pathname === href
+              pathname === href || (href !== "/" && pathname.includes(href))
                 ? `${
                     isDarkMode ? "bg-white" : "bg-black"
                   } bg-opacity-10 backdrop-blur-lg rounded-md`

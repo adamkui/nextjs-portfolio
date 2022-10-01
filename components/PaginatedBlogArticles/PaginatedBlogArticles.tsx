@@ -27,10 +27,14 @@ export const PaginatedBlogArticles: FC<PaginatedBlogArticlesProps> = ({
       <Grid container rowGap={10} className={"w-full my-20 relative"}>
         {chunk(filesData, PAGINATION_CHUNK_SIZE).map((fileDataChunk, index) => {
           return index === pageNumber
-            ? fileDataChunk.map(({ title, content }) => {
+            ? fileDataChunk.map(({ title, content, id }) => {
                 return (
                   <Grid item xs={12} key={title}>
-                    <BlogArticleSummary title={title} markdownText={content} />
+                    <BlogArticleSummary
+                      title={title}
+                      markdownText={content}
+                      id={id}
+                    />
                   </Grid>
                 );
               })
