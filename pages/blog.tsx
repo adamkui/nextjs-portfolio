@@ -2,9 +2,10 @@ import { isEmpty } from "lodash";
 import { GetStaticPropsResult, InferGetStaticPropsType, NextPage } from "next";
 
 import { BlogNoArticles, HeaderVideo, PaginatedBlogArticles } from "components";
-import { texts } from "data";
-import { useGetText } from "hooks";
 import { BlogArticlesResponse, BlogPageProps, FileData } from "models";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setFilesData } from "store/blog";
 
 const CMS_BLOG_ARTICLES_URL = `https://${process.env.CLOUDINARY_API_CLIENT}:${process.env.CLOUDINARY_API_SECRET}@api.cloudinary.com/v1_1/disyx1lwa/resources/search?max_results=500&expression=folder:nextjs-portfolio/*`;
 
@@ -35,7 +36,11 @@ export const getStaticProps = async (): Promise<
 const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   filesData,
 }) => {
-  const t = useGetText();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setFilesData(filesData));
+  }, []);
 
   return (
     <div>
@@ -44,10 +49,8 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           src="/assets/videos/about_720_m.mp4"
           srcOnMobile="/assets/videos/about_540_m.mp4"
           poster="/assets/images/about_poster.webp"
-          stringsToType={[1, 2, 3, 4].map((i) => {
-            return t(`WELCOME_TEXT_${i}` as keyof typeof texts);
-          })}
-          loop
+          stringsToType={["Blog."]}
+          loop={false}
         />
         {!isEmpty(filesData) ? (
           <PaginatedBlogArticles filesData={filesData} />

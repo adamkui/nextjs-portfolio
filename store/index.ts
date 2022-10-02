@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import common from "./common";
+import blog from "./blog"
 
 const reducer = combineReducers({
   common,
+  blog
 });
 
 const store = configureStore({ reducer });

@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import cn from "classnames";
+import Link from "next/link";
 import { FC, ReactElement, ReactNode } from "react";
 import { useSelector } from "react-redux";
 
@@ -9,6 +10,7 @@ interface SectionProps {
   children?: ReactNode;
   className?: string;
   fullWidth?: boolean;
+  titleHref?: string;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -17,6 +19,7 @@ export const Section: FC<SectionProps> = ({
   children,
   className,
   fullWidth,
+  titleHref,
 }) => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
@@ -28,9 +31,20 @@ export const Section: FC<SectionProps> = ({
         })}
       >
         <div className="w-fit mb-10">
-          <Typography variant="h5" className="w-fit mb-1 bg-clip-text">
-            {title}
-          </Typography>
+          {titleHref ? (
+            <Link href={titleHref} className={""}>
+              <Typography
+                variant="h5"
+                className="w-fit mb-1 bg-clip-text cursor-pointer"
+              >
+                {title}
+              </Typography>
+            </Link>
+          ) : (
+            <Typography variant="h5" className="w-fit mb-1 bg-clip-text">
+              {title}
+            </Typography>
+          )}
           <span
             className={cn(
               "block h-1.5 w-full bg-gradient-to-r from-sky-600 to-cyan-500"

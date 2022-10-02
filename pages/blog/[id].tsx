@@ -1,18 +1,39 @@
-import { NextPage } from "next";
+import {
+  GetServerSidePropsResult,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import { useRouter } from "next/router";
+import ReactMarkdown from "react-markdown";
 
 import { Section } from "components";
-import { useGetText } from "hooks";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { FileData } from "models/blog.model";
 
 const BlogArticlePage: NextPage = () => {
-  const t = useGetText();
   const router = useRouter();
+  const { filesData } = useSelector((state: ApplicationState) => state.blog);
+  const [articleData, setArticleData] = useState<FileData | undefined>();
 
-  const blogArticleId = router.query.id;
+  useEffect(() => {
+    // Wont have file data in case blog was not opened!
+    console.log(filesData);
+    const blogArticleId: number = Number(router.query.id);
+    const fileData = filesData[blogArticleId - 1];
+    setArticleData(fileData);
+  }, []);
 
-  console.log(blogArticleId);
-
-  return <Section title={t("ABOUT_ME_BODY_1")} body={"asdasdadads"}></Section>;
+  return (
+    <div>
+      <main className="transition-all duration-200 ease-in-out min-h-screen h-full my-20">
+        <Section
+          title={articleData?.title || ""}
+          body={<ReactMarkdown>{articleData?.content || ""}</ReactMarkdown>}
+        />
+      </main>
+    </div>
+  );
 };
 
 export default BlogArticlePage;
