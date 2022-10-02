@@ -22,22 +22,54 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   stringsToType,
   loop,
 }) => {
-  const { underSm, underXl, under2xl } = useWindowSize();
+  const sizeInfo = useWindowSize();
 
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [isVideLoaded, setVideoLoaded] = useState<boolean>(false);
+  const [videoTopProperty, setVideoTopProperty] = useState<string | number>(0);
 
   let typed: any;
+
+  useEffect(() => {
+    let top: string | number = 0;
+    const { isLg, isXl, is2Xl, is3Xl, is4Xl, is5Xl } = sizeInfo;
+
+    if (isLg) {
+      top = "-20%";
+    }
+
+    if (isXl) {
+      top = "-27.5%";
+    }
+
+    if (is2Xl) {
+      top = "-30%";
+    }
+
+    if (is3Xl) {
+      top = "-35%";
+    }
+
+    if (is4Xl) {
+      top = "-35%";
+    }
+
+    if (is5Xl) {
+      top = "-50%";
+    }
+
+    setVideoTopProperty(top);
+  }, [sizeInfo]);
 
   useEffect(() => {
     typed?.start();
   }, [typed]);
 
   return (
-    <section className="h-56 sm:h-96 flex relative justify-center items-center text-center px-10 overflow-hidden">
+    <section className="h-56 sm:h-96 2xl:h-128 4xl:h-156 flex relative justify-center items-center text-center px-10 overflow-hidden">
       {stringsToType ? (
         <Typography
-          variant={underSm ? "h5" : "h4"}
+          variant={sizeInfo.underSm ? "h5" : "h4"}
           className={"text-white z-40"}
         >
           <Typed
@@ -55,7 +87,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         src={poster}
         layout={"fill"}
         style={{
-          top: underXl ? 0 : under2xl ? "-50%" : "-100%",
+          top: videoTopProperty,
         }}
         className={cn(
           "min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",
@@ -63,13 +95,13 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         )}
       />
       <video
-        src={underSm ? srcOnMobile : src}
+        src={sizeInfo.underSm ? srcOnMobile : src}
         autoPlay
         playsInline
         loop
         muted
         style={{
-          top: underXl ? 0 : under2xl ? "-50%" : "-100%",
+          top: videoTopProperty,
         }}
         className={cn(
           "min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",

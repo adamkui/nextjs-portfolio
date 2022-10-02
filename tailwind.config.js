@@ -18,6 +18,15 @@ module.exports = {
       },
       opacity: {
         "transparent": 0
+      },
+      height: {
+        "128": "32rem",
+        "156": "38rem"
+      },
+      screens: {
+        "3xl": '2000px',
+        "4xl": "2600px",
+        "5xl": "3100opx"
       }
     },
   },
