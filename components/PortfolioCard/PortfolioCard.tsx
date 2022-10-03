@@ -4,14 +4,11 @@ import {
   CardContent,
   CardMedia,
   Chip,
-  Divider,
   Grid,
   Typography,
 } from "@mui/material";
 import cn from "classnames";
-import Image from "next/image";
 import { FC } from "react";
-import Slider from "react-slick";
 
 import { PortfolioItemProps } from "data";
 import { useGetText } from "hooks";

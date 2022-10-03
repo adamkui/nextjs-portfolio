@@ -33,10 +33,9 @@ export const MobileNavigation: FC = () => {
   return (
     <div className="md:hidden">
       <button
-        className={cn(
-          "border border-solid rounded-md p-1",
-          isDarkMode ? "border-white" : "border-black"
-        )}
+        className={
+          "border border-solid rounded-md p-1 border-black dark:border-white"
+        }
         onClick={handleToggleMobileNavigationMenu}
       >
         <MenuIcon />

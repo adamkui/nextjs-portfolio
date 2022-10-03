@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 import cn from "classnames";
 import { FC, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import Typed from "react-typed";
 import Image from "next/image";
 
@@ -24,7 +23,6 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
 }) => {
   const sizeInfo = useWindowSize();
 
-  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const [isVideLoaded, setVideoLoaded] = useState<boolean>(false);
   const [videoTopProperty, setVideoTopProperty] = useState<string | number>(0);
 
@@ -91,7 +89,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         }}
         className={cn(
           "min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",
-          isVideLoaded ? "opacity-0" : isDarkMode ? "opacity-40" : "opacity-80"
+          isVideLoaded ? "opacity-0" : "opacity-80 dark:opacity-40"
         )}
       />
       <video
@@ -105,11 +103,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         }}
         className={cn(
           "min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",
-          isVideLoaded
-            ? isDarkMode
-              ? "opacity-40"
-              : "opacity-80"
-            : "opacity-transparent"
+          isVideLoaded ? "opacity-80 dark:opacity-40" : "opacity-transparent"
         )}
         onTimeUpdate={() => {
           setVideoLoaded(true);

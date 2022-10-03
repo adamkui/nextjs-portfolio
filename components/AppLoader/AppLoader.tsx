@@ -1,22 +1,36 @@
 import { CircularProgress } from "@mui/material";
-import { FC } from "react";
-import { useSelector } from "react-redux";
+import { FC, useEffect, useState } from "react";
+import cn from "classnames";
 
 interface AppLoaderProps {
   isLoading: boolean;
 }
 
 export const AppLoader: FC<AppLoaderProps> = ({ isLoading }) => {
-  // const { isLoading } = useSelector((state: ApplicationState) => state.common);
+  const [display, setDisplay] = useState<string>("hidden");
 
-  return isLoading ? (
+  useEffect(() => {
+    if (isLoading) {
+      setDisplay("flex");
+    } else {
+      setTimeout(() => {
+        setDisplay("hidden");
+      }, 150);
+    }
+  }, [isLoading]);
+
+  return (
     <div
-      className="absolute top-0 left-0 flex items-center justify-center h-full w-full bg-white"
+      className={cn(
+        "absolute top-0 left-0 items-center justify-center h-full w-full transition-opacity duration-150 ease-in-out bg-white dark:bg-slate-800",
+        isLoading ? "opacity-100" : "opacity-0",
+        display
+      )}
       style={{ zIndex: 99 }}
     >
       <div className="fixed top-1/2">
         <CircularProgress size={62} />
       </div>
     </div>
-  ) : null;
+  );
 };

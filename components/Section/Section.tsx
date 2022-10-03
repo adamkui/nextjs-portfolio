@@ -2,7 +2,6 @@ import { Typography } from "@mui/material";
 import cn from "classnames";
 import Link from "next/link";
 import { FC, ReactElement, ReactNode } from "react";
-import { useSelector } from "react-redux";
 
 interface SectionProps {
   title: string;
@@ -23,8 +22,6 @@ export const Section: FC<SectionProps> = ({
   fullWidth,
   titleHref,
 }) => {
-  const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-
   return (
     <section className="flex w-full justify-center">
       <div
@@ -63,11 +60,8 @@ export const Section: FC<SectionProps> = ({
           <Typography
             variant="body1"
             className={cn(
-              "bg-white border border-solid backdrop-blur-lg rounded-md px-3 py-2 mt-3",
-              fullWidth ? "w-full" : "w-fit",
-              isDarkMode
-                ? "bg-opacity-5 border-transparent"
-                : "bg-opacity-100 border-grey"
+              "bg-white border border-solid backdrop-blur-lg rounded-md px-3 py-2 mt-3 bg-opacity-100 border-grey dark:bg-opacity-5 dark:border-transparent",
+              fullWidth ? "w-full" : "w-fit"
             )}
           >
             {body}

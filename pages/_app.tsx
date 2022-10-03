@@ -5,8 +5,7 @@ import { Provider, useDispatch } from "react-redux";
 
 import { AppLoader } from "components";
 import Layout from "components/Layout/Layout";
-import { setLoading } from "store/common";
-import store from "../store";
+import store from "store";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
