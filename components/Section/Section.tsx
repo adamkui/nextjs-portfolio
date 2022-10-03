@@ -9,6 +9,7 @@ interface SectionProps {
   body?: string | ReactElement;
   children?: ReactNode;
   className?: string;
+  titleClassName?: string;
   fullWidth?: boolean;
   titleHref?: string;
 }
@@ -18,6 +19,7 @@ export const Section: FC<SectionProps> = ({
   body,
   children,
   className,
+  titleClassName,
   fullWidth,
   titleHref,
 }) => {
@@ -32,16 +34,22 @@ export const Section: FC<SectionProps> = ({
       >
         <div className="w-fit mb-10">
           {titleHref ? (
-            <Link href={titleHref} className={""}>
+            <Link href={titleHref}>
               <Typography
                 variant="h5"
-                className="w-fit mb-1 bg-clip-text cursor-pointer"
+                className={cn(
+                  "w-fit mb-1 bg-clip-text cursor-pointer",
+                  titleClassName
+                )}
               >
                 {title}
               </Typography>
             </Link>
           ) : (
-            <Typography variant="h5" className="w-fit mb-1 bg-clip-text">
+            <Typography
+              variant="h5"
+              className={cn("w-fit mb-1 bg-clip-text", titleClassName)}
+            >
               {title}
             </Typography>
           )}

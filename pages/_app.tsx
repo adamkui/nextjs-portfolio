@@ -1,16 +1,32 @@
 import type { AppProps } from "next/app";
-import { Suspense } from "react";
-import { Provider } from "react-redux";
+import Router from "next/router";
+import { Suspense, useEffect, useState } from "react";
+import { Provider, useDispatch } from "react-redux";
 
-import Layout from "../components/Layout/Layout";
+import { AppLoader } from "components";
+import Layout from "components/Layout/Layout";
+import { setLoading } from "store/common";
 import store from "../store";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isLoading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    Router.events.on("routeChangeStart", () => setLoading(true));
+    Router.events.on("routeChangeComplete", () => setLoading(false));
+
+    return () => {
+      Router.events.off("routeChangeStart", () => setLoading(true));
+      Router.events.off("routeChangeComplete", () => setLoading(false));
+    };
+  }, []);
+
   return (
     <Provider store={store}>
       <Suspense fallback={""}>
         <Layout>
+          <AppLoader isLoading={isLoading} />
           <Component {...pageProps} />
         </Layout>
       </Suspense>
