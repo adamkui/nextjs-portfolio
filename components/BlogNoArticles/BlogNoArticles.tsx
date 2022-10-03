@@ -9,11 +9,15 @@ export const BlogNoArticles: FC = () => {
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
   return (
-    <>
+    <div
+      className={
+        "flex flex-col justify-center items-center w-full h-screen-1/2 min-h-128"
+      }
+    >
       <RiArticleLine size={80} color={isDarkMode ? "white" : "black"} />
       <Typography variant={"h6"} className={"mt-7"}>
         {t("BLOG_NO_POSTS")}
       </Typography>
-    </>
+    </div>
   );
 };
