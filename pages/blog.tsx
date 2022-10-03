@@ -48,6 +48,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <HeaderVideo
           src=""
           srcOnMobile=""
+          alt="Code background"
           poster="/assets/images/code.webp"
           stringsToType={["Blog."]}
           loop={false}

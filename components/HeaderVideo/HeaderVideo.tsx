@@ -10,6 +10,7 @@ interface HeaderVideoProps {
   src: string;
   srcOnMobile: string;
   poster: string;
+  alt: string;
   staticTitle?: string;
   stringsToType?: string[];
   loop?: boolean;
@@ -19,6 +20,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   src,
   srcOnMobile,
   poster,
+  alt,
   staticTitle,
   stringsToType,
   loop,
@@ -87,6 +89,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
       </Typography>
       <Image
         src={poster}
+        alt={alt}
         layout={"fill"}
         style={{
           top: videoTopProperty,

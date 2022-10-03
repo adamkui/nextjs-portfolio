@@ -15,6 +15,7 @@ const Home: NextPage = () => {
           src="/assets/videos/about_720_m.mp4"
           srcOnMobile="/assets/videos/about_540_m.mp4"
           poster="/assets/images/about_poster.webp"
+          alt="About page poster"
           stringsToType={[1, 2, 3, 4].map((i) => {
             return t(`WELCOME_TEXT_${i}` as keyof typeof texts);
           })}

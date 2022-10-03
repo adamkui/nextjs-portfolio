@@ -29,6 +29,7 @@ export const AboutMe: FC = () => {
       </div>
       <Image
         src="/assets/images/desk.webp"
+        alt="My desk"
         width={1500}
         height={1000}
         layout={"responsive"}

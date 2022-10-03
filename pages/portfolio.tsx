@@ -11,6 +11,7 @@ const PortfolioPage: NextPage = () => {
           src="/assets/videos/portfolio_720_m.mp4"
           srcOnMobile="/assets/videos/portfolio_540_m.mp4"
           poster="/assets/images/portfolio_poster.webp"
+          alt="Portfolio page poster"
           stringsToType={["Welcome to my portfolio."]}
           loop={false}
         />

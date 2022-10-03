@@ -37,6 +37,8 @@ export const MobileNavigation: FC = () => {
           "border border-solid rounded-md p-1 border-black dark:border-white"
         }
         onClick={handleToggleMobileNavigationMenu}
+        role={"presentation"}
+        aria-label="Mobile Menu"
       >
         <MenuIcon />
       </button>

@@ -56,7 +56,12 @@ export const ProfileItem: FC<ProfileItemProps> = ({
       </a>
     ),
     DOWNLOAD_BUTTON: (
-      <button onClick={() => saveCv()} className="group">
+      <button
+        onClick={() => saveCv()}
+        className="group"
+        role={"button"}
+        aria-label="Download my CV"
+      >
         <Typography variant="subtitle1">{t(titleTrlKey)}</Typography>
         <TextUnderline />
         <ToastContainer

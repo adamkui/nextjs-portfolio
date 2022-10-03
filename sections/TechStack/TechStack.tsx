@@ -53,6 +53,8 @@ export const TechStack: FC = () => {
         type="button"
         onClick={() => setModalOpen(true)}
         className="w-fit self-center group"
+        role={"button"}
+        aria-label={"More tech stack data"}
       >
         <Typography className="text-center mt-10" variant="subtitle1">
           {t("TECH_STACK_MORE")}
