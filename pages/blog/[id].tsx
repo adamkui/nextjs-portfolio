@@ -14,15 +14,22 @@ import classes from "./BlogArticlePage.module.css";
 const BlogArticlePage: NextPage = () => {
   const t = useGetText();
   const router = useRouter();
-  const { filesData } = useSelector((state: ApplicationState) => state.blog);
   const [articleData, setArticleData] = useState<FileData | undefined>();
 
   useEffect(() => {
-    // Wont have file data in case blog was not opened!
-    const blogArticleId: number = Number(router.query.id);
-    const fileData = filesData[blogArticleId - 1];
-    setArticleData(fileData);
-  }, []);
+    if (!router) return;
+
+    try {
+      const filesData = JSON.parse(localStorage.getItem("blogFilesData") || "");
+      setArticleData(filesData[Number(router.query.id) - 1]);
+
+      if (!filesData) {
+        router.replace("/blog");
+      }
+    } catch (err) {
+      router.replace("/blog");
+    }
+  }, [router]);
 
   return (
     <div>
@@ -32,17 +39,19 @@ const BlogArticlePage: NextPage = () => {
           classes.Main
         )}
       >
-        <Section
-          title={articleData?.title || ""}
-          body={<ReactMarkdown>{articleData?.content || ""}</ReactMarkdown>}
-          className={"w-full"}
-        >
-          <div className={"flex justify-center"}>
-            <Link href="/blog">
-              <ButtonWrapper label={t("BACK")} className={"mt-12"} />
-            </Link>
-          </div>
-        </Section>
+        {articleData ? (
+          <Section
+            title={articleData?.title || ""}
+            body={<ReactMarkdown>{articleData?.content || ""}</ReactMarkdown>}
+            className={"w-full"}
+          >
+            <div className={"flex justify-center"}>
+              <Link href="/blog">
+                <ButtonWrapper label={t("BACK")} className={"mt-12"} />
+              </Link>
+            </div>
+          </Section>
+        ) : null}
       </main>
     </div>
   );

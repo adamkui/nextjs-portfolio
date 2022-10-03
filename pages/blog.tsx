@@ -4,8 +4,6 @@ import { GetStaticPropsResult, InferGetStaticPropsType, NextPage } from "next";
 import { BlogNoArticles, HeaderVideo, PaginatedBlogArticles } from "components";
 import { BlogArticlesResponse, BlogPageProps, FileData } from "models";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setFilesData } from "store/blog";
 
 const CMS_BLOG_ARTICLES_URL = `https://${process.env.CLOUDINARY_API_CLIENT}:${process.env.CLOUDINARY_API_SECRET}@api.cloudinary.com/v1_1/disyx1lwa/resources/search?max_results=500&expression=folder:nextjs-portfolio/*`;
 
@@ -36,10 +34,12 @@ export const getStaticProps = async (): Promise<
 const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   filesData,
 }) => {
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(setFilesData(filesData));
+    try {
+      localStorage.setItem("blogFilesData", JSON.stringify(filesData));
+    } catch (err) {
+      // Don't do anything
+    }
   }, []);
 
   return (
