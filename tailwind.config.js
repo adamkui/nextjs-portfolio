@@ -11,9 +11,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'sora': ['Sora', 'sans-serif'],
-        'rubikMoonrocks': ['Rubik Moonrocks', 'cursive'],
-        'monoton': ['Monoton', 'cursive'],
         'gugi': ['Gugi', 'cursive']
       },
       opacity: {
