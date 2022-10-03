@@ -46,9 +46,9 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <div>
       <main className="transition-all duration-200 ease-in-out h-min-screen h-full">
         <HeaderVideo
-          src="/assets/videos/about_720_m.mp4"
-          srcOnMobile="/assets/videos/about_540_m.mp4"
-          poster="/assets/images/about_poster.webp"
+          src=""
+          srcOnMobile=""
+          poster="/assets/images/code.webp"
           stringsToType={["Blog."]}
           loop={false}
         />

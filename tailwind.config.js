@@ -27,6 +27,9 @@ module.exports = {
         "3xl": '2000px',
         "4xl": "2600px",
         "5xl": "3100opx"
+      },
+      brightness: {
+        35: ".35"
       }
     },
   },

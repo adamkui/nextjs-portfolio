@@ -10,6 +10,7 @@ interface HeaderVideoProps {
   src: string;
   srcOnMobile: string;
   poster: string;
+  staticTitle?: string;
   stringsToType?: string[];
   loop?: boolean;
 }
@@ -18,6 +19,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
   src,
   srcOnMobile,
   poster,
+  staticTitle,
   stringsToType,
   loop,
 }) => {
@@ -65,11 +67,11 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
 
   return (
     <section className="h-56 sm:h-96 2xl:h-128 4xl:h-156 flex relative justify-center items-center text-center px-10 overflow-hidden">
-      {stringsToType ? (
-        <Typography
-          variant={sizeInfo.underSm ? "h5" : "h4"}
-          className={"text-white z-40"}
-        >
+      <Typography
+        variant={sizeInfo.underSm ? "h5" : "h4"}
+        className={"text-white z-40"}
+      >
+        {stringsToType ? (
           <Typed
             typedRef={(typedRef: any) => (typed = typedRef)}
             strings={stringsToType}
@@ -79,8 +81,10 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
             backDelay={1750}
             loop={loop}
           />
-        </Typography>
-      ) : null}
+        ) : (
+          staticTitle
+        )}
+      </Typography>
       <Image
         src={poster}
         layout={"fill"}
@@ -88,8 +92,8 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           top: videoTopProperty,
         }}
         className={cn(
-          "min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",
-          isVideLoaded ? "opacity-0" : "opacity-80 dark:opacity-40"
+          "min-w-full min-h-full object-cover absolute left-0 brightness-35 dark:brightness-75 bg-transparent",
+          isVideLoaded ? "opacity-0" : "opacity-80 dark:opacity-60"
         )}
       />
       <video
@@ -102,7 +106,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           top: videoTopProperty,
         }}
         className={cn(
-          "min-w-full min-h-full object-cover absolute left-0 brightness-75 bg-transparent",
+          "min-w-full min-h-full object-cover absolute left-0 brightness-50 dark:brightness-75 bg-transparent",
           isVideLoaded ? "opacity-80 dark:opacity-40" : "opacity-transparent"
         )}
         onTimeUpdate={() => {
