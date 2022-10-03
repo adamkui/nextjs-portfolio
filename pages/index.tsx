@@ -11,7 +11,6 @@ const Home: NextPage = () => {
   return (
     <div>
       <main className="transition-all duration-200 ease-in-out h-min-screen h-full">
-        {/*
         <HeaderVideo
           src="/assets/videos/about_720_m.mp4"
           srcOnMobile="/assets/videos/about_540_m.mp4"
@@ -22,7 +21,6 @@ const Home: NextPage = () => {
           })}
           loop
         />
-      */}
         <Profile />
         <Career />
         <TechStack />
