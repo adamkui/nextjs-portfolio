@@ -22,7 +22,8 @@ module.exports = {
         "screen-1/2": "50vh"
       },
       minHeight: {
-        "128": "32rem"
+        "128": "32rem",
+        "156": "90vh",
       },
       screens: {
         "3xl": '2000px',

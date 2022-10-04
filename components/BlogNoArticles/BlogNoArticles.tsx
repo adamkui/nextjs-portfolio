@@ -11,7 +11,7 @@ export const BlogNoArticles: FC = () => {
   return (
     <div
       className={
-        "flex flex-col justify-center items-center w-full h-screen-1/2 min-h-128"
+        "flex flex-col justify-center items-center w-full h-screen-1/2 min-h-156"
       }
     >
       <RiArticleLine size={80} color={isDarkMode ? "white" : "black"} />

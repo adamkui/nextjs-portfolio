@@ -7,6 +7,7 @@ import { AppLoader } from "components";
 import Layout from "components/Layout/Layout";
 import store from "store";
 import "../styles/globals.css";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -24,6 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Suspense fallback={""}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <Layout>
           <AppLoader isLoading={isLoading} />
           <Component {...pageProps} />
