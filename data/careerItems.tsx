@@ -57,7 +57,7 @@ export const careerItems: CareerItemProps[] = [
     topConnectorColor: "#F01523",
     bottomConnectorColor: "#3B73B9",
     iconColor: "#F01523",
-    chipContent: ["VB.NET", "C#", "UiPath", "ABAP", "SAP", "SQL"],
+    chipContent: ["VB.NET", "C#", "UiPath", "ABAP", "SQL", "GraphQL"],
   },
   {
     date: "Jul 2017 - Dec 2017",
