@@ -99,6 +99,7 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
           isVideLoaded ? "opacity-0" : "opacity-80 dark:opacity-60"
         )}
         loading="eager"
+        loader={() => poster}
       />
       <video
         src={sizeInfo.underSm ? srcOnMobile : src}
