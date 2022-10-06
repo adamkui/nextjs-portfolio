@@ -32,6 +32,7 @@ export const AboutMe: FC = () => {
         layout={"responsive"}
         className={"mt-10 justify-self-center rounded-md"}
         loading={"eager"}
+        loader={() => "/assets/images/desk.webp"}
       />
     </Section>
   );
