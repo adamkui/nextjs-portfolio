@@ -64,7 +64,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_EGRIAPARTMAN_TITLE",
     descriptionTrlKey: "PORTFOLIO_EGRIAPARTMAN_DESCRIPTION",
-    imageSrc: "",
+    imageSrc: "/assets/images/portfolio/egriapartman.webp",
     chipContent: [
       "React",
       "TypeScript",
@@ -105,7 +105,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
     titleTrlKey: "PORTFOLIO_OLD_PORTFOLIO_TITLE",
     descriptionTrlKey: "PORTFOLIO_OLD_PORTFOLIO_DESCRIPTION",
-    imageSrc: "",
+    imageSrc: "/assets/images/portfolio/old_portfolio.webp",
     chipContent: ["React", "Framer Motion"],
     buttonProps: { href: "https://adam-kui-portfolio.netlify.app" },
   },
