@@ -5,7 +5,7 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 
 import { Section } from "components";
-import { useGetText, useWindowSize } from "hooks";
+import { useGetText } from "hooks";
 
 export const AboutMe: FC = () => {
   const t = useGetText();

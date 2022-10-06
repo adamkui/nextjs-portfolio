@@ -1,13 +1,13 @@
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import { Suspense, useEffect, useState } from "react";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 
 import { AppLoader } from "components";
 import Layout from "components/Layout/Layout";
+import Head from "next/head";
 import store from "store";
 import "../styles/globals.css";
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setLoading] = useState<boolean>(false);

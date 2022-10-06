@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { saveAs } from "file-saver";
-import { FC, Fragment, ReactElement } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { FC, ReactElement } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { texts } from "data";

@@ -1,52 +1,28 @@
 import { sortBy } from "lodash";
 import { ReactElement } from "react";
-import { FaReact, FaSourcetree } from "react-icons/fa";
-import { GrReactjs } from "react-icons/gr";
+import { FaReact } from "react-icons/fa";
 import {
-  SiAzuredevops,
   SiBootstrap,
-  SiCsharp,
   SiCss3,
-  SiDiscord,
-  SiDotnet,
-  SiExpo,
   SiExpress,
   SiFramer,
-  SiGit,
-  SiGithub,
-  SiGitlab,
   SiGraphql,
-  SiHeroku,
   SiHtml5,
   SiJavascript,
   SiJest,
-  SiJetbrains,
-  SiJirasoftware,
   SiLodash,
-  SiMarkdown,
   SiMaterialui,
   SiMongodb,
   SiMysql,
-  SiNetlify,
   SiNodedotjs,
-  SiNodemon,
-  SiNpm,
   SiPostcss,
-  SiPostman,
   SiReactrouter,
   SiRedux,
-  SiSap,
   SiSass,
-  SiSlack,
-  SiStrapi,
   SiStyledcomponents,
   SiTailwindcss,
   SiTestinglibrary,
   SiTypescript,
-  SiVercel,
-  SiVisualstudiocode,
-  SiXcode,
-  SiYarn,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { texts } from ".";
@@ -98,31 +74,26 @@ export const techStackItems: TechStackItemProps[] = [
   },
   {
     title: "Npm",
-    icon: <SiNpm size={72} color="#e32e37" />,
     href: "https://www.npmjs.com/",
     category: TechStackItemCategory.PACKAGE_MANAGER,
   },
   {
     title: "Yarn",
-    icon: <SiYarn size={72} color="#2c8ebb" />,
     href: "https://yarnpkg.com/",
     category: TechStackItemCategory.PACKAGE_MANAGER,
   },
   {
     title: "Git",
-    icon: <SiGit size={72} color="#e94e32" />,
     href: "https://git-scm.com/",
     category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
   },
   {
     title: "GitHub",
-    icon: <SiGithub size={72} color="#161414" />,
     href: "https://github.com/",
     category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
   },
   {
     title: "GitLab",
-    icon: <SiGitlab size={72} color="#e2432a" />,
     href: "https://about.gitlab.com/",
     category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
   },
@@ -135,16 +106,13 @@ export const techStackItems: TechStackItemProps[] = [
     title: "TFVC",
     href: "https://learn.microsoft.com/en-us/azure/devops/repos/tfvc/what-is-tfvc?view=azure-devops",
     category: TechStackItemCategory.VERSION_CONTROL_SYSTEM,
-    icon: <SiAzuredevops size={72} color="#0273d3" />,
   },
   {
     title: "ABAP",
-    icon: <SiSap size={72} color="#1873cc" />,
     category: TechStackItemCategory.PROGRAMMING_LANGUAGE,
   },
   {
     title: "C#",
-    icon: <SiCsharp size={72} color="#953dac" />,
     href: "https://learn.microsoft.com/en-us/dotnet/csharp/",
     category: TechStackItemCategory.PROGRAMMING_LANGUAGE,
   },
@@ -156,19 +124,16 @@ export const techStackItems: TechStackItemProps[] = [
   },
   {
     title: "Netlify",
-    icon: <SiNetlify size={72} color="#2ebcbc" />,
     href: "https://www.netlify.com/",
     category: TechStackItemCategory.HOSTING,
   },
   {
     title: "Vercel",
-    icon: <SiVercel size={72} color="black" />,
     href: "https://vercel.com/",
     category: TechStackItemCategory.HOSTING,
   },
   {
     title: "Heroku",
-    icon: <SiHeroku size={72} color="#79589f" />,
     href: "https://www.heroku.com/",
     category: TechStackItemCategory.HOSTING,
   },
@@ -191,7 +156,6 @@ export const techStackItems: TechStackItemProps[] = [
   },
   {
     title: "Nodemon",
-    icon: <SiNodemon size={72} color="#76d04b" />,
     href: "https://www.npmjs.com/package/nodemon",
     category: TechStackItemCategory.BACKEND_LIBRARY,
   },
@@ -203,7 +167,6 @@ export const techStackItems: TechStackItemProps[] = [
   },
   {
     title: "Postman",
-    icon: <SiPostman size={72} color="#f86936" />,
     href: "https://www.postman.com/",
     category: TechStackItemCategory.SOFTWARE,
   },
@@ -323,50 +286,42 @@ export const techStackItems: TechStackItemProps[] = [
   },
   {
     title: "React Native",
-    icon: <GrReactjs size={72} color="#61DBFB" />,
     href: "https://reactnative.dev/",
     category: TechStackItemCategory.MOBILE_DEVELOPMENT,
   },
   {
     title: "Visual Basic",
-    icon: <SiDotnet size={72} color="#5027d5" />,
     href: "https://learn.microsoft.com/en-us/dotnet/visual-basic/",
     category: TechStackItemCategory.PROGRAMMING_LANGUAGE,
   },
 
   {
     title: "Slack",
-    icon: <SiSlack size={72} color="#00bf7e" />,
     href: "https://slack.com/",
     category: TechStackItemCategory.SOFTWARE,
   },
   {
     title: "Discord",
-    icon: <SiDiscord size={72} color="#4a62fc" />,
     href: "https://discord.com/",
     category: TechStackItemCategory.SOFTWARE,
   },
   {
     title: "Visual Studio Code",
-    icon: <SiVisualstudiocode size={72} color="#2778b2" />,
     href: "https://code.visualstudio.com/",
     category: TechStackItemCategory.SOFTWARE,
   },
   {
     title: "IntelliJ IDEA",
-    icon: <SiJetbrains size={72} color="#f72e5c" />,
     href: "https://www.jetbrains.com/idea/",
     category: TechStackItemCategory.SOFTWARE,
   },
   {
     title: "Xcode",
-    icon: <SiXcode size={72} color="#1950ef" />,
     href: "https://developer.apple.com/xcode/",
     category: TechStackItemCategory.SOFTWARE,
   },
   {
     title: "Sourcetree",
-    icon: <FaSourcetree size={72} color="#2684ff" />,
     href: "https://www.sourcetreeapp.com/",
     category: TechStackItemCategory.SOFTWARE,
   },
@@ -564,7 +519,6 @@ export const techStackItems: TechStackItemProps[] = [
     title: "Strapi",
     href: "https://strapi.io/",
     category: TechStackItemCategory.CMS,
-    icon: <SiStrapi size={72} color="#8b4bff" />,
   },
   {
     title: "Cloudinary",
@@ -620,7 +574,6 @@ export const techStackItems: TechStackItemProps[] = [
     title: "Expo",
     href: "https://expo.dev/",
     category: TechStackItemCategory.MOBILE_DEVELOPMENT,
-    icon: <SiExpo size={72} color="black" />,
   },
   {
     title: "React Native Paper",
@@ -651,7 +604,6 @@ export const techStackItems: TechStackItemProps[] = [
   {
     title: "Markdown",
     href: "https://www.markdownguide.org/",
-    icon: <SiMarkdown size={72} color="black" />,
     category: TechStackItemCategory.MARKUP_LANGUAGE,
   },
   {
@@ -663,7 +615,6 @@ export const techStackItems: TechStackItemProps[] = [
     title: "Jira",
     href: "https://www.atlassian.com/software/jira",
     category: TechStackItemCategory.SOFTWARE,
-    icon: <SiJirasoftware size={72} color="#2584ff" />,
   },
 ];
 

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { useSelector } from "react-redux";
 
 import { ButtonWrapper, Section } from "components";
 import { useGetText } from "hooks";

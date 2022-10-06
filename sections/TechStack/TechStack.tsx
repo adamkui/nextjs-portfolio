@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
-import Link from "next/link";
-import { FC, useState } from "react";
+import cn from "classnames";
+import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import {
@@ -21,20 +21,12 @@ export const TechStack: FC = () => {
   const t = useGetText();
 
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [techStackCards, setTechStackCards] = useState<JSX.Element[]>([]);
 
-  return (
-    <Section
-      title={t("TECH_STACK_TITLE")}
-      body={t("TECH_STACK_BODY")}
-      className="flex flex-col mb-20"
-    >
-      <ButtonWrapper
-        label={t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
-        className={"mt-16 mb-20"}
-        onClick={() => setModalOpen(true)}
-      />
-      <Grid container className="justify-center" gap={3}>
-        {Object.values(TechStackItemCategory).map((ItemCategory) => {
+  useEffect(() => {
+    setTechStackCards(
+      Object.values(TechStackItemCategory)
+        .map((ItemCategory) => {
           return sortBy(techStackItems, [(item) => item.title.toLowerCase()])
             .filter((item) => item.category === ItemCategory && item.icon)
             .map(({ title, icon, href }) => {
@@ -48,7 +40,31 @@ export const TechStack: FC = () => {
                 />
               );
             });
-        })}
+        })
+        .flat()
+    );
+  }, [isDarkMode]);
+
+  return (
+    <Section
+      title={t("TECH_STACK_TITLE")}
+      body={t("TECH_STACK_BODY")}
+      className="flex flex-col mb-20"
+    >
+      <ButtonWrapper
+        label={t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
+        className={"mt-16 mb-20"}
+        onClick={() => setModalOpen(true)}
+      />
+      <Grid
+        container
+        className={cn(
+          "justify-center transition-all duration-200 ease-in-out",
+          techStackCards.length ? "opacity-1" : "opacity-transparent"
+        )}
+        gap={3}
+      >
+        {techStackCards}
       </Grid>
       <button
         type="button"
