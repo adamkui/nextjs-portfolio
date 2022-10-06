@@ -1,7 +1,7 @@
-import { Skeleton, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import cn from "classnames";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useSelector } from "react-redux";
 
 import { Section } from "components";
@@ -10,9 +10,6 @@ import { useGetText, useWindowSize } from "hooks";
 export const AboutMe: FC = () => {
   const t = useGetText();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
-  const { underSm, underXl } = useWindowSize();
-
-  const [isImageLoading, setImageLoading] = useState<boolean>(true);
 
   return (
     <Section title={t("ABOUT_ME_TITLE")} className="flex flex-col w-full mb-20">
@@ -33,22 +30,9 @@ export const AboutMe: FC = () => {
         width={1500}
         height={1000}
         layout={"responsive"}
-        className={cn(
-          "mt-10 justify-self-center rounded-md",
-          isImageLoading ? "opacity-transparent" : "opacity-100"
-        )}
-        onLoad={() => {
-          setImageLoading(false);
-        }}
+        className={"mt-10 justify-self-center rounded-md"}
+        loading={"eager"}
       />
-      {isImageLoading ? (
-        <Skeleton
-          animation={"wave"}
-          variant={"rounded"}
-          className={"mt-10 w-full"}
-          height={underSm ? 275 : underXl ? 550 : 850}
-        />
-      ) : null}
     </Section>
   );
 };

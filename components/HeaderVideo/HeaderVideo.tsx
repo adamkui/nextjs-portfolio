@@ -1,4 +1,4 @@
-import { Skeleton, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import cn from "classnames";
 import { FC, useEffect, useState } from "react";
 import Typed from "react-typed";
@@ -27,7 +27,6 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
 }) => {
   const sizeInfo = useWindowSize();
 
-  const [isImageLoading, setImageLoading] = useState<boolean>(true);
   const [isVideLoaded, setVideoLoaded] = useState<boolean>(false);
   const [videoTopProperty, setVideoTopProperty] = useState<string | number>(0);
 
@@ -97,22 +96,10 @@ export const HeaderVideo: FC<HeaderVideoProps> = ({
         }}
         className={cn(
           "min-w-full min-h-full object-cover absolute left-0 brightness-35 dark:brightness-75 bg-transparent",
-          isVideLoaded ? "opacity-0" : "opacity-80 dark:opacity-60",
-          isImageLoading ? "opacity-transparent" : "opacity-100"
+          isVideLoaded ? "opacity-0" : "opacity-80 dark:opacity-60"
         )}
-        onLoad={() => {
-          setImageLoading(false);
-        }}
+        loading="eager"
       />
-      {isImageLoading ? (
-        <Skeleton
-          animation={"wave"}
-          variant={"rounded"}
-          className={
-            "absolute top-0 left-0 w-full h-56 sm:h-96 2xl:h-128 4xl:h-156"
-          }
-        />
-      ) : null}
       <video
         src={sizeInfo.underSm ? srcOnMobile : src}
         autoPlay
