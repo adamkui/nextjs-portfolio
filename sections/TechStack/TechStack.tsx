@@ -13,8 +13,10 @@ import {
 import { TechStackItemCategory, techStackItems } from "data";
 import { useGetText } from "hooks";
 import { sortBy } from "lodash";
+import { useRouter } from "next/router";
 
 export const TechStack: FC = () => {
+  const router = useRouter();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
   const t = useGetText();
 
@@ -26,12 +28,11 @@ export const TechStack: FC = () => {
       body={t("TECH_STACK_BODY")}
       className="flex flex-col mb-20"
     >
-      <Link href="/portfolio">
-        <ButtonWrapper
-          label={t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
-          className={"mt-16 mb-20"}
-        />
-      </Link>
+      <ButtonWrapper
+        label={t("TECH_STACK_PORTFOLIO_BUTTON_LABEL")}
+        className={"mt-16 mb-20"}
+        onClick={() => setModalOpen(true)}
+      />
       <Grid container className="justify-center" gap={3}>
         {Object.values(TechStackItemCategory).map((ItemCategory) => {
           return sortBy(techStackItems, [(item) => item.title.toLowerCase()])
@@ -51,7 +52,7 @@ export const TechStack: FC = () => {
       </Grid>
       <button
         type="button"
-        onClick={() => setModalOpen(true)}
+        onClick={() => router.push("/portfolio")}
         className="w-fit self-center group"
         role={"button"}
         aria-label={"More tech stack data"}
