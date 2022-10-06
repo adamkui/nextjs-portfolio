@@ -65,14 +65,14 @@ export const TimeLineItemWrapper: FC<TimeLineDataProps> = ({
             align === "right" || underSm ? "self-start" : "self-end"
           )}
         >
-          <Typography variant="h5" component="span" align={"right"}>
+          <Typography
+            variant="h5"
+            component="span"
+            align={"right"}
+            className={"underline underline-offset-8 decoration-1"}
+          >
             {company}
           </Typography>
-          <Divider
-            sx={{
-              bgcolor: isDarkMode ? "white" : "rgb(30 41 59)",
-            }}
-          />
         </div>
         <Typography variant="subtitle1">{position}</Typography>
         {underSm ? (

@@ -4,6 +4,4 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = {nextConfig, images: {
-  domains: ['https://www.adamkui.hu']
-}}
+module.exports = nextConfig
