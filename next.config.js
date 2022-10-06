@@ -5,5 +5,5 @@ const nextConfig = {
 }
 
 module.exports = {nextConfig, images: {
-  domains: ['www.adamkui.hu']
+  domains: ['https://www.adamkui.hu']
 }}
