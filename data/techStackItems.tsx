@@ -616,6 +616,11 @@ export const techStackItems: TechStackItemProps[] = [
     href: "https://www.atlassian.com/software/jira",
     category: TechStackItemCategory.SOFTWARE,
   },
+  {
+    title: "George Design System",
+    href: "https://designsystem.george-labs.com/",
+    category: TechStackItemCategory.UI_KIT,
+  },
 ];
 
 const getItemsByCategory = (category: TechStackItemCategory) => {
