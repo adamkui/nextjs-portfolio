@@ -14,6 +14,8 @@ export const getStaticProps = async (): Promise<
     CMS_BLOG_ARTICLES_URL
   ).then((res) => res.json());
 
+  if (!resources) return { props: { filesData: [] } };
+
   const filesData: FileData[] = await Promise.all(
     resources.map(async ({ filename, url }, index) => {
       return {
