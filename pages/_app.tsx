@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import { Suspense, useEffect, useState } from "react";
 import { Provider } from "react-redux";
 
@@ -15,12 +15,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    // Router.events.on("routeChangeStart", () => setLoading(true));
-    // Router.events.on("routeChangeComplete", () => setLoading(false));
+    Router.events.on("routeChangeStart", () => setLoading(true));
+    Router.events.on("routeChangeComplete", () => setLoading(false));
 
     return () => {
-      // Router.events.off("routeChangeStart", () => setLoading(true));
-      // Router.events.off("routeChangeComplete", () => setLoading(false));
+      Router.events.off("routeChangeStart", () => setLoading(true));
+      Router.events.off("routeChangeComplete", () => setLoading(false));
     };
   }, []);
 
@@ -43,15 +43,12 @@ function MyApp({ Component, pageProps }: AppProps) {
               variants={{
                 initialState: {
                   opacity: 0,
-                  clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
                 },
                 animateState: {
                   opacity: 1,
-                  clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
                 },
                 exitState: {
                   opacity: 0,
-                  clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
                 },
               }}
             >
