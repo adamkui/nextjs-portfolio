@@ -1,9 +1,10 @@
-export * from "./AppLoader/AppLoader"
-export * from "./BlogArticleSummary/BlogArticleSummary"
-export * from "./BlogNoArticles/BlogNoArticles"
-export * from './ButtonWrapper/ButtonWrapper'
+export * from "./AppLoader/AppLoader";
+export * from "./BlogArticleSummary/BlogArticleSummary";
+export * from "./BlogNoArticles/BlogNoArticles";
+export * from "./ButtonWrapper/ButtonWrapper";
 export * from "./DarkModeSwitch/DarkModeSwitch";
 export * from "./Footer/Footer";
+export * from "./GitHubLink/GitHubLink";
 export * from "./Header/Header";
 export * from "./HeaderVideo/HeaderVideo";
 export * from "./Layout/Layout";
@@ -14,10 +15,9 @@ export * from "./Navigation/Navigation";
 export * from "./PaginatedBlogArticles/PaginatedBlogArticles";
 export * from "./PortfolioCard/PortfolioCard";
 export * from "./ProfileItem/ProfileItem";
-export * from "./ScrollUpButton/ScrollUpButton"
+export * from "./ScrollUpButton/ScrollUpButton";
 export * from "./Section/Section";
 export * from "./TechStackCard/TechStackCard";
 export * from "./TechStackMoreInfoDialog/TechStackMoreInfoDialog";
 export * from "./TextUnderline/TextUnderline";
 export * from "./TimeLineItemWrapper/TimeLineItemWrapper";
-

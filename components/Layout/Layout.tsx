@@ -1,12 +1,14 @@
 import cn from "classnames";
 import Head from "next/head";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetText } from "hooks";
 import { setDarkMode } from "store/common";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/material";
 
 interface LayoutProps {
   children: ReactNode;
@@ -37,8 +39,18 @@ const Layout = (props: LayoutProps) => {
     };
   }, [dispatch]);
 
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: isDarkMode ? "dark" : "light",
+        },
+      }),
+    [isDarkMode]
+  );
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div
         className={cn(
           "transition-all duration-200 ease-in-out",
@@ -59,7 +71,7 @@ const Layout = (props: LayoutProps) => {
           <Footer />
         </main>
       </div>
-    </>
+    </ThemeProvider>
   );
 };
 

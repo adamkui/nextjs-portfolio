@@ -1,12 +1,12 @@
 import { Grid, Typography } from "@mui/material";
 import { FC } from "react";
+
+import { GitHubLink, PortfolioCard, Section, TextUnderline } from "components";
+import { hobbyPortfolioItems, professionalPortfolioItems } from "data";
+import { useGetText } from "hooks/useGetText";
 import { useSelector } from "react-redux";
 
-import { PortfolioCard, Section, TextUnderline } from "components";
-import { hobbyPortfolioItems, professionalPortfolioItems } from "data";
-import { useGetText } from "hooks";
-
-export const Portfolio: FC = () => {
+export const PortfolioGrid: FC = () => {
   const t = useGetText();
   const { isDarkMode } = useSelector((state: ApplicationState) => state.common);
 
@@ -14,7 +14,7 @@ export const Portfolio: FC = () => {
     <>
       <Section
         title={t("PORTFOLIO_TITLE_PROFESSIONAL")}
-        className="flex flex-col w-full mt-20"
+        className="flex flex-col w-full mt-10"
       >
         <Grid container spacing={3} className={"justify-center"}>
           {professionalPortfolioItems.map((itemProps) => {
@@ -43,17 +43,7 @@ export const Portfolio: FC = () => {
             );
           })}
         </Grid>
-        <a
-          href="https://github.com/adamkui"
-          target={"_black"}
-          rel={"noreferrer"}
-          className="w-fit self-center group"
-        >
-          <Typography className="text-center mt-10" variant="subtitle1">
-            {t("PORTFOLIO_MORE_ON_GITHUB")}
-          </Typography>
-          <TextUnderline bgColorClass="bg-gradient-to-r from-sky-600 to-cyan-500" />
-        </a>
+        <GitHubLink />
       </Section>
     </>
   );
