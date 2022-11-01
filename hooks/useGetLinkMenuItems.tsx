@@ -2,6 +2,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { ReactElement } from "react";
+import { FaNpm } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 import { useGetText } from "./useGetText";
@@ -27,6 +28,11 @@ export const useGetLinkMenuItems = () => {
         ),
         label: t("LINK_MENU_GITHUB"),
         href: "https://github.com/adamkui",
+      },
+      {
+        icon: <FaNpm size={26} color={isDarkMode ? "white" : "#ea1f39"} />,
+        label: t("LINK_MENU_NPMJS"),
+        href: "https://www.npmjs.com/~adamkui",
       },
       {
         icon: (

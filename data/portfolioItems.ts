@@ -46,6 +46,16 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
 
 export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
+    titleTrlKey: "PORTFOLIO_REACT_BREAKPOINT_UTILS_TITLE",
+    descriptionTrlKey: "PORTFOLIO_REACT_BREAKPOINT_UTILS_DESCRIPTION",
+    imageSrc: "/assets/images/portfolio/react_breakpoint_utils.webp",
+    chipContent: ["React", "JavaScript", "Npmjs", "Lodash"],
+    buttonProps: {
+      href: "https://www.npmjs.com/package/react-breakpoint-utils",
+      label: "PORTFOLIO_VISIT_NPMJS",
+    },
+  },
+  {
     titleTrlKey: "PORTFOLIO_PAL_GOLLNER_TITLE",
     descriptionTrlKey: "PORTFOLIO_PAL_GOLLNER_DESCRIPTION",
     imageSrc: "/assets/images/portfolio/pal_gollner.webp",
