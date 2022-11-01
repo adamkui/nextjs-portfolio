@@ -92,7 +92,7 @@
   "PORTFOLIO_COLORS_APP_DESCRIPTION": "This app is a random color palette generator, with a library for saved palettes function. It is very similar to the popular application, Coolors.",
   "PORTFOLIO_PHOTO_SEARCH_APP_TITLE": "Photo Search App ",
   "PORTFOLIO_PHOTO_SEARCH_APP_DESCRIPTION": "The idea behind this project was to learn more about async JavaScript. Using this app, you can search photos, by using Pexels API in the background.",
-  "PORTFOLIO_DISCORD_CHATBOT_TITLE": "Discord News Fetch ChatBot",
+  "PORTFOLIO_DISCORD_CHATBOT_TITLE": "Discord News Fetch Chatbot",
   "PORTFOLIO_DISCORD_CHATBOT_DESCRIPTION": "This is a Discord.JS application that fetches data from Rockstar Newswire website on a regular base, formats the data in an embedded Discord message, and sends to the configured Discord channel(s). I was using this application with my friends on our gaming Discord server, to be updated about any news related to GTA 5 Online.",
   "PORTFOLIO_OLD_PORTFOLIO_TITLE": "My old portfolio website ",
   "PORTFOLIO_OLD_PORTFOLIO_DESCRIPTION": "My first ever portfolio website, built without React. This page is not in use anymore.",
