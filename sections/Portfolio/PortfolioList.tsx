@@ -1,3 +1,4 @@
+import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import OtherHousesIcon from "@mui/icons-material/OtherHouses";
 import WorkIcon from "@mui/icons-material/Work";
@@ -8,12 +9,12 @@ import {
   ListItemAvatar,
   ListItemText,
   Tooltip,
-  Typography,
 } from "@mui/material";
 import { extend } from "lodash";
 import { FC } from "react";
+3;
 
-import { GitHubLink, Section, TextUnderline } from "components";
+import { GitHubLink, Section } from "components";
 import {
   hobbyPortfolioItems,
   professionalPortfolioItems,
@@ -44,46 +45,59 @@ export const PortfolioList: FC = () => {
       className="flex flex-col w-full mt-10 mb-20"
     >
       <List dense>
-        {[...professionalItems, ...hobbyItems].map((item) => {
-          return (
-            <ListItem
-              key={item.titleTrlKey}
-              secondaryAction={
-                item.buttonProps?.href ? (
-                  <a
-                    href={item.buttonProps.href}
-                    target={"_blank"}
-                    rel={"noreferrer"}
-                  >
-                    <Tooltip
-                      title={t(
-                        item.buttonProps.label || "PORTFOLIO_VISIT_WEBSITE"
-                      )}
+        {[...professionalItems, ...hobbyItems].map(
+          ({ titleTrlKey, buttonProps, type, chipContent, subtitleTrlKey }) => {
+            return (
+              <ListItem
+                key={titleTrlKey}
+                secondaryAction={buttonProps?.map(({ href, label }) => {
+                  return (
+                    <a
+                      href={href}
+                      target={"_blank"}
+                      rel={"noreferrer"}
+                      className="mx-1"
                     >
-                      <IconButton edge="end" aria-label="Navigate to page">
-                        <LaunchIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </a>
-                ) : null
-              }
-            >
-              <Tooltip title={item.type} placement={underMd ? "top" : "left"}>
-                <ListItemAvatar className="hidden sm:block">
-                  {item.type === PortfolioItemType.PROFESSIONAL ? (
-                    <WorkIcon />
-                  ) : (
-                    <OtherHousesIcon />
-                  )}
-                </ListItemAvatar>
-              </Tooltip>
-              <ListItemText
-                primary={t(item.titleTrlKey)}
-                secondary={underSm ? null : item.chipContent.join(", ")}
-              />
-            </ListItem>
-          );
-        })}
+                      <Tooltip title={t(label || "PORTFOLIO_VISIT_WEBSITE")}>
+                        <IconButton edge="end" aria-label="Navigate to page">
+                          {label?.includes("GITHUB") ? (
+                            <GitHubIcon />
+                          ) : (
+                            <LaunchIcon />
+                          )}
+                        </IconButton>
+                      </Tooltip>
+                    </a>
+                  );
+                })}
+              >
+                <Tooltip title={type} placement={underMd ? "top" : "left"}>
+                  <ListItemAvatar className="hidden sm:block">
+                    {type === PortfolioItemType.PROFESSIONAL ? (
+                      <WorkIcon />
+                    ) : (
+                      <OtherHousesIcon />
+                    )}
+                  </ListItemAvatar>
+                </Tooltip>
+                <ListItemText
+                  primary={
+                    <a
+                      href={
+                        buttonProps
+                          ? buttonProps[buttonProps.length - 1].href
+                          : ""
+                      }
+                      target={"_blank"}
+                      rel={"noreferrer"}
+                    >{`${t(titleTrlKey)} (${t(subtitleTrlKey)})`}</a>
+                  }
+                  secondary={underSm ? null : chipContent.join(", ")}
+                />
+              </ListItem>
+            );
+          }
+        )}
       </List>
       <GitHubLink />
     </Section>

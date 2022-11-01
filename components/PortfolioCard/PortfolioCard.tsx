@@ -4,6 +4,7 @@ import {
   CardContent,
   CardMedia,
   Chip,
+  Divider,
   Grid,
   Typography,
 } from "@mui/material";
@@ -21,6 +22,7 @@ interface PortfolioCardProps extends PortfolioItemProps {
 export const PortfolioCard: FC<PortfolioCardProps> = ({
   isDarkMode,
   titleTrlKey,
+  subtitleTrlKey,
   descriptionTrlKey,
   imageSrc,
   chipContent,
@@ -49,7 +51,11 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
             : "bg-opacity-100 border-grey"
         )}
       >
-        <a href={buttonProps?.href} target={"_blank"} rel={"noreferrer"}>
+        <a
+          href={buttonProps ? buttonProps[buttonProps.length - 1].href : ""}
+          target={"_blank"}
+          rel={"noreferrer"}
+        >
           <CardMedia
             component="img"
             sx={{
@@ -66,9 +72,16 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
             isDarkMode ? "text-white" : "text-black"
           )}
         >
-          <Typography variant="h5" className="mb-3">
+          <Typography variant="h5" className="mb-1">
             {t(titleTrlKey)}
           </Typography>
+          <Typography
+            variant="subtitle1"
+            className="mb-3 text-sky-500 dark:text-sky-300"
+          >
+            {t(subtitleTrlKey)}
+          </Typography>
+          <Divider className="mb-3" />
           <Typography variant="body1">{t(descriptionTrlKey)}</Typography>
           <Grid container spacing={1} className={"mt-3 w-fit"}>
             {chipContent.map((label) => {
@@ -84,16 +97,20 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
             })}
           </Grid>
         </CardContent>
-        {buttonProps ? (
-          <CardActions className="px-3">
-            <a href={buttonProps.href} target={"_blank"} rel={"noreferrer"}>
-              <ButtonWrapper
-                label={t(buttonProps?.label || "PORTFOLIO_VISIT_WEBSITE")}
-                className={"my-3"}
-              />
-            </a>
-          </CardActions>
-        ) : null}
+        <div className="flex flex-wrap">
+          {buttonProps?.map(({ href, label }) => {
+            return (
+              <CardActions className="px-3">
+                <a href={href} target={"_blank"} rel={"noreferrer"}>
+                  <ButtonWrapper
+                    label={t(label || "PORTFOLIO_VISIT_WEBSITE")}
+                    className={"my-3"}
+                  />
+                </a>
+              </CardActions>
+            );
+          })}
+        </div>
       </Card>
     </Grid>
   );

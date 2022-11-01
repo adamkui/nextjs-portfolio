@@ -54,7 +54,7 @@ export const Section: FC<SectionProps> = ({
             className={cn(
               "block h-1.5 w-full bg-gradient-to-r from-sky-600 to-cyan-500"
             )}
-          ></span>
+          />
         </div>
         {body ? (
           <Typography
