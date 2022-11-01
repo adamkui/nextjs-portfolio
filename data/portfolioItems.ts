@@ -77,7 +77,13 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
       "Axios",
       "Cloudinary",
     ],
-    buttonProps: [{ href: "https://www.palgollner.hu/" }],
+    buttonProps: [
+      {
+        href: "https://github.com/adamkui/pal-gollner-website",
+        label: "PORTFOLIO_VISIT_GITHUB",
+      },
+      { href: "https://www.palgollner.hu/" },
+    ],
   },
   {
     titleTrlKey: "PORTFOLIO_EGRIAPARTMAN_TITLE",
