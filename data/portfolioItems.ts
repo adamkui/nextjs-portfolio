@@ -36,13 +36,6 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
     chipContent: ["React", "TypeScript", "Bootstrap", "NodeJs"],
   },
   {
-    titleTrlKey: "PORTFOLIO_GEORGE_MICROSITES_TITLE",
-    subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_DEVELOPMENT",
-    descriptionTrlKey: "PORTFOLIO_GEORGE_MICROSITES_DESCRIPTION",
-    imageSrc: "/assets/images/portfolio/george_microsites.webp",
-    chipContent: ["React", "TypeScript", "Bootstrap"],
-  },
-  {
     titleTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_TITLE",
     subtitleTrlKey: "PORTFOLIO_SUBTITLE_BACKEND_DEVELOPMENT",
     descriptionTrlKey: "PORTFOLIO_GEORGE_MOCK_BACKEND_DESCRIPTION",

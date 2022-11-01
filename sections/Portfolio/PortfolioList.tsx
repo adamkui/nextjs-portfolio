@@ -47,10 +47,14 @@ export const PortfolioList: FC = () => {
       <List dense>
         {[...professionalItems, ...hobbyItems].map(
           ({ titleTrlKey, buttonProps, type, chipContent, subtitleTrlKey }) => {
+            const buttonPropsToPass =
+              underSm && buttonProps
+                ? [buttonProps[buttonProps.length - 1]]
+                : buttonProps;
             return (
               <ListItem
                 key={titleTrlKey}
-                secondaryAction={buttonProps?.map(({ href, label }) => {
+                secondaryAction={buttonPropsToPass?.map(({ href, label }) => {
                   return (
                     <a
                       href={href}
@@ -84,8 +88,8 @@ export const PortfolioList: FC = () => {
                   primary={
                     <a
                       href={
-                        buttonProps
-                          ? buttonProps[buttonProps.length - 1].href
+                        buttonPropsToPass
+                          ? buttonPropsToPass[buttonPropsToPass.length - 1].href
                           : ""
                       }
                       target={"_blank"}
