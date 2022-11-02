@@ -100,7 +100,7 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
         <div className="flex flex-wrap">
           {buttonProps?.map(({ href, label }) => {
             return (
-              <CardActions className="px-3">
+              <CardActions className="px-3" key={href}>
                 <a href={href} target={"_blank"} rel={"noreferrer"}>
                   <ButtonWrapper
                     label={t(label || "PORTFOLIO_VISIT_WEBSITE")}
