@@ -46,11 +46,27 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
 
 export const hobbyPortfolioItems: PortfolioItemProps[] = [
   {
+    titleTrlKey: "PORTFOLIO_LINKTREE_TITLE",
+    subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_DEVELOPMENT",
+    descriptionTrlKey: "PORTFOLIO_LINKTREE_DESCRIPTION",
+    imageSrc: "/assets/images/portfolio/linktree.webp",
+    chipContent: ["Qwik", "TypeScript", "Vite"],
+    buttonProps: [
+      {
+        href: "https://github.com/adamkui/qwik-link-tree",
+        label: "PORTFOLIO_VISIT_GITHUB",
+      },
+      {
+        href: "https://adamkui-linktree.netlify.app/",
+      },
+    ],
+  },
+  {
     titleTrlKey: "PORTFOLIO_REACT_BREAKPOINT_UTILS_TITLE",
     subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_LIBRARY",
     descriptionTrlKey: "PORTFOLIO_REACT_BREAKPOINT_UTILS_DESCRIPTION",
     imageSrc: "/assets/images/portfolio/react_breakpoint_utils.webp",
-    chipContent: ["React", "JavaScript", "Npmjs", "Lodash"],
+    chipContent: ["React", "TypeScript", "Npmjs"],
     buttonProps: [
       {
         href: "https://github.com/adamkui/react-breakpoint-utils",

@@ -1,8 +1,8 @@
-import CodeIcon from "@mui/icons-material/Code";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { ReactElement } from "react";
 import { FaNpm } from "react-icons/fa";
+import { HiLink } from "react-icons/hi";
 import { SiCodersrank } from "react-icons/si";
 import { useSelector } from "react-redux";
 
@@ -51,6 +51,11 @@ export const useGetLinkMenuItems = () => {
         ),
         label: t("LINK_MENU_LINKEDIN"),
         href: "https://linkedin.com/in/adamkui",
+      },
+      {
+        icon: <HiLink size={26} color={isDarkMode ? "white" : "#b62911"} />,
+        label: t("LINK_MENU_LINKTREE"),
+        href: "https://adamkui-linktree.netlify.app",
       },
     ];
 

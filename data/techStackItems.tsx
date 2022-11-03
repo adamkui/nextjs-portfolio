@@ -23,6 +23,7 @@ import {
   SiTailwindcss,
   SiTestinglibrary,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { texts } from ".";
@@ -35,6 +36,7 @@ export enum TechStackItemCategory {
   "PROGRAMMING_LANGUAGE" = "PROGRAMMING_LANGUAGE",
   "FRONTEND_FRAMEWORK" = "FRONTEND_FRAMEWORK",
   "FRONTEND_LIBRARY" = "FRONTEND_LIBRARY",
+  "FRONTEND_TOOLING" = "FRONTEND_TOOLING",
   "UI_KIT" = "UI_KIT",
   "RUNTIME_ENVIRONMENT" = "RUNTIME_ENVIRONMENT",
   "BACKEND_FRAMEWORK" = "BACKEND_FRAMEWORK",
@@ -630,6 +632,17 @@ export const techStackItems: TechStackItemProps[] = [
     title: "react-breakpoint-utils",
     href: "https://www.npmjs.com/package/react-breakpoint-utils",
     category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "Vite",
+    href: "https://vitejs.dev/",
+    category: TechStackItemCategory.FRONTEND_TOOLING,
+    icon: <SiVite size={72} color="#636cff" />,
+  },
+  {
+    title: "Qwik",
+    href: "https://qwik.builder.io/",
+    category: TechStackItemCategory.FRONTEND_FRAMEWORK,
   },
 ];
 
