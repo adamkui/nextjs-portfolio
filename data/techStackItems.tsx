@@ -621,6 +621,16 @@ export const techStackItems: TechStackItemProps[] = [
     href: "https://designsystem.george-labs.com/",
     category: TechStackItemCategory.UI_KIT,
   },
+  {
+    title: "react-hook-form",
+    href: "https://react-hook-form.com/",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
+  {
+    title: "react-breakpoint-utils",
+    href: "https://www.npmjs.com/package/react-breakpoint-utils",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
 ];
 
 const getItemsByCategory = (category: TechStackItemCategory) => {
