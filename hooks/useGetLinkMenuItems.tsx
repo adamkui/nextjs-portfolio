@@ -3,6 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { ReactElement } from "react";
 import { FaNpm } from "react-icons/fa";
+import { SiCodersrank } from "react-icons/si";
 import { useSelector } from "react-redux";
 
 import { useGetText } from "./useGetText";
@@ -36,6 +37,13 @@ export const useGetLinkMenuItems = () => {
       },
       {
         icon: (
+          <SiCodersrank size={26} color={isDarkMode ? "white" : "#50B0BA"} />
+        ),
+        label: t("LINK_MENU_CODERSRANK"),
+        href: "https://profile.codersrank.io/user/adamkui",
+      },
+      {
+        icon: (
           <LinkedInIcon
             sx={{ fontSize: 26 }}
             htmlColor={isDarkMode ? "white" : "#0e76a8"}
@@ -43,16 +51,6 @@ export const useGetLinkMenuItems = () => {
         ),
         label: t("LINK_MENU_LINKEDIN"),
         href: "https://linkedin.com/in/adamkui",
-      },
-      {
-        icon: (
-          <CodeIcon
-            sx={{ fontSize: 26 }}
-            htmlColor={isDarkMode ? "white" : "#50B0BA"}
-          />
-        ),
-        label: t("LINK_MENU_CODERSRANK"),
-        href: "https://profile.codersrank.io/user/adamkui",
       },
     ];
 
