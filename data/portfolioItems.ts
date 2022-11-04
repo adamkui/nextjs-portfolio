@@ -53,7 +53,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
     chipContent: ["Qwik", "TypeScript", "Vite", "Bootstrap"],
     buttonProps: [
       {
-        href: "https://github.com/adamkui/qwik-link-tree",
+        href: "https://github.com/adamkui/linktree-2.0",
         label: "PORTFOLIO_VISIT_GITHUB",
       },
       {
