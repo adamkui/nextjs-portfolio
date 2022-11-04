@@ -50,7 +50,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
     subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_DEVELOPMENT",
     descriptionTrlKey: "PORTFOLIO_LINKTREE_DESCRIPTION",
     imageSrc: "/assets/images/portfolio/linktree.webp",
-    chipContent: ["Qwik", "TypeScript", "Vite"],
+    chipContent: ["Qwik", "TypeScript", "Vite", "Bootstrap"],
     buttonProps: [
       {
         href: "https://github.com/adamkui/qwik-link-tree",
