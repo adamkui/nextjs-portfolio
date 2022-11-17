@@ -55,7 +55,7 @@ export const useGetLinkMenuItems = () => {
       {
         icon: <HiLink size={26} color={isDarkMode ? "white" : "#b62911"} />,
         label: t("LINK_MENU_LINKTREE"),
-        href: "https://adamkui-linktree.netlify.app",
+        href: "https://linktree.adamkui.hu/",
       },
     ];
 

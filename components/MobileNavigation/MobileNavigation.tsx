@@ -77,17 +77,17 @@ export const MobileNavigation: FC = () => {
                 </MenuItem>
               </Link>
             ) : (
-              <MenuItem
-                key={label}
-                onClick={handleClose}
-                className="flex font-thin"
-                sx={{ width: 170 }}
-              >
-                <ListItemIcon>{icon}</ListItemIcon>
-                <a href={href} target={"_blank"} rel="noreferrer">
+              <a href={href} target={"_blank"} rel="noreferrer">
+                <MenuItem
+                  key={label}
+                  onClick={handleClose}
+                  className="flex font-thin"
+                  sx={{ width: 170 }}
+                >
+                  <ListItemIcon>{icon}</ListItemIcon>
                   {label}
-                </a>
-              </MenuItem>
+                </MenuItem>
+              </a>
             );
           }
         )}

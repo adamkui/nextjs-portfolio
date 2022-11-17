@@ -72,12 +72,13 @@ export const LinksMenu: FC = () => {
                 <MenuItem
                   key={label}
                   onClick={handleClose}
-                  sx={{ paddingY: 1 }}
+                  sx={{ padding: 0 }}
+                  className={"liasdasdads"}
                 >
                   <a
                     href={href}
                     target="_blank"
-                    className="flex w-full items-center"
+                    className="flex w-full items-center px-4 py-2"
                     rel="noreferrer"
                   >
                     <ListItemIcon>{icon}</ListItemIcon>

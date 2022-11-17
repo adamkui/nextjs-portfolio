@@ -57,7 +57,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
         label: "PORTFOLIO_VISIT_GITHUB",
       },
       {
-        href: "https://adamkui-linktree.netlify.app/",
+        href: "https://linktree.adamkui.hu/",
       },
     ],
   },
