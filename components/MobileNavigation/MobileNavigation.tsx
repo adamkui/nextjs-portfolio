@@ -77,7 +77,7 @@ export const MobileNavigation: FC = () => {
                 </MenuItem>
               </Link>
             ) : (
-              <a href={href} target={"_blank"} rel="noreferrer">
+              <a href={href} target={"_blank"} rel="noreferrer" key={href}>
                 <MenuItem
                   key={label}
                   onClick={handleClose}

@@ -42,6 +42,46 @@ export const professionalPortfolioItems: PortfolioItemProps[] = [
     imageSrc: "/assets/images/portfolio/george_store_2.webp",
     chipContent: ["NodeJS", "ExpressJS"],
   },
+  {
+    titleTrlKey: "PORTFOLIO_BIKEGARAZS_TITLE",
+    subtitleTrlKey: "PORTFOLIO_SUBTITLE_ECOMMERCE",
+    descriptionTrlKey: "PORTFOLIO_BIKEGARAZS_DESCRIPTION",
+    imageSrc: "/assets/images/portfolio/bikegarazs.webp",
+    chipContent: ["Unas", "HTML", "CSS", "REST"],
+    buttonProps: [{ href: "https://www.bikegarazs.hu/" }],
+  },
+  {
+    titleTrlKey: "PORTFOLIO_PAL_GOLLNER_TITLE",
+    subtitleTrlKey: "PORTFOLIO_SUBTITLE_FULLSTACK_DEVELOPMENT",
+    descriptionTrlKey: "PORTFOLIO_PAL_GOLLNER_DESCRIPTION",
+    imageSrc: "/assets/images/portfolio/pal_gollner.webp",
+    chipContent: [
+      "React",
+      "TypeScript",
+      "NodeJs",
+      "ExpressJs",
+      "Material UI",
+      "Framer Motion",
+      "TailwindCSS",
+      "Axios",
+      "Cloudinary",
+    ],
+    buttonProps: [{ href: "https://www.palgollner.hu/" }],
+  },
+  {
+    titleTrlKey: "PORTFOLIO_EGRIAPARTMAN_TITLE",
+    subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_DEVELOPMENT",
+    descriptionTrlKey: "PORTFOLIO_EGRIAPARTMAN_DESCRIPTION",
+    imageSrc: "/assets/images/portfolio/egriapartman.webp",
+    chipContent: [
+      "React",
+      "TypeScript",
+      "Framer Motion",
+      "TailwindCSS",
+      "Styled Components",
+    ],
+    buttonProps: [{ href: "https://www.egriapartman.hu/" }],
+  },
 ];
 
 export const hobbyPortfolioItems: PortfolioItemProps[] = [
@@ -78,43 +118,7 @@ export const hobbyPortfolioItems: PortfolioItemProps[] = [
       },
     ],
   },
-  {
-    titleTrlKey: "PORTFOLIO_PAL_GOLLNER_TITLE",
-    subtitleTrlKey: "PORTFOLIO_SUBTITLE_FULLSTACK_DEVELOPMENT",
-    descriptionTrlKey: "PORTFOLIO_PAL_GOLLNER_DESCRIPTION",
-    imageSrc: "/assets/images/portfolio/pal_gollner.webp",
-    chipContent: [
-      "React",
-      "TypeScript",
-      "NodeJs",
-      "Material UI",
-      "Framer Motion",
-      "TailwindCSS",
-      "Axios",
-      "Cloudinary",
-    ],
-    buttonProps: [
-      {
-        href: "https://github.com/adamkui/pal-gollner-website",
-        label: "PORTFOLIO_VISIT_GITHUB",
-      },
-      { href: "https://www.palgollner.hu/" },
-    ],
-  },
-  {
-    titleTrlKey: "PORTFOLIO_EGRIAPARTMAN_TITLE",
-    subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_DEVELOPMENT",
-    descriptionTrlKey: "PORTFOLIO_EGRIAPARTMAN_DESCRIPTION",
-    imageSrc: "/assets/images/portfolio/egriapartman.webp",
-    chipContent: [
-      "React",
-      "TypeScript",
-      "Framer Motion",
-      "TailwindCSS",
-      "Styled Components",
-    ],
-    buttonProps: [{ href: "https://www.egriapartman.hu/" }],
-  },
+
   {
     titleTrlKey: "PORTFOLIO_NOTES_APP_TITLE",
     subtitleTrlKey: "PORTFOLIO_SUBTITLE_FRONTEND_DEVELOPMENT",
