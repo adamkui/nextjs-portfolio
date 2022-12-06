@@ -644,6 +644,11 @@ export const techStackItems: TechStackItemProps[] = [
     href: "https://qwik.builder.io/",
     category: TechStackItemCategory.FRONTEND_FRAMEWORK,
   },
+  {
+    title: "react-zoom-pan-pinch",
+    href: "https://github.com/prc5/react-zoom-pan-pinch#readme",
+    category: TechStackItemCategory.FRONTEND_LIBRARY,
+  },
 ];
 
 const getItemsByCategory = (category: TechStackItemCategory) => {
